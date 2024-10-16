@@ -1,8 +1,15 @@
 package co.edu.unbosque.controller;
 
+import co.edu.unbosque.view.VentanaPrincipal;
+
 public class Controller {
 
-	public void run(){
-		
+	private VentanaPrincipal ventanaP;
+
+	public Controller() {
+		ventanaP = new VentanaPrincipal();
+	}
+
+	public void run() {
 	}
 }
