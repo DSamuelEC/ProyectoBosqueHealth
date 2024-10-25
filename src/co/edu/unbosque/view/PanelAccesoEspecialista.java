@@ -5,16 +5,15 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
- * Clase encargada de recibir los datos del paciente para que pueda acceder al
- * sistema. En caso de que no exista un paciente, tiene un boton para poder
- * crearlo.
+ * Clase encargada de recibir los datos del especialista para que pueda acceder
+ * al sistema en caso de que si exista uno con los datos solicitados.
  * 
  * @author Samuel Diaz
  */
 
-public class PanelAccesoPaciente extends JPanel {
+public class PanelAccesoEspecialista extends JPanel {
 	/**
-	 * Atributo encargado de almacenar el nombre del paciente
+	 * Atributo encargado de almacenar el nombre del especialista
 	 */
 	private JTextField txtNombre;
 	/**
@@ -31,16 +30,11 @@ public class PanelAccesoPaciente extends JPanel {
 	 * almacenada en la persistencia
 	 */
 	private JButton btnSubmit;
-	/**
-	 * Atributo encargado de mostrar un boton para navegar al panel para crear un
-	 * usuario
-	 */
-	private JButton btnCrearUsuario;
 
 	/**
 	 * Metodo Constructor de la clase
 	 */
-	public PanelAccesoPaciente() {
+	public PanelAccesoEspecialista() {
 		setSize(1300, 700);
 		setLayout(null);
 
@@ -64,14 +58,10 @@ public class PanelAccesoPaciente extends JPanel {
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
 
-		btnCrearUsuario = new JButton("CrearUsuario");
-		btnCrearUsuario.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-
 		add(txtNombre);
 		add(txtCedula);
 		add(btnAtras);
 		add(btnSubmit);
-		add(btnCrearUsuario);
 	}
 
 	/**
@@ -153,23 +143,5 @@ public class PanelAccesoPaciente extends JPanel {
 	 */
 	public void setBtnSubmit(JButton btnSubmit) {
 		this.btnSubmit = btnSubmit;
-	}
-
-	/**
-	 * Metodo que retorna el valor del atributo btnCrearUsuario
-	 * 
-	 * @return Contenido del atributo btnCrearUsuario
-	 */
-	public JButton getBtnCrearUsuario() {
-		return btnCrearUsuario;
-	}
-
-	/**
-	 * Metodo que actualiza el valor del atributo btnCrearUsuario
-	 * 
-	 * @param btnCrearUsuario Valor a actualizar
-	 */
-	public void setBtnCrearUsuario(JButton btnCrearUsuario) {
-		this.btnCrearUsuario = btnCrearUsuario;
 	}
 }
