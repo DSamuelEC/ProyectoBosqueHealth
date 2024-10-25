@@ -14,24 +14,24 @@ public class PanelAcceso extends JPanel {
 	/**
 	 * Atributo encargado de mostrar un texto de Bienvenida en el Panel
 	 */
-	JLabel lblBienvenida;
+	private JLabel lblBienvenida;
 	/**
 	 * Atributo encargado de mostrar un texto para indicar al Usuario que ingrese el
 	 * modo de acceso deseado
 	 */
-	JLabel lblModoDeAcceso;
+	private JLabel lblModoDeAcceso;
 	/**
 	 * Atributo encargado de mostrar un boton con acceso a Usuario
 	 */
-	JButton btnUsuario;
+	private JButton btnUsuario;
 	/**
 	 * Atributo encargado de mostrar un boton con acceso a Especialista
 	 */
-	JButton btnEspecialista;
+	private JButton btnEspecialista;
 	/**
 	 * Atributo encargado de mostrar un boton con acceso a Admin
 	 */
-	JButton btnAdmin;
+	private JButton btnAdmin;
 
 	/**
 	 * Metodo Constructor de la clase
