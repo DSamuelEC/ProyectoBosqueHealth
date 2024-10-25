@@ -42,7 +42,7 @@ public class PanelAcceso extends JPanel {
 		setLayout(null);
 
 		inicializarComponentes();
-		setVisible(true);
+		setVisible(false);
 
 	}
 

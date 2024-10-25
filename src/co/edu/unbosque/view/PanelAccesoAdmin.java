@@ -40,7 +40,7 @@ public class PanelAccesoAdmin extends JPanel {
 		setLayout(null);
 
 		inicializarComponentes();
-		setVisible(true);
+		setVisible(false);
 	}
 
 	/**
