@@ -35,7 +35,7 @@ public class PanelCrearPaciente extends JPanel {
 	 */
 	private JButton btnAtras;
 	/**
-	 * Atributo encargado de mostrar un boton para guardar la infromación del
+	 * Atributo encargado de mostrar un boton para guardar la informacion del
 	 * paciente y avanzar al siguiente panel de AccesoUsuario
 	 */
 	private JButton btnSubmit;
@@ -53,7 +53,7 @@ public class PanelCrearPaciente extends JPanel {
 		setLayout(null);
 
 		inicializarComponentes();
-		setVisible(false);
+		setVisible(true);
 
 	}
 
@@ -63,19 +63,19 @@ public class PanelCrearPaciente extends JPanel {
 	public void inicializarComponentes() {
 		txtNombre = new JTextField();
 		txtNombre.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		configurarPlaceholder(txtNombre, "Nombre");
+		configurarPlaceHolder(txtNombre, "Nombre");
 
 		txtCedula = new JTextField();
 		txtCedula.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		configurarPlaceholder(txtCedula, "Cedula");
+		configurarPlaceHolder(txtCedula, "Cedula");
 
 		txtCorreo = new JTextField();
 		txtCorreo.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		configurarPlaceholder(txtCorreo, "Correo");
+		configurarPlaceHolder(txtCorreo, "Correo");
 
 		txtEdad = new JTextField();
 		txtEdad.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		configurarPlaceholder(txtEdad, "Edad");
+		configurarPlaceHolder(txtEdad, "Edad");
 
 		btnAtras = new JButton("Atras");
 		btnAtras.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
@@ -101,7 +101,7 @@ public class PanelCrearPaciente extends JPanel {
 	 * txtCedula, txtCorreo y txtEdad" para que cuando no tenga ningun texto muestre
 	 * por defecto un mensaje indicando lo que debe ingresar el paciente
 	 */
-	private void configurarPlaceholder(JTextField textField, String placeholder) {
+	private void configurarPlaceHolder(JTextField textField, String placeholder) {
 		// Establecer el placeholder inicialmente
 		textField.setText(placeholder);
 		textField.setForeground(Color.GRAY);

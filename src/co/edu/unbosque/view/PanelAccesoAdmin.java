@@ -49,11 +49,11 @@ public class PanelAccesoAdmin extends JPanel {
 	public void inicializarComponentes() {
 		txtNombre = new JTextField();
 		txtNombre.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		configurarPlaceholder(txtNombre, "Nombre");
+		configurarPlaceHolder(txtNombre, "Nombre");
 
 		txtCedula = new JTextField();
 		txtCedula.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		configurarPlaceholder(txtCedula, "Cedula");
+		configurarPlaceHolder(txtCedula, "Cedula");
 
 		btnAtras = new JButton("Atras");
 		btnAtras.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
@@ -67,7 +67,7 @@ public class PanelAccesoAdmin extends JPanel {
 	 * txtCedula" para que cuando no tenga ningun texto muestre por defecto un
 	 * mensaje indicando lo que debe ingresar el Administrador
 	 */
-	private void configurarPlaceholder(JTextField textField, String placeholder) {
+	private void configurarPlaceHolder(JTextField textField, String placeholder) {
 		// Establecer el placeholder inicialmente
 		textField.setText(placeholder);
 		textField.setForeground(Color.GRAY);
