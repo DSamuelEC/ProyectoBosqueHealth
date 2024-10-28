@@ -15,17 +15,14 @@ public class PanelCambiarTurno extends JPanel {
 	 */
 	private JTextField txtNombreCompañero;
 	/**
-	 * Atributo encargado de almacenar la fecha del nuevo turno
+	 * Atributo encargado de almacenar la fecha del turno del Especialista
 	 */
-	private JTextField txtFecha;
+	private JTextField txtFechaMiTurno;
 	/**
-	 * Atributo encargado de almacenar la hora inicial del nuevo turno
+	 * Atributo encargado de almacenar la fecha del turno del compañero
 	 */
-	private JTextField txtHoraInicio;
-	/**
-	 * Atributo encargado de almacenar la hora final del nuevo turno
-	 */
-	private JTextField txtHoraFinal;
+	private JTextField txtFechaTurnoCompañero;
+
 	/**
 	 * Atributo encargado de mostrar un boton que guarde la información y vuelva al
 	 * panel principal
@@ -51,17 +48,13 @@ public class PanelCambiarTurno extends JPanel {
 		txtNombreCompañero.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
 		configurarPlaceHolder(txtNombreCompañero, "Nombre Compañero");
 
-		txtFecha = new JTextField();
-		txtFecha.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		configurarPlaceHolder(txtFecha, "Fecha");
+		txtFechaMiTurno = new JTextField();
+		txtFechaMiTurno.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		configurarPlaceHolder(txtFechaMiTurno, "Fecha Mi Turno (AA/MM/DD)");
 
-		txtHoraInicio = new JTextField();
-		txtHoraInicio.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		configurarPlaceHolder(txtHoraInicio, "Hora inicio");
-
-		txtHoraFinal = new JTextField();
-		txtHoraFinal.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		configurarPlaceHolder(txtHoraFinal, "Hora Final");
+		txtFechaTurnoCompañero = new JTextField();
+		txtFechaTurnoCompañero.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		configurarPlaceHolder(txtFechaMiTurno, "Fecha Turno Compañero (AA/MM/DD)");
 
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
@@ -99,57 +92,39 @@ public class PanelCambiarTurno extends JPanel {
 	}
 
 	/**
-	 * Metodo que retorna el valor del atributo txtFecha
+	 * Metodo que retorna el valor del atributo txtFechaMiTurno
 	 * 
-	 * @return Contenido del atributo txtFecha
+	 * @return Contenido del atributo txtFechaMiTurno
 	 */
-	public JTextField getTxtFecha() {
-		return txtFecha;
+	public JTextField getTxtFechaMiTurno() {
+		return txtFechaMiTurno;
 	}
 
 	/**
-	 * Metodo que actualiza el valor del atributo txtFecha
+	 * Metodo que actualiza el valor del atributo txtFechaMiTurno
 	 * 
-	 * @param txtFecha Valor a actualizar
+	 * @param txtFechaMiTurno Valor a actualizar
 	 */
-	public void setTxtFecha(JTextField txtFecha) {
-		this.txtFecha = txtFecha;
+	public void setTxtFechaMiTurno(JTextField txtFechaMiTurno) {
+		this.txtFechaMiTurno = txtFechaMiTurno;
 	}
 
 	/**
-	 * Metodo que retorna el valor del atributo txtHoraInicio
+	 * Metodo que retorna el valor del atributo txtFechaTurnoCompañero
 	 * 
-	 * @return Contenido del atributo txtHoraInicio
+	 * @return Contenido del atributo txtFechaTurnoCompañero
 	 */
-	public JTextField getTxthHoraInicio() {
-		return txtHoraInicio;
+	public JTextField getTxtFechaTurnoCompañero() {
+		return txtFechaTurnoCompañero;
 	}
 
 	/**
-	 * Metodo que actualiza el valor del atributo txtHoraInicio
+	 * Metodo que actualiza el valor del atributo txtFechaTurnoCompañero
 	 * 
-	 * @param txtHoraInicio Valor a actualizar
+	 * @param txtFechaTurnoCompañero Valor a actualizar
 	 */
-	public void setTxthHoraInicio(JTextField txthHoraInicio) {
-		this.txtHoraInicio = txthHoraInicio;
-	}
-
-	/**
-	 * Metodo que retorna el valor del atributo txtHoraFinal
-	 * 
-	 * @return Contenido del atributo txtHoraFinal
-	 */
-	public JTextField getTxtHoraFinal() {
-		return txtHoraFinal;
-	}
-
-	/**
-	 * Metodo que actualiza el valor del atributo txtHoraFinal
-	 * 
-	 * @param txtHoraFinal Valor a actualizar
-	 */
-	public void setTxtHoraFinal(JTextField txtHoraFinal) {
-		this.txtHoraFinal = txtHoraFinal;
+	public void setTxtFechaTurnoCompañero(JTextField txtFechaTurnoCompañero) {
+		this.txtFechaTurnoCompañero = txtFechaTurnoCompañero;
 	}
 
 	/**

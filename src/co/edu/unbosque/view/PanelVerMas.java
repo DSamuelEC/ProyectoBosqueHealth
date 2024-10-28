@@ -9,7 +9,7 @@ import javax.swing.*;
  * @author Mariana Ovallos
  */
 
-public class PanelCitaEspecialista extends JPanel {
+public class PanelVerMas extends JPanel {
 
 	/**
 	 * Atributo encargado de mostrar una etiqueta "Nombre del paciente" y el nombre
@@ -73,7 +73,7 @@ public class PanelCitaEspecialista extends JPanel {
 	/**
 	 * Metodo Constructor de la clase
 	 */
-	public PanelCitaEspecialista() {
+	public PanelVerMas() {
 		setSize(1300, 700);
 		setLayout(null);
 
@@ -90,40 +90,40 @@ public class PanelCitaEspecialista extends JPanel {
 
 		lblNombreEspecialista = new JLabel("Nombre del especialista: ");
 		lblNombreEspecialista.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		
+
 		lblFecha = new JLabel("Fecha: ");
 		lblFecha.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		
+
 		lblHora = new JLabel("Hora: ");
 		lblHora.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		
+
 		lblSexo = new JLabel("Sexo: ");
 		lblSexo.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		
+
 		lblEdad = new JLabel("Edad: ");
 		lblEdad.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		
+
 		lblCorreo = new JLabel("Correo: ");
 		lblCorreo.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		
+
 		lblCedula = new JLabel("Cedula: ");
 		lblCedula.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		
+
 		txtTratamiento = new JTextField();
 		txtTratamiento.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
 		configurarPlaceHolder(txtTratamiento, "Tratamiento");
-		
+
 		txtDiagnostico = new JTextField();
 		txtDiagnostico.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
 		configurarPlaceHolder(txtDiagnostico, "Diagnostico");
-		
+
 		txtExamenes = new JTextField();
 		txtExamenes.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
 		configurarPlaceHolder(txtDiagnostico, "Diagnostico");
-		
+
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		
+
 	}
 
 	/**

@@ -8,7 +8,7 @@ import javax.swing.*;
  * @author Mariana Ovallos
  */
 
-public class PanelEspecialista extends JPanel {
+public class PanelBotonesEspecialista extends JPanel {
 
 	/**
 	 * Atributo encargado de mostrar un texto con el nombre del especialista en el
@@ -29,15 +29,23 @@ public class PanelEspecialista extends JPanel {
 	 */
 	private JButton btnCambiarTurno;
 	/**
-	 * Atributo encargado de mostrar un boton que de acceso al Panel de
-	 * Notificaciones
+	 * Atributo encargado de mostrar un boton que de acceso al Panel VerMas
 	 */
-	private JButton btnNotificaciones;
+	private JButton btnVerMas;
+	/**
+	 * Atributo encargado de mostrar un boton que de acceso al Panel SolicitudTurno
+	 */
+	private JButton btnSolicitudTurno;
+	/**
+	 * Atributo encargado de mostrar un boton que cierre sesión y regrese al panel
+	 * Acceso
+	 */
+	private JButton btnCerrarSesion;
 
 	/**
 	 * Metodo Constructor de la clase
 	 */
-	public PanelEspecialista() {
+	public PanelBotonesEspecialista() {
 		setSize(1300, 700);
 		setLayout(null);
 
@@ -62,8 +70,15 @@ public class PanelEspecialista extends JPanel {
 		btnCambiarTurno = new JButton("Cambiar Turno");
 		btnCambiarTurno.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
 
-		btnNotificaciones = new JButton("Notificaciones");
-		btnNotificaciones.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnVerMas = new JButton("Ver Más");
+		btnVerMas.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+
+		btnCerrarSesion = new JButton("Cerrar Sesión");
+		btnCerrarSesion.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+
+		btnSolicitudTurno = new JButton("Solicitud Turno");
+		btnSolicitudTurno.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+
 	}
 
 	/**
@@ -139,21 +154,57 @@ public class PanelEspecialista extends JPanel {
 	}
 
 	/**
-	 * Metodo que retorna el valor del atributo btnNotificaciones
+	 * Metodo que retorna el valor del atributo btnVerMas
 	 * 
-	 * @return Contenido del atributo btnNotificaciones
+	 * @return Contenido del atributo btnVerMas
 	 */
-	public JButton getBtnNotificaciones() {
-		return btnNotificaciones;
+	public JButton getBtnVerMas() {
+		return btnVerMas;
 	}
 
 	/**
-	 * Metodo que actualiza el valor del atributo btnNotificaciones
+	 * Metodo que actualiza el valor del atributo btnVerMas
 	 * 
-	 * @param btnNotificaciones valor a actualizar
+	 * @param btnVerMas valor a actualizar
 	 */
-	public void setBtnNotificaciones(JButton btnNotificaciones) {
-		this.btnNotificaciones = btnNotificaciones;
+	public void setBtnVerMas(JButton btnVerMas) {
+		this.btnVerMas = btnVerMas;
+	}
+
+	/**
+	 * Metodo que retorna el valor del atributo btnSolicitudTurno
+	 * 
+	 * @return Contenido del atributo btnSolicitudTurno
+	 */
+	public JButton getBtnSolicitudTurno() {
+		return btnSolicitudTurno;
+	}
+
+	/**
+	 * Metodo que actualiza el valor del atributo btnSolicitudTurno
+	 * 
+	 * @param btnSolicitudTurno valor a actualizar
+	 */
+	public void setBtnSolicitudTurno(JButton btnSolicitudTurno) {
+		this.btnSolicitudTurno = btnSolicitudTurno;
+	}
+
+	/**
+	 * Metodo que retorna el valor del atributo CerrarSesion
+	 * 
+	 * @return Contenido del atributo CerrarSesion
+	 */
+	public JButton getBtnCerrarSesion() {
+		return btnCerrarSesion;
+	}
+
+	/**
+	 * Metodo que actualiza el valor del atributo CerrarSesion
+	 * 
+	 * @param CerrarSesion valor a actualizar
+	 */
+	public void setBtnCerrarSesion(JButton btnCerrarSesion) {
+		this.btnCerrarSesion = btnCerrarSesion;
 	}
 
 }
