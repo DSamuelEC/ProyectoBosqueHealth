@@ -42,7 +42,7 @@ public class PanelAcceso extends JPanel {
 		setLayout(null);
 
 		inicializarComponentes();
-		setVisible(false);
+		setVisible(true);
 
 	}
 
@@ -58,6 +58,7 @@ public class PanelAcceso extends JPanel {
 
 		btnUsuario = new JButton("Usuario");
 		btnUsuario.setBounds(570, 250, 150, 60);
+		btnUsuario.setActionCommand("USUARIOOOO");
 
 		btnEspecialista = new JButton("Especialista");
 		btnEspecialista.setBounds(570, 350, 150, 60);

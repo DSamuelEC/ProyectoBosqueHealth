@@ -60,12 +60,12 @@ public class PanelAccesoAdmin extends JPanel {
 
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(690, 370, 150, 60);
-		
+
 		add(btnAtras);
 		add(btnSubmit);
 		add(txtCedula);
 		add(txtNombre);
-		
+
 	}
 
 	/**
@@ -74,14 +74,12 @@ public class PanelAccesoAdmin extends JPanel {
 	 * mensaje indicando lo que debe ingresar el Administrador
 	 */
 	private void configurarPlaceHolder(JTextField textField, String placeholder) {
-		// Establecer el placeholder inicialmente
 		textField.setText(placeholder);
 		textField.setForeground(Color.GRAY);
 
 		textField.addFocusListener(new FocusListener() {
 			@Override
 			public void focusGained(FocusEvent e) {
-				// Si el texto es igual al placeholder, lo borra y cambia el color
 				if (textField.getText().equals(placeholder)) {
 					textField.setText("");
 					textField.setForeground(Color.BLACK);
@@ -90,7 +88,6 @@ public class PanelAccesoAdmin extends JPanel {
 
 			@Override
 			public void focusLost(FocusEvent e) {
-				// Si el campo está vacío al perder el foco, restablece el placeholder
 				if (textField.getText().isEmpty()) {
 					textField.setForeground(Color.GRAY);
 					textField.setText(placeholder);

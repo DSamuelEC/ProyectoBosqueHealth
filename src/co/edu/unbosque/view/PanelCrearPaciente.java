@@ -53,7 +53,7 @@ public class PanelCrearPaciente extends JPanel {
 		setLayout(null);
 
 		inicializarComponentes();
-		setVisible(true);
+		setVisible(false);
 
 	}
 

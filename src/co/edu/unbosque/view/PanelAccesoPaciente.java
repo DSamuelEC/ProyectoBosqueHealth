@@ -1,5 +1,9 @@
 package co.edu.unbosque.view;
 
+import java.awt.Color;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -52,17 +56,19 @@ public class PanelAccesoPaciente extends JPanel {
 	 * Metodo encargado de inicializar todos los atributos de la clase
 	 */
 	public void inicializarComponentes() {
-		txtNombre = new JTextField(" ");
-		txtNombre.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		txtNombre = new JTextField();
+		txtNombre.setBounds(300, 170, 700, 60);
+		configurarPlaceHolder(txtNombre, "Nombre");
 
-		txtCedula = new JTextField(" ");
-		txtCedula.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		txtCedula = new JTextField();
+		txtCedula.setBounds(300, 270, 700, 60);
+		configurarPlaceHolder(txtCedula, "Cedula");
 
 		btnAtras = new JButton("Atras");
-		btnAtras.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnAtras.setBounds(400, 370, 150, 60);
 
 		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnSubmit.setBounds(620, 370, 150, 60);
 
 		btnCrearUsuario = new JButton("CrearUsuario");
 		btnCrearUsuario.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
@@ -79,8 +85,27 @@ public class PanelAccesoPaciente extends JPanel {
 	 * txtCedula" para que cuando no tenga ningun texto muestre por defecto un
 	 * mensaje indicando lo que debe ingresar el paciente
 	 */
-	public void configurarPlaceHolder() {
+	public void configurarPlaceHolder(JTextField textField, String placeholder) {
+		textField.setText(placeholder);
+		textField.setForeground(Color.GRAY);
 
+		textField.addFocusListener(new FocusListener() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (textField.getText().equals(placeholder)) {
+					textField.setText("");
+					textField.setForeground(Color.BLACK);
+				}
+			}
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				if (textField.getText().isEmpty()) {
+					textField.setForeground(Color.GRAY);
+					textField.setText(placeholder);
+				}
+			}
+		});
 	}
 
 	/**
