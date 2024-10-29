@@ -56,6 +56,7 @@ public class Controller implements ActionListener {
 		});
 		ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().getBtnSubmit().addActionListener(e -> {
 			ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().setVisible(false);
+			ventanaP.getpAccesosPrincipal().getPanelAcceso().setVisible(true);
 			ventanaP.getpAccesosPrincipal().setVisible(false);
 			ventanaP.getpEPrincipal().setVisible(true);
 //			manda al panelEspecialistaPrincipal
@@ -79,9 +80,39 @@ public class Controller implements ActionListener {
 			ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
 			ventanaP.getpEPrincipal().getpMisPacientes().setVisible(true);
 		});
-		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnMisPacientes().addActionListener(e -> {
+		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnVerMas().addActionListener(e -> {
 			ventanaP.getpEPrincipal().getpCambiarTurno().setVisible(false);
 			ventanaP.getpEPrincipal().getpSolicitudTurno().setVisible(false);
+			ventanaP.getpEPrincipal().getpMisPacientes().setVisible(false);
+			ventanaP.getpEPrincipal().getpVerMas().setVisible(true);
+		});
+		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnCambiarTurno().addActionListener(e -> {
+			ventanaP.getpEPrincipal().getpSolicitudTurno().setVisible(false);
+			ventanaP.getpEPrincipal().getpMisPacientes().setVisible(false);
+			ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
+			ventanaP.getpEPrincipal().getpCambiarTurno().setVisible(true);
+		});
+		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnSolicitudTurno().addActionListener(e -> {
+			ventanaP.getpEPrincipal().getpMisPacientes().setVisible(false);
+			ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
+			ventanaP.getpEPrincipal().getpCambiarTurno().setVisible(false);
+			ventanaP.getpEPrincipal().getpSolicitudTurno().setVisible(true);
+		});
+		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnCerrarSesion().addActionListener(e -> {
+			ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
+			ventanaP.getpEPrincipal().getpCambiarTurno().setVisible(false);
+			ventanaP.getpEPrincipal().getpSolicitudTurno().setVisible(false);
+			ventanaP.getpEPrincipal().getpMisPacientes().setVisible(true);
+			ventanaP.getpEPrincipal().setVisible(false);
+			ventanaP.getpAccesosPrincipal().setVisible(true);
+		});
+		ventanaP.getpEPrincipal().getpVerMas().getBtnSubmit().addActionListener(e -> {
+//			popup de que ya se cambió los datos, sino se cambian mostrar error
+			ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
+			ventanaP.getpEPrincipal().getpMisPacientes().setVisible(true);
+		});
+		ventanaP.getpEPrincipal().getpVerMas().getBtnAtras().addActionListener(e -> {
+//			popup de que ya se cambió los datos, sino se cambian mostrar error
 			ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
 			ventanaP.getpEPrincipal().getpMisPacientes().setVisible(true);
 		});
