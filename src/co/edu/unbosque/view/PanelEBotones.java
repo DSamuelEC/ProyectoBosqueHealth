@@ -50,7 +50,7 @@ public class PanelEBotones extends JPanel {
 		setLayout(null);
 
 		inicializarComponentes();
-		setVisible(false);
+		setVisible(true);
 	}
 
 	/**
@@ -78,6 +78,14 @@ public class PanelEBotones extends JPanel {
 
 		btnSolicitudTurno = new JButton("Solicitud Turno");
 		btnSolicitudTurno.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		
+		add(btnCambiarTurno);
+		add(btnCerrarSesion);
+		add(btnMisPacientes);
+		add(btnSolicitudTurno);
+		add(btnTurnos);
+		add(btnVerMas);
+		add(lblNombreEspecialista);
 
 	}
 
