@@ -42,7 +42,7 @@ public class PanelAcceso extends JPanel {
 		setLayout(null);
 
 		inicializarComponentes();
-		setVisible(false);
+		setVisible(true);
 
 	}
 
@@ -51,7 +51,7 @@ public class PanelAcceso extends JPanel {
 	 */
 	public void inicializarComponentes() {
 		lblBienvenida = new JLabel("¡Bienvenidos a BOSQUEHEALTH!");
-		lblBienvenida.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblBienvenida.setBounds(50, 100, 400, 100);
 
 		lblModoDeAcceso = new JLabel("Ingrese el modo de acceso");
 		lblModoDeAcceso.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);

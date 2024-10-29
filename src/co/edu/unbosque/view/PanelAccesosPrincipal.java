@@ -14,12 +14,12 @@ public class PanelAccesosPrincipal extends JPanel {
 		setLayout(null);
 
 		inicializarComponentes();
-		setVisible(false);
+		setVisible(true);
 	}
 
 	public void inicializarComponentes() {
 		panelAcceso = new PanelAcceso();
-		panelAcceso.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		panelAcceso.setBounds(0, 0, 1300, 700);
 		
 		panelAccesoPaciente = new PanelAccesoPaciente();
 		panelAccesoPaciente.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
