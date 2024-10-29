@@ -46,7 +46,7 @@ public class PanelESolicitudTurno extends JPanel {
 		setLayout(null);
 		setBackground(new Color(255, 255, 255));
 		inicializarComponentes();
-		setVisible(true);
+		setVisible(false);
 	}
 
 	/**

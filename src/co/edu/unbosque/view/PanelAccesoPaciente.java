@@ -68,7 +68,7 @@ public class PanelAccesoPaciente extends JPanel {
 		btnAtras.setBounds(400, 370, 150, 60);
 
 		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(620, 370, 150, 60);
+		btnSubmit.setBounds(600, 370, 150, 60);
 
 		btnCrearUsuario = new JButton("CrearUsuario");
 		btnCrearUsuario.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
