@@ -7,7 +7,7 @@ import javax.swing.*;
  * 
  * @author Mariana Ovallos
  */
-public class PanelMisPacientes extends JPanel {
+public class PanelEMisPacientes extends JPanel {
 	/**
 	 * Atributo encargado de motrar una tabla con los pacientes
 	 */
@@ -20,7 +20,7 @@ public class PanelMisPacientes extends JPanel {
 	/**
 	 * Metodo Constructor de la clase
 	 */
-	public PanelMisPacientes() {
+	public PanelEMisPacientes() {
 		setSize(1300, 700);
 		setLayout(null);
 

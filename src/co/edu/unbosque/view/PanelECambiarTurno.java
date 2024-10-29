@@ -7,7 +7,7 @@ import javax.swing.*;
  * 
  * @author Mariana Ovallos
  */
-public class PanelCambiarTurno extends JPanel {
+public class PanelECambiarTurno extends JPanel {
 
 	/**
 	 * Atributo encargado de almacenar el Nombre del compañero con el que se desea
@@ -32,7 +32,7 @@ public class PanelCambiarTurno extends JPanel {
 	/**
 	 * Metodo Constructor de la clase
 	 */
-	public PanelCambiarTurno() {
+	public PanelECambiarTurno() {
 		setSize(1300, 700);
 		setLayout(null);
 

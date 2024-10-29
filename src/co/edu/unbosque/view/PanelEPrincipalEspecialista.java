@@ -9,32 +9,32 @@ import javax.swing.*;
  * @author Mariana Ovallos
  */
 
-public class PanelPrincipalEspecialista extends JPanel {
+public class PanelEPrincipalEspecialista extends JPanel {
 	/**
 	 * Atributo encragado de traer el PanelBotonesEspecialista
 	 */
-	private PanelBotonesEspecialista pBotonesEspecialista;
+	private PanelEBotonesEspecialista pBotonesEspecialista;
 	/**
 	 * Atributo encragado de traer el PanelMisPacientes
 	 */
-	private PanelMisPacientes pMisPacientes;
+	private PanelEMisPacientes pMisPacientes;
 	/**
 	 * Atributo encragado de traer el PanelVerMas
 	 */
-	private PanelVerMas pVerMas;
+	private PanelEVerMas pVerMas;
 	/**
 	 * Atributo encragado de traer el PanelCambiarTurno
 	 */
-	private PanelCambiarTurno pCambiarTurno;
+	private PanelECambiarTurno pCambiarTurno;
 	/**
 	 * Atributo encragado de traer el PanelSolicitudTurno
 	 */
-	private PanelSolicitudTurno pSolicitudTurno;
+	private PanelESolicitudTurno pSolicitudTurno;
 
 	/**
 	 * Metodo Constructor de la clase
 	 */
-	public PanelPrincipalEspecialista() {
+	public PanelEPrincipalEspecialista() {
 		setSize(1300, 700);
 		setLayout(null);
 
@@ -46,19 +46,19 @@ public class PanelPrincipalEspecialista extends JPanel {
 	 * Metodo encargado de inicializar todos los atributos de la clase
 	 */
 	public void inicializarComponentes() {
-		pBotonesEspecialista = new PanelBotonesEspecialista();
+		pBotonesEspecialista = new PanelEBotonesEspecialista();
 		pBotonesEspecialista.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
 
-		pCambiarTurno = new PanelCambiarTurno();
+		pCambiarTurno = new PanelECambiarTurno();
 		pCambiarTurno.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
 
-		pMisPacientes = new PanelMisPacientes();
+		pMisPacientes = new PanelEMisPacientes();
 		pMisPacientes.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
 
-		pSolicitudTurno = new PanelSolicitudTurno();
+		pSolicitudTurno = new PanelESolicitudTurno();
 		pSolicitudTurno.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
 
-		pVerMas = new PanelVerMas();
+		pVerMas = new PanelEVerMas();
 		pVerMas.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
 
 	}
@@ -68,7 +68,7 @@ public class PanelPrincipalEspecialista extends JPanel {
 	 * 
 	 * @return Contenido del atributo pBotonesEspecialista
 	 */
-	public PanelBotonesEspecialista getpBotonesEspecialista() {
+	public PanelEBotonesEspecialista getpBotonesEspecialista() {
 		return pBotonesEspecialista;
 	}
 
@@ -77,7 +77,7 @@ public class PanelPrincipalEspecialista extends JPanel {
 	 * 
 	 * @param pBotonesEspecialista valor a actualizar
 	 */
-	public void setpBotonesEspecialista(PanelBotonesEspecialista pBotonesEspecialista) {
+	public void setpBotonesEspecialista(PanelEBotonesEspecialista pBotonesEspecialista) {
 		this.pBotonesEspecialista = pBotonesEspecialista;
 	}
 
@@ -86,7 +86,7 @@ public class PanelPrincipalEspecialista extends JPanel {
 	 * 
 	 * @return Contenido del atributo pMisPacientes
 	 */
-	public PanelMisPacientes getpMisPacientes() {
+	public PanelEMisPacientes getpMisPacientes() {
 		return pMisPacientes;
 	}
 
@@ -95,7 +95,7 @@ public class PanelPrincipalEspecialista extends JPanel {
 	 * 
 	 * @param pMisPacientes valor a actualizar
 	 */
-	public void setpMisPacientes(PanelMisPacientes pMisPacientes) {
+	public void setpMisPacientes(PanelEMisPacientes pMisPacientes) {
 		this.pMisPacientes = pMisPacientes;
 	}
 
@@ -104,7 +104,7 @@ public class PanelPrincipalEspecialista extends JPanel {
 	 * 
 	 * @return Contenido del atributo pVerMas
 	 */
-	public PanelVerMas getpVerMas() {
+	public PanelEVerMas getpVerMas() {
 		return pVerMas;
 	}
 
@@ -113,7 +113,7 @@ public class PanelPrincipalEspecialista extends JPanel {
 	 * 
 	 * @param pVerMas valor a actualizar
 	 */
-	public void setpVerMas(PanelVerMas pVerMas) {
+	public void setpVerMas(PanelEVerMas pVerMas) {
 		this.pVerMas = pVerMas;
 	}
 
@@ -122,7 +122,7 @@ public class PanelPrincipalEspecialista extends JPanel {
 	 * 
 	 * @return Contenido del atributo pCambiarTurno
 	 */
-	public PanelCambiarTurno getpCambiarTurno() {
+	public PanelECambiarTurno getpCambiarTurno() {
 		return pCambiarTurno;
 	}
 
@@ -131,7 +131,7 @@ public class PanelPrincipalEspecialista extends JPanel {
 	 * 
 	 * @param pCambiarTurno valor a actualizar
 	 */
-	public void setpCambiarTurno(PanelCambiarTurno pCambiarTurno) {
+	public void setpCambiarTurno(PanelECambiarTurno pCambiarTurno) {
 		this.pCambiarTurno = pCambiarTurno;
 	}
 
@@ -140,7 +140,7 @@ public class PanelPrincipalEspecialista extends JPanel {
 	 * 
 	 * @return Contenido del atributo pSolicitudTurno
 	 */
-	public PanelSolicitudTurno getpSolicitudTurno() {
+	public PanelESolicitudTurno getpSolicitudTurno() {
 		return pSolicitudTurno;
 	}
 
@@ -149,7 +149,7 @@ public class PanelPrincipalEspecialista extends JPanel {
 	 * 
 	 * @param pSolicitudTurno valor a actualizar
 	 */
-	public void setpSolicitudTurno(PanelSolicitudTurno pSolicitudTurno) {
+	public void setpSolicitudTurno(PanelESolicitudTurno pSolicitudTurno) {
 		this.pSolicitudTurno = pSolicitudTurno;
 	}
 

@@ -6,7 +6,7 @@ import javax.swing.*;
  * Clase encargada de mostrar una tabla con los cambios que compañeros quieren
  * hacer de turno, para aceptarlo o rechazarlos
  */
-public class PanelSolicitudTurno extends JPanel {
+public class PanelESolicitudTurno extends JPanel {
 	/**
 	 * Atributo encargado de mostrar una tabla con el nombre y fecha de los
 	 * compañeros que quieren hacer un cambio de turno
@@ -28,7 +28,7 @@ public class PanelSolicitudTurno extends JPanel {
 	/**
 	 * Metodo Constructor de la clase
 	 */
-	public PanelSolicitudTurno() {
+	public PanelESolicitudTurno() {
 		setSize(1300, 700);
 		setLayout(null);
 

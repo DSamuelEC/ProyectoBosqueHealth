@@ -9,7 +9,7 @@ import javax.swing.*;
  * @author Mariana Ovallos
  */
 
-public class PanelVerMas extends JPanel {
+public class PanelEVerMas extends JPanel {
 
 	/**
 	 * Atributo encargado de mostrar una etiqueta "Nombre del paciente" y el nombre
@@ -73,7 +73,7 @@ public class PanelVerMas extends JPanel {
 	/**
 	 * Metodo Constructor de la clase
 	 */
-	public PanelVerMas() {
+	public PanelEVerMas() {
 		setSize(1300, 700);
 		setLayout(null);
 
