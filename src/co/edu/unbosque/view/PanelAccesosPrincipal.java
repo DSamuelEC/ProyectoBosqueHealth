@@ -2,14 +2,14 @@ package co.edu.unbosque.view;
 
 import javax.swing.JPanel;
 
-public class PanelPrincipalAccesos extends JPanel {
+public class PanelAccesosPrincipal extends JPanel {
 	private PanelAcceso panelAcceso;
 	private PanelAccesoPaciente panelAccesoPaciente;
 	private PanelCrearPaciente panelCrearPaciente;
 	private PanelAccesoEspecialista panelAccesoEspecialista;
 	private PanelAccesoAdmin panelAccesoAdmin;
 
-	public PanelPrincipalAccesos() {
+	public PanelAccesosPrincipal() {
 		setSize(1300, 700);
 		setLayout(null);
 

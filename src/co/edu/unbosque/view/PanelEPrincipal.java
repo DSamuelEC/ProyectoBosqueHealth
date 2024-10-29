@@ -9,7 +9,7 @@ import javax.swing.*;
  * @author Mariana Ovallos
  */
 
-public class PanelEPrincipalEspecialista extends JPanel {
+public class PanelEPrincipal extends JPanel {
 	/**
 	 * Atributo encragado de traer el PanelBotonesEspecialista
 	 */
@@ -34,7 +34,7 @@ public class PanelEPrincipalEspecialista extends JPanel {
 	/**
 	 * Metodo Constructor de la clase
 	 */
-	public PanelEPrincipalEspecialista() {
+	public PanelEPrincipal() {
 		setSize(1300, 700);
 		setLayout(null);
 
