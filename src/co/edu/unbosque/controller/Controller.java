@@ -79,6 +79,12 @@ public class Controller implements ActionListener {
 			ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
 			ventanaP.getpEPrincipal().getpMisPacientes().setVisible(true);
 		});
+		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnMisPacientes().addActionListener(e -> {
+			ventanaP.getpEPrincipal().getpCambiarTurno().setVisible(false);
+			ventanaP.getpEPrincipal().getpSolicitudTurno().setVisible(false);
+			ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
+			ventanaP.getpEPrincipal().getpMisPacientes().setVisible(true);
+		});
 	}
 
 	public void run() {
