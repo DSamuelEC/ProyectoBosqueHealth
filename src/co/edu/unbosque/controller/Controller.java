@@ -57,6 +57,7 @@ public class Controller implements ActionListener {
 		ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().getBtnSubmit().addActionListener(e -> {
 			ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().setVisible(false);
 //			ventanaP.getpEPrincipal().setVisible(true); 
+//			 dirigir a la view de especialista
 		});
 		ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().getBtnAtras().addActionListener(e -> {
 			ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().setVisible(false);
@@ -66,7 +67,8 @@ public class Controller implements ActionListener {
 			ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().setVisible(false);
 //			ventanaP.getp.setVisible(true); (deberia llevarme a la vista del admin)
 		});
-
+		
+//		Especialista
 	}
 
 	public void run() {
