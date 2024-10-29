@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 public class VentanaPrincipal extends JFrame {
 	private PanelAccesosPrincipal pAccesosPrincipal;
 	private PanelEPrincipal pEPrincipal;
+	private PanelPrincipalPaciente pPrincipalPaciente;
 
 	public VentanaPrincipal() {
 		setTitle("BosqueHealthApp");
@@ -27,6 +28,13 @@ public class VentanaPrincipal extends JFrame {
 		pEPrincipal = new PanelEPrincipal();
 		pEPrincipal.setBounds(0, 0, 1300, 700);
 		getContentPane().add(pEPrincipal);
+		
+		pPrincipalPaciente = new PanelPrincipalPaciente();
+		pPrincipalPaciente.setBounds(0, 0, 1300, 700);
+		getContentPane().add(pPrincipalPaciente);
+		
+		
+		
 	}
 
 	public PanelAccesosPrincipal getpAccesosPrincipal() {
