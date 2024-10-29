@@ -78,7 +78,7 @@ public class PanelEVerMas extends JPanel {
 		setLayout(null);
 
 		inicializarComponentes();
-		setVisible(true);
+		setVisible(false);
 	}
 
 	/**

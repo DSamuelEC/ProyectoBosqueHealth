@@ -14,7 +14,7 @@ public class PanelAccesosPrincipal extends JPanel {
 		setLayout(null);
 
 		inicializarComponentes();
-		setVisible(true);
+		setVisible(false);
 	}
 
 	public void inicializarComponentes() {

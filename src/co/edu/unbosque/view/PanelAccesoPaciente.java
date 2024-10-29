@@ -45,7 +45,7 @@ public class PanelAccesoPaciente extends JPanel {
 		setLayout(null);
 
 		inicializarComponentes();
-		setVisible(true);
+		setVisible(false);
 	}
 
 	/**
