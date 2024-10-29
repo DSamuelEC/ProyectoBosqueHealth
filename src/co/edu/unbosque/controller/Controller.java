@@ -91,12 +91,14 @@ public class Controller implements ActionListener {
 			ventanaP.getpEPrincipal().getpMisPacientes().setVisible(false);
 			ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
 			ventanaP.getpEPrincipal().getpCambiarTurno().setVisible(true);
+//			popup de si se envió el cambio de turno
 		});
 		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnSolicitudTurno().addActionListener(e -> {
 			ventanaP.getpEPrincipal().getpMisPacientes().setVisible(false);
 			ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
 			ventanaP.getpEPrincipal().getpCambiarTurno().setVisible(false);
 			ventanaP.getpEPrincipal().getpSolicitudTurno().setVisible(true);
+//			popup de si se aceptó o rechazo el turno 
 		});
 		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnCerrarSesion().addActionListener(e -> {
 			ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
