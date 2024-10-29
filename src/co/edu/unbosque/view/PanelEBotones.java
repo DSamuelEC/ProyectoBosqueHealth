@@ -1,5 +1,7 @@
 package co.edu.unbosque.view;
 
+import java.awt.Color;
+
 import javax.swing.*;
 
 /**
@@ -48,7 +50,7 @@ public class PanelEBotones extends JPanel {
 	public PanelEBotones() {
 		setSize(1300, 700);
 		setLayout(null);
-
+		setBackground(new Color(255, 255, 255));
 		inicializarComponentes();
 		setVisible(true);
 	}
@@ -58,26 +60,26 @@ public class PanelEBotones extends JPanel {
 	 */
 	public void inicializarComponentes() {
 
-		lblNombreEspecialista = new JLabel("");
-		lblNombreEspecialista.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblNombreEspecialista = new JLabel("Nombre Especialista");
+		lblNombreEspecialista.setBounds(50, 20, 700, 60);
 
 		btnTurnos = new JButton("Turnos");
-		btnTurnos.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnTurnos.setBounds(250, 30, 150, 40);
 
 		btnMisPacientes = new JButton("Mis Pacientes");
-		btnMisPacientes.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnMisPacientes.setBounds(420, 30, 150, 40);
+		
+		btnVerMas = new JButton("Ver Más");
+		btnVerMas.setBounds(590, 30, 150, 40);
 
 		btnCambiarTurno = new JButton("Cambiar Turno");
-		btnCambiarTurno.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-
-		btnVerMas = new JButton("Ver Más");
-		btnVerMas.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-
-		btnCerrarSesion = new JButton("Cerrar Sesión");
-		btnCerrarSesion.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnCambiarTurno.setBounds(760, 30, 150, 40);
 
 		btnSolicitudTurno = new JButton("Solicitud Turno");
-		btnSolicitudTurno.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnSolicitudTurno.setBounds(930, 30, 150, 40);
+		
+		btnCerrarSesion = new JButton("Cerrar Sesión");
+		btnCerrarSesion.setBounds(1100, 30, 150, 40);
 		
 		add(btnCambiarTurno);
 		add(btnCerrarSesion);

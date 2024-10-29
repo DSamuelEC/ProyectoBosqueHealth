@@ -1,6 +1,9 @@
 package co.edu.unbosque.view;
 
+import java.awt.Color;
+
 import javax.swing.*;
+import javax.swing.table.TableColumnModel;
 
 /**
  * Clase encargada de mostrar los pacientes correspondientes al Especialista
@@ -16,6 +19,18 @@ public class PanelEMisPacientes extends JPanel {
 	 * Atribujo encargado de mostrar un panel de desplazamiento
 	 */
 	private JScrollPane scrollPane;
+	/**
+	 * Atributo encargado de mostrar un texto del nombre del pacinete en el Panel
+	 */
+	private JLabel lblNombrePaciente;
+	/**
+	 * Atributo encargado de mostrar un texto de la fecha de la cita en el Panel
+	 */
+	private JLabel lblFecha;
+	/**
+	 * Atributo encargado de mostrar un texto de la Hora de la cita en el Panel
+	 */
+	private JLabel lblHora;
 
 	/**
 	 * Metodo Constructor de la clase
@@ -23,7 +38,7 @@ public class PanelEMisPacientes extends JPanel {
 	public PanelEMisPacientes() {
 		setSize(1300, 700);
 		setLayout(null);
-
+		setBackground(new Color(255, 255, 255));
 		inicializarComponentes();
 		setVisible(false);
 	}
@@ -32,10 +47,30 @@ public class PanelEMisPacientes extends JPanel {
 	 * Metodo encargado de inicializar todos los atributos de la clase
 	 */
 	public void inicializarComponentes() {
-
-		tblMisPacientes = new JTable();
+		
+		tblMisPacientes = new JTable(50, 3);
+		TableColumnModel columnModel = tblMisPacientes.getColumnModel();
+		columnModel.getColumn(0).setPreferredWidth(680);
+	    columnModel.getColumn(1).setPreferredWidth(280);
+	    columnModel.getColumn(2).setPreferredWidth(300);
+		tblMisPacientes.setBounds(0, 40, 1300, 590);
 
 		scrollPane = new JScrollPane();
+		
+		lblNombrePaciente = new JLabel("Nombre paciente");
+		lblNombrePaciente.setBounds(30, 10, 300, 20);
+		
+		lblFecha = new JLabel("Fecha");
+		lblFecha.setBounds(700, 10, 300, 20);
+
+		lblHora = new JLabel("Hora");
+		lblHora.setBounds(1000, 10, 300, 20);
+		
+		add(scrollPane);
+		add(tblMisPacientes);
+		add(lblNombrePaciente);
+		add(lblFecha);
+		add(lblHora);
 
 	}
 

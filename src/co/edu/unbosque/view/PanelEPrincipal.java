@@ -39,7 +39,7 @@ public class PanelEPrincipal extends JPanel {
 		setLayout(null);
 
 		inicializarComponentes();
-		setVisible(false);
+		setVisible(true);
 	}
 
 	/**
@@ -47,19 +47,25 @@ public class PanelEPrincipal extends JPanel {
 	 */
 	public void inicializarComponentes() {
 		pBotonesEspecialista = new PanelEBotones();
-		pBotonesEspecialista.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		pBotonesEspecialista.setBounds(0, 0, 1300, 100);
 
 		pCambiarTurno = new PanelECambiarTurno();
-		pCambiarTurno.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		pCambiarTurno.setBounds(0, 110, 1300, 590);
 
 		pMisPacientes = new PanelEMisPacientes();
-		pMisPacientes.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		pMisPacientes.setBounds(0, 110, 1300, 590);
 
 		pSolicitudTurno = new PanelESolicitudTurno();
-		pSolicitudTurno.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		pSolicitudTurno.setBounds(0, 110, 1300, 590);
 
 		pVerMas = new PanelEVerMas();
-		pVerMas.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		pVerMas.setBounds(0, 110, 1300, 590);
+		
+		add(pBotonesEspecialista);
+		add(pCambiarTurno);
+		add(pMisPacientes);
+		add(pSolicitudTurno);
+		add(pVerMas);
 
 	}
 
