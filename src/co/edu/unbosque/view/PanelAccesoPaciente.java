@@ -65,13 +65,13 @@ public class PanelAccesoPaciente extends JPanel {
 		configurarPlaceHolder(txtCedula, "Cedula");
 
 		btnAtras = new JButton("Atras");
-		btnAtras.setBounds(400, 370, 150, 60);
+		btnAtras.setBounds(380, 370, 150, 60);
 
 		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(600, 370, 150, 60);
+		btnSubmit.setBounds(580, 370, 150, 60);
 
 		btnCrearUsuario = new JButton("CrearUsuario");
-		btnCrearUsuario.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnCrearUsuario.setBounds(780, 370, 150, 60);
 
 		add(txtNombre);
 		add(txtCedula);

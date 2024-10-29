@@ -73,7 +73,7 @@ public class PanelAccesoAdmin extends JPanel {
 	 * txtCedula" para que cuando no tenga ningun texto muestre por defecto un
 	 * mensaje indicando lo que debe ingresar el Administrador
 	 */
-	private void configurarPlaceHolder(JTextField textField, String placeholder) {
+	public void configurarPlaceHolder(JTextField textField, String placeholder) {
 		textField.setText(placeholder);
 		textField.setForeground(Color.GRAY);
 

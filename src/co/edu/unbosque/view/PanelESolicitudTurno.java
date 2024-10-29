@@ -9,6 +9,8 @@ import javax.swing.table.TableColumnModel;
 /**
  * Clase encargada de mostrar una tabla con los cambios que compañeros quieren
  * hacer de turno, para aceptarlo o rechazarlos
+ * 
+ * @author Mariana Ovallos
  */
 public class PanelESolicitudTurno extends JPanel {
 	/**

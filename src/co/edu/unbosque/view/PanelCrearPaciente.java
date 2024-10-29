@@ -102,7 +102,7 @@ public class PanelCrearPaciente extends JPanel {
 	 * txtCedula, txtCorreo y txtEdad" para que cuando no tenga ningun texto muestre
 	 * por defecto un mensaje indicando lo que debe ingresar el paciente
 	 */
-	private void configurarPlaceHolder(JTextField textField, String placeholder) {
+	public void configurarPlaceHolder(JTextField textField, String placeholder) {
 		// Establecer el placeholder inicialmente
 		textField.setText(placeholder);
 		textField.setForeground(Color.GRAY);
