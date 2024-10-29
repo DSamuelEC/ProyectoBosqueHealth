@@ -22,16 +22,16 @@ public class PanelAccesosPrincipal extends JPanel {
 		panelAcceso.setBounds(0, 0, 1300, 700);
 		
 		panelAccesoPaciente = new PanelAccesoPaciente();
-		panelAccesoPaciente.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		panelAccesoPaciente.setBounds(0, 0, 1300, 700);
 		
 		panelCrearPaciente = new PanelCrearPaciente();
-		panelCrearPaciente.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		panelCrearPaciente.setBounds(0, 0, 1300, 700);
 		
 		panelAccesoEspecialista = new PanelAccesoEspecialista();
-		panelAccesoEspecialista.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		panelAccesoEspecialista.setBounds(0, 0, 1300, 700);
 	
 		panelAccesoAdmin = new PanelAccesoAdmin();
-		panelAccesoAdmin.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		panelAccesoAdmin.setBounds(0, 0, 1300, 700);
 		
 		add(panelAcceso);
 		add(panelAccesoPaciente);
