@@ -73,6 +73,10 @@ public class PanelEVerMas extends JPanel {
 	 * panel MisPacientes
 	 */
 	private JButton btnSubmit;
+	/**
+	 * Atributo encargado de mostrar un boton de volver al panelEMisPacientes
+	 */
+	private JButton btnAtras;
 
 	/**
 	 * Metodo Constructor de la clase
@@ -126,7 +130,10 @@ public class PanelEVerMas extends JPanel {
 		configurarPlaceHolder(txtExamenes, "Examenes");
 
 		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(600, 480, 100, 30);
+		btnSubmit.setBounds(660, 480, 100, 30);
+		
+		btnAtras = new JButton("Atras");
+		btnAtras.setBounds(590, 480, 100, 30);
 		
 		add(btnSubmit);
 		add(lblCedula);
@@ -140,7 +147,7 @@ public class PanelEVerMas extends JPanel {
 		add(txtDiagnostico);
 		add(txtExamenes);
 		add(txtTratamiento);
-
+		add(btnAtras);
 	}
 
 	/**
@@ -391,6 +398,22 @@ public class PanelEVerMas extends JPanel {
 	 */
 	public void setBtnSubmit(JButton btnSubmit) {
 		this.btnSubmit = btnSubmit;
+	}
+	/**
+	 * Metodo que retorna el valor del atributo btnAtras
+	 * 
+	 * @return Contenido del atributo btnAtras
+	 */
+	public JButton getBtnAtras() {
+		return btnAtras;
+	}
+	/**
+	 * Metodo que actualiza el valor del atributo btnAtras
+	 * 
+	 * @param btnAtras Valor a actualizar
+	 */
+	public void setBtnAtras(JButton btnAtras) {
+		this.btnAtras = btnAtras;
 	}
 
 }
