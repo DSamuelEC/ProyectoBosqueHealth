@@ -13,7 +13,7 @@ public class PanelEPrincipal extends JPanel {
 	/**
 	 * Atributo encragado de traer el PanelBotonesEspecialista
 	 */
-	private PanelEBotonesEspecialista pBotonesEspecialista;
+	private PanelEBotones pBotonesEspecialista;
 	/**
 	 * Atributo encragado de traer el PanelMisPacientes
 	 */
@@ -46,7 +46,7 @@ public class PanelEPrincipal extends JPanel {
 	 * Metodo encargado de inicializar todos los atributos de la clase
 	 */
 	public void inicializarComponentes() {
-		pBotonesEspecialista = new PanelEBotonesEspecialista();
+		pBotonesEspecialista = new PanelEBotones();
 		pBotonesEspecialista.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
 
 		pCambiarTurno = new PanelECambiarTurno();
@@ -68,7 +68,7 @@ public class PanelEPrincipal extends JPanel {
 	 * 
 	 * @return Contenido del atributo pBotonesEspecialista
 	 */
-	public PanelEBotonesEspecialista getpBotonesEspecialista() {
+	public PanelEBotones getpBotonesEspecialista() {
 		return pBotonesEspecialista;
 	}
 
@@ -77,7 +77,7 @@ public class PanelEPrincipal extends JPanel {
 	 * 
 	 * @param pBotonesEspecialista valor a actualizar
 	 */
-	public void setpBotonesEspecialista(PanelEBotonesEspecialista pBotonesEspecialista) {
+	public void setpBotonesEspecialista(PanelEBotones pBotonesEspecialista) {
 		this.pBotonesEspecialista = pBotonesEspecialista;
 	}
 

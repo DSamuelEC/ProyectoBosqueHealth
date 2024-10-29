@@ -8,7 +8,7 @@ import javax.swing.*;
  * @author Mariana Ovallos
  */
 
-public class PanelEBotonesEspecialista extends JPanel {
+public class PanelEBotones extends JPanel {
 
 	/**
 	 * Atributo encargado de mostrar un texto con el nombre del especialista en el
@@ -45,7 +45,7 @@ public class PanelEBotonesEspecialista extends JPanel {
 	/**
 	 * Metodo Constructor de la clase
 	 */
-	public PanelEBotonesEspecialista() {
+	public PanelEBotones() {
 		setSize(1300, 700);
 		setLayout(null);
 
