@@ -3,7 +3,7 @@ package co.edu.unbosque.view;
 import javax.swing.JFrame;
 
 public class VentanaPrincipal extends JFrame {
-	private PanelAccesosPrincipal panelPrincipalAccesos;
+	private PanelAccesosPrincipal pAccesosPrincipal;
 	private PanelEPrincipal pEPrincipal;
 
 	public VentanaPrincipal() {
@@ -20,20 +20,29 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	public void inicializarComponentes() {
-		panelPrincipalAccesos = new PanelAccesosPrincipal();
-		panelPrincipalAccesos.setBounds(0, 0, 1300, 700);
-		getContentPane().add(panelPrincipalAccesos);
+		pAccesosPrincipal = new PanelAccesosPrincipal();
+		pAccesosPrincipal.setBounds(0, 0, 1300, 700);
+		getContentPane().add(pAccesosPrincipal);
 		
 		pEPrincipal = new PanelEPrincipal();
 		pEPrincipal.setBounds(0, 0, 1300, 700);
 		getContentPane().add(pEPrincipal);
 	}
 
-	public PanelAccesosPrincipal getPanelPrincipalAccesos() {
-		return panelPrincipalAccesos;
+	public PanelAccesosPrincipal getpAccesosPrincipal() {
+		return pAccesosPrincipal;
 	}
 
-	public void setPanelPrincipalAccesos(PanelAccesosPrincipal panelPrincipalAccesos) {
-		this.panelPrincipalAccesos = panelPrincipalAccesos;
+	public void setpAccesosPrincipal(PanelAccesosPrincipal pAccesosPrincipal) {
+		this.pAccesosPrincipal = pAccesosPrincipal;
 	}
+
+	public PanelEPrincipal getpEPrincipal() {
+		return pEPrincipal;
+	}
+
+	public void setpEPrincipal(PanelEPrincipal pEPrincipal) {
+		this.pEPrincipal = pEPrincipal;
+	}
+
 }

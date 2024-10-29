@@ -53,7 +53,7 @@ public class PanelCrearPaciente extends JPanel {
 		setLayout(null);
 
 		inicializarComponentes();
-		setVisible(false);
+		setVisible(true);
 
 	}
 
@@ -62,29 +62,30 @@ public class PanelCrearPaciente extends JPanel {
 	 */
 	public void inicializarComponentes() {
 		txtNombre = new JTextField();
-		txtNombre.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		txtNombre.setBounds(300, 120, 700, 60);
 		configurarPlaceHolder(txtNombre, "Nombre");
 
 		txtCedula = new JTextField();
-		txtCedula.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		txtCedula.setBounds(300, 200, 700, 60);
 		configurarPlaceHolder(txtCedula, "Cedula");
 
 		txtCorreo = new JTextField();
-		txtCorreo.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		txtCorreo.setBounds(300, 280, 700, 60);
 		configurarPlaceHolder(txtCorreo, "Correo");
 
 		txtEdad = new JTextField();
-		txtEdad.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		txtEdad.setBounds(670, 370, 330, 60);
 		configurarPlaceHolder(txtEdad, "Edad");
+		
+		String[] opciones = {"F", "M" };
+		ldSexo = new JComboBox<String>(opciones);
+		ldSexo.setBounds(300, 370, 330, 60);
 
 		btnAtras = new JButton("Atras");
-		btnAtras.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnAtras.setBounds(375, 450, 250, 60);
 
 		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-
-		String[] opciones = { "F", "M" };
-		ldSexo = new JComboBox<String>(opciones);
+		btnSubmit.setBounds(670, 450, 250, 60);
 
 		add(txtNombre);
 		add(txtCedula);

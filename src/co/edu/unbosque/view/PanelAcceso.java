@@ -42,7 +42,7 @@ public class PanelAcceso extends JPanel {
 		setLayout(null);
 
 		inicializarComponentes();
-		setVisible(true);
+		setVisible(false);
 
 	}
 
@@ -51,19 +51,19 @@ public class PanelAcceso extends JPanel {
 	 */
 	public void inicializarComponentes() {
 		lblBienvenida = new JLabel("¡Bienvenidos a BOSQUEHEALTH!");
-		lblBienvenida.setBounds(50, 100, 400, 100);
+		lblBienvenida.setBounds(550, 100, 400, 100);
 
 		lblModoDeAcceso = new JLabel("Ingrese el modo de acceso");
-		lblModoDeAcceso.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblModoDeAcceso.setBounds(565, 130, 400, 100);
 
 		btnUsuario = new JButton("Usuario");
-		btnUsuario.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnUsuario.setBounds(570, 250, 150, 60);
 
 		btnEspecialista = new JButton("Especialista");
-		btnEspecialista.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnEspecialista.setBounds(570, 350, 150, 60);
 
 		btnAdmin = new JButton("Admin");
-		btnAdmin.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnAdmin.setBounds(570, 450, 150, 60);
 
 		add(lblBienvenida);
 		add(lblModoDeAcceso);

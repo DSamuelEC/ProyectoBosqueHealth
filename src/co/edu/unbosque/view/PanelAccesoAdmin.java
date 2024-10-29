@@ -48,18 +48,24 @@ public class PanelAccesoAdmin extends JPanel {
 	 */
 	public void inicializarComponentes() {
 		txtNombre = new JTextField();
-		txtNombre.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		txtNombre.setBounds(300, 170, 700, 60);
 		configurarPlaceHolder(txtNombre, "Nombre");
 
 		txtCedula = new JTextField();
-		txtCedula.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		txtCedula.setBounds(300, 270, 700, 60);
 		configurarPlaceHolder(txtCedula, "Cedula");
 
 		btnAtras = new JButton("Atras");
-		btnAtras.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnAtras.setBounds(440, 370, 150, 60);
 
 		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnSubmit.setBounds(690, 370, 150, 60);
+		
+		add(btnAtras);
+		add(btnSubmit);
+		add(txtCedula);
+		add(txtNombre);
+		
 	}
 
 	/**
