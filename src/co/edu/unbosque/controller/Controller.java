@@ -56,8 +56,9 @@ public class Controller implements ActionListener {
 		});
 		ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().getBtnSubmit().addActionListener(e -> {
 			ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().setVisible(false);
-//			ventanaP.getpEPrincipal().setVisible(true); 
-//			 dirigir a la view de especialista
+			ventanaP.getpAccesosPrincipal().setVisible(false);
+			ventanaP.getpEPrincipal().setVisible(true);
+//			manda al panelEspecialistaPrincipal
 		});
 		ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().getBtnAtras().addActionListener(e -> {
 			ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().setVisible(false);
@@ -67,8 +68,17 @@ public class Controller implements ActionListener {
 			ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().setVisible(false);
 //			ventanaP.getp.setVisible(true); (deberia llevarme a la vista del admin)
 		});
-		
+
 //		Especialista
+		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnTurnos().addActionListener(e -> {
+//			mostrar un popup que diga si se mandó el correo con sus turnos o no
+		});
+		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnMisPacientes().addActionListener(e -> {
+			ventanaP.getpEPrincipal().getpCambiarTurno().setVisible(false);
+			ventanaP.getpEPrincipal().getpSolicitudTurno().setVisible(false);
+			ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
+			ventanaP.getpEPrincipal().getpMisPacientes().setVisible(true);
+		});
 	}
 
 	public void run() {

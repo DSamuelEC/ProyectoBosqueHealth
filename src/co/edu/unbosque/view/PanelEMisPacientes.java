@@ -41,7 +41,7 @@ public class PanelEMisPacientes extends JPanel {
 		setLayout(null);
 		setBackground(new Color(255, 255, 255));
 		inicializarComponentes();
-		setVisible(false);
+		setVisible(true);
 	}
 
 	/**
