@@ -1,5 +1,6 @@
 package co.edu.unbosque.view;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 
 import javax.swing.*;
@@ -20,7 +21,7 @@ public class PanelEMisPacientes extends JPanel {
 	 */
 	private JScrollPane scrollPane;
 	/**
-	 * Atributo encargado de mostrar un texto del nombre del pacinete en el Panel
+	 * Atributo encargado de mostrar un texto del nombre del paciente en el Panel
 	 */
 	private JLabel lblNombrePaciente;
 	/**
@@ -55,7 +56,7 @@ public class PanelEMisPacientes extends JPanel {
 	    columnModel.getColumn(2).setPreferredWidth(300);
 		tblMisPacientes.setBounds(0, 40, 1300, 590);
 
-		scrollPane = new JScrollPane();
+		scrollPane = new JScrollPane(tblMisPacientes);
 		
 		lblNombrePaciente = new JLabel("Nombre paciente");
 		lblNombrePaciente.setBounds(30, 10, 300, 20);
@@ -108,6 +109,55 @@ public class PanelEMisPacientes extends JPanel {
 	 */
 	public void setScrollPane(JScrollPane scrollPane) {
 		this.scrollPane = scrollPane;
+	}
+
+	/**
+	 * Metodo que retorna el valor del atributo lblNombrePaciente
+	 * 
+	 * @return Contenido del atributo lblNombrePaciente
+	 */
+	public JLabel getLblNombrePaciente() {
+		return lblNombrePaciente;
+	}
+	/**
+	 * Metodo que actualiza el valor del atributo lblNombrePaciente
+	 * 
+	 * @param lblNombrePaciente valor a actualizar
+	 */
+	public void setLblNombrePaciente(JLabel lblNombrePaciente) {
+		this.lblNombrePaciente = lblNombrePaciente;
+	}
+	/**
+	 * Metodo que retorna el valor del atributo lblFecha
+	 * 
+	 * @return Contenido del atributo lblFecha
+	 */
+	public JLabel getLblFecha() {
+		return lblFecha;
+	}
+	/**
+	 * Metodo que actualiza el valor del atributo lblFecha
+	 * 
+	 * @param lblFecha valor a actualizar
+	 */
+	public void setLblFecha(JLabel lblFecha) {
+		this.lblFecha = lblFecha;
+	}
+	/**
+	 * Metodo que retorna el valor del atributo lblHora
+	 * 
+	 * @return Contenido del atributo lblHora
+	 */
+	public JLabel getLblHora() {
+		return lblHora;
+	}
+	/**
+	 * Metodo que actualiza el valor del atributo lblHora
+	 * 
+	 * @param lblHora valor a actualizar
+	 */
+	public void setLblHora(JLabel lblHora) {
+		this.lblHora = lblHora;
 	}
 
 }

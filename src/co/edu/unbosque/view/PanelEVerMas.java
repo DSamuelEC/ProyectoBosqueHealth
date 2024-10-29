@@ -1,5 +1,9 @@
 package co.edu.unbosque.view;
 
+import java.awt.Color;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+
 import javax.swing.*;
 
 /**
@@ -76,7 +80,7 @@ public class PanelEVerMas extends JPanel {
 	public PanelEVerMas() {
 		setSize(1300, 700);
 		setLayout(null);
-
+		setBackground(new Color(255, 255, 255));
 		inicializarComponentes();
 		setVisible(false);
 	}
@@ -86,43 +90,56 @@ public class PanelEVerMas extends JPanel {
 	 */
 	public void inicializarComponentes() {
 		lblNombrePaciente = new JLabel("Nombre del paciente: ");
-		lblNombrePaciente.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblNombrePaciente.setBounds(40, 30, 300, 20);
 
 		lblNombreEspecialista = new JLabel("Nombre del especialista: ");
-		lblNombreEspecialista.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblNombreEspecialista.setBounds(40, 70, 300, 20);
 
 		lblFecha = new JLabel("Fecha: ");
-		lblFecha.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblFecha.setBounds(760, 30, 300, 20);
 
 		lblHora = new JLabel("Hora: ");
-		lblHora.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblHora.setBounds(1050, 30, 300, 20);
 
 		lblSexo = new JLabel("Sexo: ");
-		lblSexo.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblSexo.setBounds(40, 110, 300, 20);
 
 		lblEdad = new JLabel("Edad: ");
-		lblEdad.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblEdad.setBounds(40, 150, 300, 20);
 
 		lblCorreo = new JLabel("Correo: ");
-		lblCorreo.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblCorreo.setBounds(40, 190, 300, 20);
 
 		lblCedula = new JLabel("Cedula: ");
-		lblCedula.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblCedula.setBounds(40, 230, 300, 20);
 
 		txtTratamiento = new JTextField();
-		txtTratamiento.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		txtTratamiento.setBounds(40, 270, 1200, 50);
 		configurarPlaceHolder(txtTratamiento, "Tratamiento");
 
 		txtDiagnostico = new JTextField();
-		txtDiagnostico.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		txtDiagnostico.setBounds(40, 340, 1200, 50);
 		configurarPlaceHolder(txtDiagnostico, "Diagnostico");
 
 		txtExamenes = new JTextField();
-		txtExamenes.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		configurarPlaceHolder(txtDiagnostico, "Diagnostico");
+		txtExamenes.setBounds(40, 410, 1200, 50);
+		configurarPlaceHolder(txtExamenes, "Examenes");
 
 		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnSubmit.setBounds(600, 480, 100, 30);
+		
+		add(btnSubmit);
+		add(lblCedula);
+		add(lblCorreo);
+		add(lblEdad);
+		add(lblFecha);
+		add(lblHora);
+		add(lblNombreEspecialista);
+		add(lblNombrePaciente);
+		add(lblSexo);
+		add(txtDiagnostico);
+		add(txtExamenes);
+		add(txtTratamiento);
 
 	}
 
@@ -135,7 +152,29 @@ public class PanelEVerMas extends JPanel {
 	 * @param placeholder
 	 */
 	public void configurarPlaceHolder(JTextField textField, String placeholder) {
+		// Establecer el placeholder inicialmente
+				textField.setText(placeholder);
+				textField.setForeground(Color.GRAY);
 
+				textField.addFocusListener(new FocusListener() {
+					@Override
+					public void focusGained(FocusEvent e) {
+						// Si el texto es igual al placeholder, lo borra y cambia el color
+						if (textField.getText().equals(placeholder)) {
+							textField.setText("");
+							textField.setForeground(Color.BLACK);
+						}
+					}
+
+					@Override
+					public void focusLost(FocusEvent e) {
+						// Si el campo está vacío al perder el foco, restablece el placeholder
+						if (textField.getText().isEmpty()) {
+							textField.setForeground(Color.GRAY);
+							textField.setText(placeholder);
+						}
+					}
+				});
 	}
 
 	/**

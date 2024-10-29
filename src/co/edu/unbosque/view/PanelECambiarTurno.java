@@ -1,6 +1,8 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
 import javax.swing.*;
 
@@ -47,19 +49,24 @@ public class PanelECambiarTurno extends JPanel {
 	 */
 	public void inicializarComponentes() {
 		txtNombreCompañero = new JTextField();
-		txtNombreCompañero.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		txtNombreCompañero.setBounds(140, 100, 1000, 50);
 		configurarPlaceHolder(txtNombreCompañero, "Nombre Compañero");
 
 		txtFechaMiTurno = new JTextField();
-		txtFechaMiTurno.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		txtFechaMiTurno.setBounds(140, 180, 1000, 50);
 		configurarPlaceHolder(txtFechaMiTurno, "Fecha Mi Turno (AA/MM/DD)");
 
 		txtFechaTurnoCompañero = new JTextField();
-		txtFechaTurnoCompañero.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
-		configurarPlaceHolder(txtFechaMiTurno, "Fecha Turno Compañero (AA/MM/DD)");
+		txtFechaTurnoCompañero.setBounds(140, 260, 1000, 50);
+		configurarPlaceHolder(txtFechaTurnoCompañero, "Fecha Turno Compañero (AA/MM/DD)");
 
 		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnSubmit.setBounds(600, 340, 100, 30);
+
+		add(btnSubmit);
+		add(txtFechaMiTurno);
+		add(txtFechaTurnoCompañero);
+		add(txtNombreCompañero);
 
 	}
 
@@ -72,7 +79,29 @@ public class PanelECambiarTurno extends JPanel {
 	 * @param placeholder
 	 */
 	public void configurarPlaceHolder(JTextField textField, String placeholder) {
+		// Establecer el placeholder inicialmente
+		textField.setText(placeholder);
+		textField.setForeground(Color.GRAY);
 
+		textField.addFocusListener(new FocusListener() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				// Si el texto es igual al placeholder, lo borra y cambia el color
+				if (textField.getText().equals(placeholder)) {
+					textField.setText("");
+					textField.setForeground(Color.BLACK);
+				}
+			}
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				// Si el campo está vacío al perder el foco, restablece el placeholder
+				if (textField.getText().isEmpty()) {
+					textField.setForeground(Color.GRAY);
+					textField.setText(placeholder);
+				}
+			}
+		});
 	}
 
 	/**

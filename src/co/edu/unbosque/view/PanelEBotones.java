@@ -68,7 +68,7 @@ public class PanelEBotones extends JPanel {
 
 		btnMisPacientes = new JButton("Mis Pacientes");
 		btnMisPacientes.setBounds(420, 30, 150, 40);
-		
+
 		btnVerMas = new JButton("Ver Más");
 		btnVerMas.setBounds(590, 30, 150, 40);
 
@@ -77,10 +77,10 @@ public class PanelEBotones extends JPanel {
 
 		btnSolicitudTurno = new JButton("Solicitud Turno");
 		btnSolicitudTurno.setBounds(930, 30, 150, 40);
-		
+
 		btnCerrarSesion = new JButton("Cerrar Sesión");
 		btnCerrarSesion.setBounds(1100, 30, 150, 40);
-		
+
 		add(btnCambiarTurno);
 		add(btnCerrarSesion);
 		add(btnMisPacientes);

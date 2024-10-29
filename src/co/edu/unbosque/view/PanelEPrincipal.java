@@ -60,7 +60,7 @@ public class PanelEPrincipal extends JPanel {
 
 		pVerMas = new PanelEVerMas();
 		pVerMas.setBounds(0, 110, 1300, 590);
-		
+
 		add(pBotonesEspecialista);
 		add(pCambiarTurno);
 		add(pMisPacientes);
