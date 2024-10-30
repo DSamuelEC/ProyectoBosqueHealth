@@ -16,7 +16,6 @@ public class PanelEBotones extends JPanel {
 	 * Atributo encargado de mostrar un texto con el nombre del especialista en el
 	 * Panel
 	 */
-
 	private JLabel lblNombreEspecialista;
 	/**
 	 * Atributo encargado de mostrar un boton que de acceso al Panel de Turnos
@@ -39,7 +38,7 @@ public class PanelEBotones extends JPanel {
 	 */
 	private JButton btnSolicitudTurno;
 	/**
-	 * Atributo encargado de mostrar un boton que cierre sesión y regrese al panel
+	 * Atributo encargado de mostrar un boton que cierre sesion y regrese al panel
 	 * Acceso
 	 */
 	private JButton btnCerrarSesion;
