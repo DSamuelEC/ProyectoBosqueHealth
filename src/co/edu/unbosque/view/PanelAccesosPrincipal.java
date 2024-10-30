@@ -22,7 +22,7 @@ public class PanelAccesosPrincipal extends JPanel {
 	/**
 	 * Atributo encargado de almacenar y mostrar la instancia del PanelCrearPaciente
 	 */
-	private PanelCrearPaciente panelCrearPaciente;
+	private PanelAccesoCrearPaciente panelCrearPaciente;
 	/**
 	 * Atributo encargado de almacenar y mostrar la instancia del
 	 * PanelAccesoEspecialista
@@ -54,7 +54,7 @@ public class PanelAccesosPrincipal extends JPanel {
 		panelAccesoPaciente = new PanelAccesoPaciente();
 		panelAccesoPaciente.setBounds(0, 0, 1300, 700);
 
-		panelCrearPaciente = new PanelCrearPaciente();
+		panelCrearPaciente = new PanelAccesoCrearPaciente();
 		panelCrearPaciente.setBounds(0, 0, 1300, 700);
 
 		panelAccesoEspecialista = new PanelAccesoEspecialista();
@@ -196,7 +196,7 @@ public class PanelAccesosPrincipal extends JPanel {
 	 * 
 	 * @return Contenido del atributo panelCrearPaciente
 	 */
-	public PanelCrearPaciente getPanelCrearPaciente() {
+	public PanelAccesoCrearPaciente getPanelCrearPaciente() {
 		return panelCrearPaciente;
 	}
 
@@ -205,7 +205,7 @@ public class PanelAccesosPrincipal extends JPanel {
 	 * 
 	 * @param panelCrearPaciente Valor a actualizar
 	 */
-	public void setPanelCrearPaciente(PanelCrearPaciente panelCrearPaciente) {
+	public void setPanelCrearPaciente(PanelAccesoCrearPaciente panelCrearPaciente) {
 		this.panelCrearPaciente = panelCrearPaciente;
 	}
 }

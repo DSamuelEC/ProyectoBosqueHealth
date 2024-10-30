@@ -13,7 +13,7 @@ import javax.swing.*;
  * @author Mariana Ovallos
  */
 
-public class PanelCrearPaciente extends JPanel {
+public class PanelAccesoCrearPaciente extends JPanel {
 	/**
 	 * Atributo encargado de almacenar el nombre del paciente
 	 */
@@ -48,7 +48,7 @@ public class PanelCrearPaciente extends JPanel {
 	 * Metodo Constructor de la clase
 	 */
 
-	public PanelCrearPaciente() {
+	public PanelAccesoCrearPaciente() {
 		setSize(1300, 700);
 		setLayout(null);
 
