@@ -17,81 +17,17 @@ public class Controller implements ActionListener {
 	public void asignarOyentes() {
 //		Accesos
 		ventanaP.getpAccesosPrincipal().getPanelAcceso().getBtnUsuario().addActionListener(this);
-		/**
-		 * e -> { System.out.println("eventoo");
-		 * ventanaP.getpAccesosPrincipal().getPanelAcceso().setVisible(false);
-		 * ventanaP.getpAccesosPrincipal().getPanelAccesoPaciente().setVisible(true); }
-		 */
 		ventanaP.getpAccesosPrincipal().getPanelAcceso().getBtnEspecialista().addActionListener(this);
-		/**
-		 * e -> { ventanaP.getpAccesosPrincipal().getPanelAcceso().setVisible(false);
-		 * ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().setVisible(true);
-		 * }
-		 */
 		ventanaP.getpAccesosPrincipal().getPanelAcceso().getBtnAdmin().addActionListener(this);
-		/**
-		 * e -> { ventanaP.getpAccesosPrincipal().getPanelAcceso().setVisible(false);
-		 * ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().setVisible(true); }
-		 */
 		ventanaP.getpAccesosPrincipal().getPanelAccesoPaciente().getBtnAtras().addActionListener(this);
-		/**
-		 * e -> {
-		 * ventanaP.getpAccesosPrincipal().getPanelAccesoPaciente().setVisible(false);
-		 * ventanaP.getpAccesosPrincipal().getPanelAcceso().setVisible(true); }
-		 */
 		ventanaP.getpAccesosPrincipal().getPanelAccesoPaciente().getBtnCrearUsuario().addActionListener(this);
-		/**
-		 * e -> {
-		 * ventanaP.getpAccesosPrincipal().getPanelAccesoPaciente().setVisible(false);
-		 * ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().setVisible(true); }
-		 */
 		ventanaP.getpAccesosPrincipal().getPanelAccesoPaciente().getBtnSubmit().addActionListener(this);
-		/**
-		 * e -> {
-		 * ventanaP.getpAccesosPrincipal().getPanelAccesoPaciente().setVisible(false);
-		 * // ventanaP.getp().setVisible(true); (deberia llevarme a la vista del
-		 * usuario) }
-		 */
 		ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getBtnAtras().addActionListener(this);
-		/**
-		 * e -> {
-		 * ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().setVisible(false);
-		 * ventanaP.getpAccesosPrincipal().getPanelAccesoPaciente().setVisible(true); }
-		 */
 		ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getBtnSubmit().addActionListener(this);
-		/**
-		 * e -> {
-		 * ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().setVisible(false);
-		 * mostrar un popup que diga si se creo y si si que ingrese
-		 * ventanaP.getpAccesosPrincipal().getPanelAccesoPaciente().setVisible(true); }
-		 */
-		ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().getBtnAtras().addActionListener(this);
-		/**
-		 * e -> {
-		 * ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().setVisible(false);
-		 * ventanaP.getpAccesosPrincipal().getPanelAcceso().setVisible(true); }
-		 */
-		ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().getBtnSubmit().addActionListener(this);
-		/**
-		 * e -> {
-		 * ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().setVisible(false);
-		 * ventanaP.getpAccesosPrincipal().getPanelAcceso().setVisible(true);
-		 * ventanaP.getpAccesosPrincipal().setVisible(false);
-		 * ventanaP.getpEPrincipal().setVisible(true); // manda al
-		 * panelEspecialistaPrincipal }
-		 */
-		ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().getBtnAtras().addActionListener(this);
-		/**
-		 * e -> {
-		 * ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().setVisible(false);
-		 * ventanaP.getpAccesosPrincipal().getPanelAcceso().setVisible(true); }
-		 */
+		ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().getBtnAtras().addActionListener(this);		
+		ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().getBtnSubmit().addActionListener(this);		
+		ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().getBtnAtras().addActionListener(this);		
 		ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().getBtnSubmit().addActionListener(this);
-		/**
-		 * e -> {
-		 * ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().setVisible(false); //
-		 * ventanaP.getp.setVisible(true); (deberia llevarme a la vista del admin) }
-		 */
 
 //		Especialista
 		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnTurnos().addActionListener(this);
@@ -164,5 +100,58 @@ public class Controller implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String comando = e.getActionCommand();
 		System.out.println(comando);
+
+		switch (comando) {
+//		ACCESOS
+		case "P_ACCESO_USUARIO":
+			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(2);
+			break;
+		case "P_ACCESO_ESPECIALISTA":
+			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(4);
+			break;
+		case "P_ACCESO_ADMIN":
+			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(5);
+			break;
+		case "P_ACCESOPACIENTE_ATRAS":
+			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(1);
+			break;
+		case "P_ACCESOPACIENTE_SUBMIT":
+			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(1);
+//			debe mostrar el popup de si se pudo ingresar o no, si si entonces se pone 
+//			visible el panel 1 por defecto para que al cerrar sesion aparezca desde ese panel ya visible, 
+//			y luego se oculta el panel contenedor de todos los de accesos
+			break;
+		case "P_ACCESOPACIENTE_CREARUSUARIO":
+			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(3);
+			break;
+		case "P_ACCESOSCREARPACIENTE_ATRAS":
+			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(2);
+			break;
+		case "P_ACCESOSCREARPACIENTE_SUBMIT":
+			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(2);
+//			si se creo bien el paciente, mostrar un popup de que se creo bien, y si si 
+//			entonces se devuelve automaticamente al login para que pueda ingresar con sus datos e ingresar
+			break;
+		case "P_ACCESOESPECIALISTA_ATRAS":
+			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(1);
+			break;
+		case "P_ACCESOESPECIALISTA_SUBMIT":
+			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(1);
+//			debe mostrar el popup de si se pudo ingresar o no, si si entonces se pone 
+//			visible el panel 1 por defecto para que al cerrar sesion aparezca desde ese panel ya visible, 
+//			y luego se oculta el panel contenedor de todos los de accesos
+			break;
+		case "P_ACCESOADMIN_ATRAS":
+			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(1);
+			break;
+		case "P_ACCESOADMIN_SUBMIT":
+			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(1);
+//			debe mostrar el popup de si se pudo ingresar o no, si si entonces se pone 
+//			visible el panel 1 por defecto para que al cerrar sesion aparezca desde ese panel ya visible, 
+//			y luego se oculta el panel contenedor de todos los de accesos
+			break;
+		default:
+			break;
+		}
 	}
 }

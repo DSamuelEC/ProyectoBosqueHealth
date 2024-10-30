@@ -71,6 +71,55 @@ public class PanelAccesosPrincipal extends JPanel {
 	}
 
 	/**
+	 * Metodo que cambia la visibilidad de los paneles, el orden son 1 =
+	 * panelAcceso, 2 = panelAccesoPaciente, 3 = panelCrearPaciente, 4 =
+	 * panelAccesoEspecialista, 5 = panelAccesoAdmin
+	 * 
+	 * @param panelVisible panel que se hara visible
+	 */
+	public void cambiarVisibilidad(int panelVisible) {
+		switch (panelVisible) {
+		case 1:
+			panelAccesoPaciente.setVisible(false);
+			panelCrearPaciente.setVisible(false);
+			panelAccesoEspecialista.setVisible(false);
+			panelAccesoAdmin.setVisible(false);
+			panelAcceso.setVisible(true);
+			break;
+		case 2:
+			panelCrearPaciente.setVisible(false);
+			panelAccesoEspecialista.setVisible(false);
+			panelAccesoAdmin.setVisible(false);
+			panelAcceso.setVisible(false);
+			panelAccesoPaciente.setVisible(true);
+			break;
+		case 3:
+			panelAccesoEspecialista.setVisible(false);
+			panelAccesoAdmin.setVisible(false);
+			panelAcceso.setVisible(false);
+			panelAccesoPaciente.setVisible(false);
+			panelCrearPaciente.setVisible(true);
+			break;
+		case 4:
+			panelAccesoAdmin.setVisible(false);
+			panelAcceso.setVisible(false);
+			panelAccesoPaciente.setVisible(false);
+			panelCrearPaciente.setVisible(false);
+			panelAccesoEspecialista.setVisible(true);
+			break;
+		case 5:
+			panelAcceso.setVisible(false);
+			panelAccesoPaciente.setVisible(false);
+			panelCrearPaciente.setVisible(false);
+			panelAccesoEspecialista.setVisible(false);
+			panelAccesoAdmin.setVisible(true);
+			break;
+		default:
+			break;
+		}
+	}
+
+	/**
 	 * Metodo que retorna el valor del atributo panelAcceso
 	 * 
 	 * @return Contenido del atributo panelAcceso
