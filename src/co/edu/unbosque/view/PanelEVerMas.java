@@ -131,10 +131,12 @@ public class PanelEVerMas extends JPanel {
 
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(660, 480, 100, 30);
+		btnSubmit.setActionCommand("P_VER_MAS_ESPECIALISTA_SUBMIT");
 
 		btnAtras = new JButton("Atras");
 		btnAtras.setBounds(490, 480, 100, 30);
-
+		btnAtras.setActionCommand("P_VER_MAS_ESPECIALISTA_ATRAS");
+		
 		add(btnSubmit);
 		add(lblCedula);
 		add(lblCorreo);

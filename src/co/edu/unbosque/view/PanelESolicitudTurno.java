@@ -63,9 +63,11 @@ public class PanelESolicitudTurno extends JPanel {
 
 		btnAceptar = new JButton("Aceptar Cambio");
 		btnAceptar.setBounds(870, 505, 170, 30);
-
+		btnAceptar.setActionCommand("P_SOLICITUD_TURNO_ESPECIALISTA_ACEPTAR");
+		
 		btnRechazar = new JButton("Rechazar Cambio");
 		btnRechazar.setBounds(1070, 505, 170, 30);
+		btnRechazar.setActionCommand("P_SOLICITUD_TURNO_ESPECIALISTA_RECHAZAR");
 
 		scrollPane = new JScrollPane(tblSolicitudTurno);
 

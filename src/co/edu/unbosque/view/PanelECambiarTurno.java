@@ -62,6 +62,7 @@ public class PanelECambiarTurno extends JPanel {
 
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(600, 340, 100, 30);
+		btnSubmit.setActionCommand("P_CAMBIAR_TURNO_ESPECIALISTA_SUBMIT");
 
 		add(btnSubmit);
 		add(txtFechaMiTurno);
