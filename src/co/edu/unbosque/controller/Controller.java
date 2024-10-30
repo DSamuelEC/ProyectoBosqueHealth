@@ -19,13 +19,17 @@ public class Controller implements ActionListener {
 		ventanaP.getpAccesosPrincipal().getPanelAcceso().getBtnUsuario().addActionListener(this);
 		ventanaP.getpAccesosPrincipal().getPanelAcceso().getBtnEspecialista().addActionListener(this);
 		ventanaP.getpAccesosPrincipal().getPanelAcceso().getBtnAdmin().addActionListener(this);
+		
 		ventanaP.getpAccesosPrincipal().getPanelAccesoPaciente().getBtnAtras().addActionListener(this);
 		ventanaP.getpAccesosPrincipal().getPanelAccesoPaciente().getBtnCrearUsuario().addActionListener(this);
 		ventanaP.getpAccesosPrincipal().getPanelAccesoPaciente().getBtnSubmit().addActionListener(this);
+		
 		ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getBtnAtras().addActionListener(this);
 		ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getBtnSubmit().addActionListener(this);
+		
 		ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().getBtnAtras().addActionListener(this);		
-		ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().getBtnSubmit().addActionListener(this);		
+		ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().getBtnSubmit().addActionListener(this);
+		
 		ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().getBtnAtras().addActionListener(this);		
 		ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().getBtnSubmit().addActionListener(this);
 
@@ -38,22 +42,12 @@ public class Controller implements ActionListener {
 		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnCerrarSesion().addActionListener(this);
 	
 		ventanaP.getpEPrincipal().getpVerMas().getBtnSubmit().addActionListener(this);
-		/**
-		 * e -> { // popup de que ya se cambió los datos, sino se cambian mostrar error
-		 * ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpMisPacientes().setVisible(true); }
-		 */
 		ventanaP.getpEPrincipal().getpVerMas().getBtnAtras().addActionListener(this);
-		/**
-		 * e -> { ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpMisPacientes().setVisible(true); }
-		 */
+		
 		ventanaP.getpEPrincipal().getpCambiarTurno().getBtnSubmit().addActionListener(this);
-		/**
-		 * e -> { // popup de que pidio el cambio de turno bien
-		 * ventanaP.getpEPrincipal().getpCambiarTurno().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpMisPacientes().setVisible(true); }
-		 */
+		
+		ventanaP.getpEPrincipal().getpSolicitudTurno().getBtnAceptar().addActionListener(this);
+		ventanaP.getpEPrincipal().getpSolicitudTurno().getBtnRechazar().addActionListener(this);
 	}
 
 	public void run() {
@@ -135,6 +129,25 @@ public class Controller implements ActionListener {
 			ventanaP.getpEPrincipal().cambiarVisibilidad(1);
 			ventanaP.cambiarVisibilidad(1);
 //			debe cerrar sesion y mandarme al accesos
+			break;
+		case "P_VER_MAS_ESPECIALISTA_ATRAS":
+			ventanaP.getpEPrincipal().cambiarVisibilidad(1);
+			break;
+		case "P_VER_MAS_ESPECIALISTA_SUBMIT":
+			ventanaP.getpEPrincipal().cambiarVisibilidad(1);
+//			mostrar un popup diciendo si se hicieron los cambios o no 
+			break;
+		case "P_CAMBIAR_TURNO_ESPECIALISTA_SUBMIT":
+			ventanaP.getpEPrincipal().cambiarVisibilidad(1);
+//			mostrar un popup diciendo si se pudo pedir un cambio de turno o no 
+			break;
+		case "P_SOLICITUD_TURNO_ESPECIALISTA_ACEPTAR":
+			ventanaP.getpEPrincipal().cambiarVisibilidad(1);
+//			mostrar un popup diciendo si se pudo aceptar un cambio de turno o no y avisando que se envia al correo la informacion 
+			break;
+		case "P_SOLICITUD_TURNO_ESPECIALISTA_RECHAZAR":
+			ventanaP.getpEPrincipal().cambiarVisibilidad(1);
+//			mostrar un popup diciendo si se pudo rechazar un cambio de turno o no y avisando que se envia al correo la informacion
 			break;
 		default:
 			break;

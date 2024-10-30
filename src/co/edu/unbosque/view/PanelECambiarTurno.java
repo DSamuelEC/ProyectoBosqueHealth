@@ -80,14 +80,12 @@ public class PanelECambiarTurno extends JPanel {
 	 * @param placeholder
 	 */
 	public void configurarPlaceHolder(JTextField textField, String placeholder) {
-		// Establecer el placeholder inicialmente
 		textField.setText(placeholder);
 		textField.setForeground(Color.GRAY);
 
 		textField.addFocusListener(new FocusListener() {
 			@Override
 			public void focusGained(FocusEvent e) {
-				// Si el texto es igual al placeholder, lo borra y cambia el color
 				if (textField.getText().equals(placeholder)) {
 					textField.setText("");
 					textField.setForeground(Color.BLACK);
@@ -96,7 +94,6 @@ public class PanelECambiarTurno extends JPanel {
 
 			@Override
 			public void focusLost(FocusEvent e) {
-				// Si el campo está vacío al perder el foco, restablece el placeholder
 				if (textField.getText().isEmpty()) {
 					textField.setForeground(Color.GRAY);
 					textField.setText(placeholder);
