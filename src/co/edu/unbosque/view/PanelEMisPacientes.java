@@ -50,6 +50,7 @@ public class PanelEMisPacientes extends JPanel {
 	public void inicializarComponentes() {
 		
 		tblMisPacientes = new JTable(50, 3);
+		tblMisPacientes.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		TableColumnModel columnModel = tblMisPacientes.getColumnModel();
 		columnModel.getColumn(0).setPreferredWidth(680);
 	    columnModel.getColumn(1).setPreferredWidth(280);
