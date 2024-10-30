@@ -98,7 +98,7 @@ public class Controller implements ActionListener {
 			ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
 			ventanaP.getpEPrincipal().getpCambiarTurno().setVisible(false);
 			ventanaP.getpEPrincipal().getpSolicitudTurno().setVisible(true);
-//			popup de si se aceptó o rechazo el turno 
+//			popup de si se acepto o rechazo el turno 
 		});
 		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnCerrarSesion().addActionListener(e -> {
 			ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
@@ -114,8 +114,12 @@ public class Controller implements ActionListener {
 			ventanaP.getpEPrincipal().getpMisPacientes().setVisible(true);
 		});
 		ventanaP.getpEPrincipal().getpVerMas().getBtnAtras().addActionListener(e -> {
-//			popup de que ya se cambió los datos, sino se cambian mostrar error
 			ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
+			ventanaP.getpEPrincipal().getpMisPacientes().setVisible(true);
+		});
+		ventanaP.getpEPrincipal().getpCambiarTurno().getBtnSubmit().addActionListener(e -> {
+//			popup de que pidio el cambio de turno bien
+			ventanaP.getpEPrincipal().getpCambiarTurno().setVisible(false);
 			ventanaP.getpEPrincipal().getpMisPacientes().setVisible(true);
 		});
 	}
