@@ -30,50 +30,13 @@ public class Controller implements ActionListener {
 		ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().getBtnSubmit().addActionListener(this);
 
 //		Especialista
-		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnTurnos().addActionListener(this);
-		/**
-		 * e -> { // mostrar un popup que diga si se mandó el correo con sus turnos o no
-		 * }
-		 */
-		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnMisPacientes().addActionListener(this);
-		/**
-		 * e -> { ventanaP.getpEPrincipal().getpCambiarTurno().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpSolicitudTurno().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpMisPacientes().setVisible(true); }
-		 */
-		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnVerMas().addActionListener(this);
-		/**
-		 * e -> { ventanaP.getpEPrincipal().getpCambiarTurno().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpSolicitudTurno().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpMisPacientes().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpVerMas().setVisible(true); }
-		 */
+		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnTurnos().addActionListener(this);	
+		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnMisPacientes().addActionListener(this);		
+		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnVerMas().addActionListener(this);		
 		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnCambiarTurno().addActionListener(this);
-		/**
-		 * e -> { ventanaP.getpEPrincipal().getpSolicitudTurno().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpMisPacientes().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpCambiarTurno().setVisible(true); // popup de si
-		 * se envió el cambio de turno }
-		 */
-		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnSolicitudTurno().addActionListener(this);
-		/**
-		 * e -> { ventanaP.getpEPrincipal().getpMisPacientes().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpCambiarTurno().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpSolicitudTurno().setVisible(true); // popup de
-		 * si se acepto o rechazo el turno }
-		 */
+		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnSolicitudTurno().addActionListener(this);	
 		ventanaP.getpEPrincipal().getpBotonesEspecialista().getBtnCerrarSesion().addActionListener(this);
-		/**
-		 * e -> { ventanaP.getpEPrincipal().getpVerMas().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpCambiarTurno().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpSolicitudTurno().setVisible(false);
-		 * ventanaP.getpEPrincipal().getpMisPacientes().setVisible(true);
-		 * ventanaP.getpEPrincipal().setVisible(false);
-		 * ventanaP.getpAccesosPrincipal().setVisible(true); }
-		 */
+	
 		ventanaP.getpEPrincipal().getpVerMas().getBtnSubmit().addActionListener(this);
 		/**
 		 * e -> { // popup de que ya se cambió los datos, sino se cambian mostrar error
@@ -137,6 +100,7 @@ public class Controller implements ActionListener {
 			break;
 		case "P_ACCESOESPECIALISTA_SUBMIT":
 			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(1);
+			ventanaP.cambiarVisibilidad(3);
 //			debe mostrar el popup de si se pudo ingresar o no, si si entonces se pone 
 //			visible el panel 1 por defecto para que al cerrar sesion aparezca desde ese panel ya visible, 
 //			y luego se oculta el panel contenedor de todos los de accesos
@@ -149,6 +113,28 @@ public class Controller implements ActionListener {
 //			debe mostrar el popup de si se pudo ingresar o no, si si entonces se pone 
 //			visible el panel 1 por defecto para que al cerrar sesion aparezca desde ese panel ya visible, 
 //			y luego se oculta el panel contenedor de todos los de accesos
+			break;
+			
+//			ESPECIALISTA
+		case "P_BOTONES_ESPECIALISTA_TURNOS":
+//			debe mostrar en un popup si se mando al correo o no sus turnos del mes
+			break;
+		case "P_BOTONES_ESPECIALISTA_MIS_PACIENTES":
+			ventanaP.getpEPrincipal().cambiarVisibilidad(1);
+			break;
+		case "P_BOTONES_ESPECIALISTA_VER_MAS":
+			ventanaP.getpEPrincipal().cambiarVisibilidad(2);
+			break;
+		case "P_BOTONES_ESPECIALISTA_CAMBIAR_TURNO":
+			ventanaP.getpEPrincipal().cambiarVisibilidad(3);
+			break;
+		case "P_BOTONES_ESPECIALISTA_SOLICITUD_TURNO":
+			ventanaP.getpEPrincipal().cambiarVisibilidad(4);
+			break;
+		case "P_BOTONES_ESPECIALISTA_CERRAR_SESION":
+			ventanaP.getpEPrincipal().cambiarVisibilidad(1);
+			ventanaP.cambiarVisibilidad(1);
+//			debe cerrar sesion y mandarme al accesos
 			break;
 		default:
 			break;

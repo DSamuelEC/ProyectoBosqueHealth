@@ -24,15 +24,42 @@ public class VentanaPrincipal extends JFrame {
 		pAccesosPrincipal = new PanelAccesosPrincipal();
 		pAccesosPrincipal.setBounds(0, 0, 1300, 700);
 		getContentPane().add(pAccesosPrincipal);
-		
+
 		pEPrincipal = new PanelEPrincipal();
 		pEPrincipal.setBounds(0, 0, 1300, 700);
 		getContentPane().add(pEPrincipal);
-		
+
 //		pPrincipalPaciente = new PanelPrincipalPaciente();
 //		pPrincipalPaciente.setBounds(0, 0, 1300, 700);
 //		getContentPane().add(pPrincipalPaciente);
-		
+
+	}
+
+	/**
+	 * Metodo que cambia la visibilidad de los paneles principales, el orden son 1 =
+	 * pAccesosPrincipal, 3 = pEPrincipal, y faltan los otros 2 paneles principales
+	 * 
+	 * @param panelVisible panel que se hara visible
+	 */
+	public void cambiarVisibilidad(int panelVisible) {
+		switch (panelVisible) {
+		case 1:
+			pEPrincipal.setVisible(false);
+			pAccesosPrincipal.setVisible(true);
+			break;
+		case 2:
+
+			break;
+		case 3:
+			pAccesosPrincipal.setVisible(false);
+			pEPrincipal.setVisible(true);
+			break;
+		case 4:
+
+			break;
+		default:
+			break;
+		}
 	}
 
 	public PanelAccesosPrincipal getpAccesosPrincipal() {
