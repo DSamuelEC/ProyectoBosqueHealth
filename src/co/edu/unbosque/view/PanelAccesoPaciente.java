@@ -66,12 +66,15 @@ public class PanelAccesoPaciente extends JPanel {
 
 		btnAtras = new JButton("Atras");
 		btnAtras.setBounds(380, 370, 150, 60);
+		btnAtras.setActionCommand("P_ACCESOPACIENTE_ATRAS");
 
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(580, 370, 150, 60);
+		btnSubmit.setActionCommand("P_ACCESOPACIENTE_SUBMIT");
 
 		btnCrearUsuario = new JButton("CrearUsuario");
 		btnCrearUsuario.setBounds(780, 370, 150, 60);
+		btnCrearUsuario.setActionCommand("P_ACCESOPACIENTE_CREARUSUARIO");
 
 		add(txtNombre);
 		add(txtCedula);

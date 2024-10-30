@@ -60,9 +60,11 @@ public class PanelAccesoEspecialista extends JPanel {
 
 		btnAtras = new JButton("Atras");
 		btnAtras.setBounds(440, 370, 150, 60);
+		btnAtras.setActionCommand("P_ACCESOESPECIALISTA_ATRAS");
 
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(690, 370, 150, 60);
+		btnSubmit.setActionCommand("P_ACCESOESPECIALISTA_SUBMIT");
 
 		add(txtNombre);
 		add(txtCedula);

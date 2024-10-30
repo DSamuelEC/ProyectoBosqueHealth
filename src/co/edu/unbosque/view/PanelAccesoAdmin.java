@@ -57,9 +57,11 @@ public class PanelAccesoAdmin extends JPanel {
 
 		btnAtras = new JButton("Atras");
 		btnAtras.setBounds(440, 370, 150, 60);
+		btnAtras.setActionCommand("P_ACCESOADMIN_ATRAS");
 
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(690, 370, 150, 60);
+		btnSubmit.setActionCommand("P_ACCESOADMIN_SUBMIT");
 
 		add(btnAtras);
 		add(btnSubmit);

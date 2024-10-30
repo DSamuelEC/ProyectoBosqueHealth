@@ -58,13 +58,15 @@ public class PanelAcceso extends JPanel {
 
 		btnUsuario = new JButton("Usuario");
 		btnUsuario.setBounds(570, 250, 150, 60);
-		btnUsuario.setActionCommand("USUARIOOOO");
+		btnUsuario.setActionCommand("P_ACCESO_USUARIO");
 
 		btnEspecialista = new JButton("Especialista");
 		btnEspecialista.setBounds(570, 350, 150, 60);
+		btnEspecialista.setActionCommand("P_ACCESO_ESPECIALISTA");
 
 		btnAdmin = new JButton("Admin");
 		btnAdmin.setBounds(570, 450, 150, 60);
+		btnAdmin.setActionCommand("P_ACCESO_ADMIN");
 
 		add(lblBienvenida);
 		add(lblModoDeAcceso);
