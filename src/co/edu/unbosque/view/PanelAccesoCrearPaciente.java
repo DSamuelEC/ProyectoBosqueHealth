@@ -54,7 +54,6 @@ public class PanelAccesoCrearPaciente extends JPanel {
 
 		inicializarComponentes();
 		setVisible(false);
-
 	}
 
 	/**
@@ -76,8 +75,8 @@ public class PanelAccesoCrearPaciente extends JPanel {
 		txtEdad = new JTextField();
 		txtEdad.setBounds(670, 370, 330, 60);
 		configurarPlaceHolder(txtEdad, "Edad");
-		
-		String[] opciones = {"F", "M" };
+
+		String[] opciones = { "F", "M" };
 		ldSexo = new JComboBox<String>(opciones);
 		ldSexo.setBounds(300, 370, 330, 60);
 
@@ -88,7 +87,7 @@ public class PanelAccesoCrearPaciente extends JPanel {
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(670, 450, 250, 60);
 		btnSubmit.setActionCommand("P_ACCESOSCREARPACIENTE_SUBMIT");
-		
+
 		add(txtNombre);
 		add(txtCedula);
 		add(txtCorreo);
@@ -105,14 +104,12 @@ public class PanelAccesoCrearPaciente extends JPanel {
 	 * por defecto un mensaje indicando lo que debe ingresar el paciente
 	 */
 	public void configurarPlaceHolder(JTextField textField, String placeholder) {
-		// Establecer el placeholder inicialmente
 		textField.setText(placeholder);
 		textField.setForeground(Color.GRAY);
 
 		textField.addFocusListener(new FocusListener() {
 			@Override
 			public void focusGained(FocusEvent e) {
-				// Si el texto es igual al placeholder, lo borra y cambia el color
 				if (textField.getText().equals(placeholder)) {
 					textField.setText("");
 					textField.setForeground(Color.BLACK);
@@ -121,7 +118,6 @@ public class PanelAccesoCrearPaciente extends JPanel {
 
 			@Override
 			public void focusLost(FocusEvent e) {
-				// Si el campo está vacío al perder el foco, restablece el placeholder
 				if (textField.getText().isEmpty()) {
 					textField.setForeground(Color.GRAY);
 					textField.setText(placeholder);
@@ -144,7 +140,6 @@ public class PanelAccesoCrearPaciente extends JPanel {
 	 * 
 	 * @param txtNombre valor a actualizar
 	 */
-
 	public void setTxtNombre(JTextField txtNombre) {
 		this.txtNombre = txtNombre;
 	}
@@ -154,7 +149,6 @@ public class PanelAccesoCrearPaciente extends JPanel {
 	 * 
 	 * @return Contenido del atributo txtCedula
 	 */
-
 	public JTextField getTxtCedula() {
 		return txtCedula;
 	}
@@ -164,7 +158,6 @@ public class PanelAccesoCrearPaciente extends JPanel {
 	 * 
 	 * @param txtCedula valor a actualizar
 	 */
-
 	public void setTxtCedula(JTextField txtCedula) {
 		this.txtCedula = txtCedula;
 	}
@@ -174,7 +167,6 @@ public class PanelAccesoCrearPaciente extends JPanel {
 	 * 
 	 * @return Contenido del atributo txtCorreo
 	 */
-
 	public JTextField getTxtCorreo() {
 		return txtCorreo;
 	}
@@ -184,7 +176,6 @@ public class PanelAccesoCrearPaciente extends JPanel {
 	 * 
 	 * @param txtCorreo valor a actualizar
 	 */
-
 	public void setTxtCorreo(JTextField txtCorreo) {
 		this.txtCorreo = txtCorreo;
 	}
@@ -194,7 +185,6 @@ public class PanelAccesoCrearPaciente extends JPanel {
 	 * 
 	 * @return Contenido del atributo txtEdad
 	 */
-
 	public JTextField getTxtEdad() {
 		return txtEdad;
 	}
@@ -204,7 +194,6 @@ public class PanelAccesoCrearPaciente extends JPanel {
 	 * 
 	 * @param txtEdad valor a actualizar
 	 */
-
 	public void setTxtEdad(JTextField txtEdad) {
 		this.txtEdad = txtEdad;
 	}
@@ -214,7 +203,6 @@ public class PanelAccesoCrearPaciente extends JPanel {
 	 * 
 	 * @return Contenido del atributo btnAtras
 	 */
-
 	public JButton getBtnAtras() {
 		return btnAtras;
 	}
@@ -224,7 +212,6 @@ public class PanelAccesoCrearPaciente extends JPanel {
 	 * 
 	 * @param btnAtras valor a actualizar
 	 */
-
 	public void setBtnAtras(JButton btnAtras) {
 		this.btnAtras = btnAtras;
 	}
@@ -234,7 +221,6 @@ public class PanelAccesoCrearPaciente extends JPanel {
 	 * 
 	 * @return Contenido del atributo btnSubmit
 	 */
-
 	public JButton getBtnSubmit() {
 		return btnSubmit;
 	}
@@ -244,7 +230,6 @@ public class PanelAccesoCrearPaciente extends JPanel {
 	 * 
 	 * @param btnSubmit valor a actualizar
 	 */
-
 	public void setBtnSubmit(JButton btnSubmit) {
 		this.btnSubmit = btnSubmit;
 	}
@@ -254,7 +239,6 @@ public class PanelAccesoCrearPaciente extends JPanel {
 	 * 
 	 * @return Contenido del atributo ldSexo
 	 */
-
 	public JComboBox getLdSexo() {
 		return ldSexo;
 	}
@@ -264,9 +248,7 @@ public class PanelAccesoCrearPaciente extends JPanel {
 	 * 
 	 * @param ldSexo valor a actualizar
 	 */
-
 	public void setLdSexo(JComboBox ldSexo) {
 		this.ldSexo = ldSexo;
 	}
-
 }

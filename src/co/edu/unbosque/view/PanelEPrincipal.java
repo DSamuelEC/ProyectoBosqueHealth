@@ -72,7 +72,7 @@ public class PanelEPrincipal extends JPanel {
 	 * Metodo que cambia la visibilidad de los paneles, el orden son 1 =
 	 * pMisPacientes, 2 = pVerMas, 3 = pCambiarTurno, 4 = pSolicitudTurno
 	 * 
-	 * @param panelVisible panel que se hara visible
+	 * @param panelVisible index panel que se hara visible
 	 */
 	public void cambiarVisibilidad(int panelVisible) {
 		switch (panelVisible) {

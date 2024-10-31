@@ -36,14 +36,12 @@ public class PanelAcceso extends JPanel {
 	/**
 	 * Metodo Constructor de la clase
 	 */
-
 	public PanelAcceso() {
 		setSize(1300, 700);
 		setLayout(null);
 
 		inicializarComponentes();
 		setVisible(true);
-
 	}
 
 	/**
@@ -89,7 +87,6 @@ public class PanelAcceso extends JPanel {
 	 * 
 	 * @param lblBienvenida valor a actualizar
 	 */
-
 	public void setLblBienvenida(JLabel lblBienvenida) {
 		this.lblBienvenida = lblBienvenida;
 	}
@@ -99,7 +96,6 @@ public class PanelAcceso extends JPanel {
 	 * 
 	 * @return contenido del atributo lblModoDeAcceso
 	 */
-
 	public JLabel getLblModoDeAcceso() {
 		return lblModoDeAcceso;
 	}
@@ -118,7 +114,6 @@ public class PanelAcceso extends JPanel {
 	 * 
 	 * @return contenido del atributo btnUsuario
 	 */
-
 	public JButton getBtnUsuario() {
 		return btnUsuario;
 	}
@@ -128,7 +123,6 @@ public class PanelAcceso extends JPanel {
 	 * 
 	 * @param btnUsuario valor a actualizar
 	 */
-
 	public void setBtnUsuario(JButton btnUsuario) {
 		this.btnUsuario = btnUsuario;
 	}
@@ -138,7 +132,6 @@ public class PanelAcceso extends JPanel {
 	 * 
 	 * @return contenido del atriburo btnEspecialista
 	 */
-
 	public JButton getBtnEspecialista() {
 		return btnEspecialista;
 	}
@@ -148,7 +141,6 @@ public class PanelAcceso extends JPanel {
 	 * 
 	 * @param btnEspecialista valor a actualizar
 	 */
-
 	public void setBtnEspecialista(JButton btnEspecialista) {
 		this.btnEspecialista = btnEspecialista;
 	}
@@ -158,7 +150,6 @@ public class PanelAcceso extends JPanel {
 	 * 
 	 * @return contenido del atributo btnAdmin
 	 */
-
 	public JButton getBtnAdmin() {
 		return btnAdmin;
 	}
@@ -171,5 +162,4 @@ public class PanelAcceso extends JPanel {
 	public void setBtnAdmin(JButton btnAdmin) {
 		this.btnAdmin = btnAdmin;
 	}
-
 }

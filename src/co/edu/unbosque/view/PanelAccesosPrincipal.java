@@ -8,7 +8,6 @@ import javax.swing.JPanel;
  * 
  * @author Samuel Diaz
  */
-
 public class PanelAccesosPrincipal extends JPanel {
 	/**
 	 * Atributo encargado de almacenar y mostrar la instancia del PanelAcceso
@@ -75,7 +74,7 @@ public class PanelAccesosPrincipal extends JPanel {
 	 * panelAcceso, 2 = panelAccesoPaciente, 3 = panelCrearPaciente, 4 =
 	 * panelAccesoEspecialista, 5 = panelAccesoAdmin
 	 * 
-	 * @param panelVisible panel que se hara visible
+	 * @param panelVisible index panel que se hara visible
 	 */
 	public void cambiarVisibilidad(int panelVisible) {
 		switch (panelVisible) {
