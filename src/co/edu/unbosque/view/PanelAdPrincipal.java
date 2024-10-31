@@ -36,7 +36,7 @@ public class PanelAdPrincipal extends JPanel {
 		setLayout(null);
 
 		inicializarComponentes();
-		setVisible(true);
+		setVisible(false);
 	}
 
 	/**

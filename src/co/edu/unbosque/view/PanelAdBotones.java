@@ -72,31 +72,31 @@ public class PanelAdBotones extends JPanel {
 		lblNombreAdmin.setBounds(50, 20, 700, 60);
 
 		btnRegistrarEspecialistas = new JButton("Crear Especialista");
-		btnRegistrarEspecialistas.setBounds(250, 30, 150, 40);
+		btnRegistrarEspecialistas.setBounds(250, 30, 140, 40);
 		btnRegistrarEspecialistas.setActionCommand("P_BOTONES_ADMIN_REGISTRAR_ESPECIALISTA");
 
 		btnAsignarTurnos = new JButton("Asignar Turnos");
-		btnAsignarTurnos.setBounds(250, 30, 150, 40);
+		btnAsignarTurnos.setBounds(400, 30, 130, 40);
 		btnAsignarTurnos.setActionCommand("P_BOTONES_ADMIN_ASIGNAR_TURNOS");
 
 		btnVerPacientes = new JButton("Ver Pacientes");
-		btnVerPacientes.setBounds(250, 30, 150, 40);
+		btnVerPacientes.setBounds(540, 30, 130, 40);
 		btnVerPacientes.setActionCommand("P_BOTONES_ADMIN_VER_PACIENTES");
 
 		btnVerEspecialistas = new JButton("Ver Especialistas");
-		btnVerEspecialistas.setBounds(250, 30, 150, 40);
+		btnVerEspecialistas.setBounds(680, 30, 140, 40);
 		btnVerEspecialistas.setActionCommand("P_BOTONES_ADMIN_VER_ESPECIALISTAS");
 
 		btnReportes = new JButton("Reportes");
-		btnReportes.setBounds(250, 30, 150, 40);
+		btnReportes.setBounds(830, 30, 120, 40);
 		btnReportes.setActionCommand("P_BOTONES_ADMIN_REPORTES");
 
 		btnConfiguraciones = new JButton("Configuraciones");
-		btnConfiguraciones.setBounds(250, 30, 150, 40);
+		btnConfiguraciones.setBounds(960, 30, 140, 40);
 		btnConfiguraciones.setActionCommand("P_BOTONES_ADMIN_CONFIGURACIONES");
 
 		btnCerrarSesion = new JButton("Cerrar Sesion");
-		btnCerrarSesion.setBounds(250, 30, 150, 40);
+		btnCerrarSesion.setBounds(1110, 30, 140, 40);
 		btnCerrarSesion.setActionCommand("P_BOTONES_ADMIN_CERRAR_SESION");
 
 		add(lblNombreAdmin);

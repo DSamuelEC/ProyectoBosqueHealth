@@ -6,6 +6,7 @@ public class VentanaPrincipal extends JFrame {
 	private PanelAccesosPrincipal pAccesosPrincipal;
 	private PanelEPrincipal pEPrincipal;
 	private PanelPPrincipal pPPrincipal;
+	private PanelAdPrincipal pAdPrincipal;
 
 	public VentanaPrincipal() {
 		setTitle("BosqueHealthApp");
@@ -34,6 +35,10 @@ public class VentanaPrincipal extends JFrame {
 		pPPrincipal = new PanelPPrincipal();
 		pPPrincipal.setBounds(0, 0, 1300, 700);
 		getContentPane().add(pPPrincipal);
+		
+		pAdPrincipal = new PanelAdPrincipal();
+		pAdPrincipal.setBounds(0, 0, 1300, 700);
+		getContentPane().add(pAdPrincipal);
 
 		
 	}
@@ -47,21 +52,28 @@ public class VentanaPrincipal extends JFrame {
 	public void cambiarVisibilidad(int panelVisible) {
 		switch (panelVisible) {
 		case 1:
+			pAdPrincipal.setVisible(false);
 			pPPrincipal.setVisible(false);
 			pEPrincipal.setVisible(false);
 			pAccesosPrincipal.setVisible(true);
 			break;
 		case 2:
+			pEPrincipal.setVisible(false);
+			pAdPrincipal.setVisible(false);
 			pAccesosPrincipal.setVisible(false);
 			pPPrincipal.setVisible(true);
 			break;
 		case 3:
+			pAdPrincipal.setVisible(false);
 			pPPrincipal.setVisible(false);
 			pAccesosPrincipal.setVisible(false);
 			pEPrincipal.setVisible(true);
 			break;
 		case 4:
-
+			pPPrincipal.setVisible(false);
+			pAccesosPrincipal.setVisible(false);
+			pEPrincipal.setVisible(false);
+			pAdPrincipal.setVisible(true);
 			break;
 		default:
 			break;
@@ -90,6 +102,14 @@ public class VentanaPrincipal extends JFrame {
 
 	public void setpPPrincipal(PanelPPrincipal pPPrincipal) {
 		this.pPPrincipal = pPPrincipal;
+	}
+
+	public PanelAdPrincipal getpAdPrincipal() {
+		return pAdPrincipal;
+	}
+
+	public void setpAdPrincipal(PanelAdPrincipal pAdPrincipal) {
+		this.pAdPrincipal = pAdPrincipal;
 	}
 
 	
