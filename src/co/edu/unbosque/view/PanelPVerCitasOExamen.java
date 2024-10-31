@@ -50,7 +50,7 @@ public class PanelPVerCitasOExamen extends JPanel {
 		setLayout(null);
 		setBackground(new Color(255, 255, 255));
 		inicializarComponentes();
-		setVisible(false);
+		setVisible(true);
 	}
 
 	/**
@@ -61,25 +61,26 @@ public class PanelPVerCitasOExamen extends JPanel {
 		tblVerCitasOExamen.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		TableColumnModel columnModel = tblVerCitasOExamen.getColumnModel();
 		columnModel.getColumn(0).setPreferredWidth(200);
-		columnModel.getColumn(1).setPreferredWidth(500);
+		columnModel.getColumn(1).setPreferredWidth(600);
 		columnModel.getColumn(2).setPreferredWidth(300);
-		columnModel.getColumn(3).setPreferredWidth(300);
+		columnModel.getColumn(3).setPreferredWidth(200);
 		tblVerCitasOExamen.setBounds(0, 40, 1300, 590);
 
 		lblCita = new JLabel("Cita");
-		lblCita.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblCita.setBounds(10, 10, 300, 20);
 
 		lblExamen = new JLabel("Exámen");
-		lblExamen.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblExamen.setBounds(10, 10, 300, 20);
+		lblExamen.setVisible(false);
 
 		lblNombreEspecialista = new JLabel("Nombre Especialista");
-		lblNombreEspecialista.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblNombreEspecialista.setBounds(210, 10, 300, 20);
 
 		lblFecha = new JLabel("Fecha");
-		lblFecha.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblFecha.setBounds(810, 10, 300, 20);
 
 		lblHora = new JLabel("Hora");
-		lblHora.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblHora.setBounds(1110, 10, 300, 20);
 
 		scrollPane = new JScrollPane(tblVerCitasOExamen);
 		

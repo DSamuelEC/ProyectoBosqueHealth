@@ -51,6 +51,26 @@ public class Controller implements ActionListener {
 
 		ventanaP.getpEPrincipal().getpSolicitudTurno().getBtnAceptar().addActionListener(this);
 		ventanaP.getpEPrincipal().getpSolicitudTurno().getBtnRechazar().addActionListener(this);
+		
+//		Paciente
+		ventanaP.getpPPrincipal().getpPSuperior().getBtnAgendarCita().addActionListener(this);
+		ventanaP.getpPPrincipal().getpPSuperior().getBtnCancelarCita().addActionListener(this);
+		ventanaP.getpPPrincipal().getpPSuperior().getBtnCerrarSesion().addActionListener(this);
+		ventanaP.getpPPrincipal().getpPSuperior().getBtnReagendarCita().addActionListener(this);
+		ventanaP.getpPPrincipal().getpPSuperior().getBtnVerCitas().addActionListener(this);
+		ventanaP.getpPPrincipal().getpPSuperior().getBtnVerExamenes().addActionListener(this);
+		ventanaP.getpPPrincipal().getpPSuperior().getBtnVerMas().addActionListener(this);
+		
+		ventanaP.getpPPrincipal().getpPVerMas().getBtnAtras().addActionListener(this);
+		ventanaP.getpPPrincipal().getpPVerMas().getBtnExamenes().addActionListener(this);
+		ventanaP.getpPPrincipal().getpPVerMas().getBtnResultadoExamen().addActionListener(this);
+		ventanaP.getpPPrincipal().getpPVerMas().getBtnSubmit().addActionListener(this);
+		ventanaP.getpPPrincipal().getpPVerMas().getBtnTratamiento().addActionListener(this);
+		
+		ventanaP.getpPPrincipal().getpPCrearOActualizarCita().getBtnAgendar().addActionListener(this);
+		ventanaP.getpPPrincipal().getpPCrearOActualizarCita().getBtnBuscarDisponibilidad().addActionListener(this);
+		
+		
 	}
 
 	public void run() {
@@ -146,6 +166,38 @@ public class Controller implements ActionListener {
 		case "P_SOLICITUD_TURNO_ESPECIALISTA_RECHAZAR":
 			ventanaP.getpEPrincipal().cambiarVisibilidad(1);
 			vistaE.mostrarInformacion("Haz rechazado el turno de tu compañero .:Nombre:. mas info al correo", 1);
+			break;
+			
+//		     PACIENTE
+		case "P_SUPERIOR_PACIENTE_VER_CITAS":
+			ventanaP.getpPPrincipal().cambiarVisibilidad(1);
+			break;
+	/*	case "P_SUPERIOR_PACIENTE_VER_EXAMENES":
+			ventanaP.getpPPrincipal().cambiarVisibilidad(1);
+			break; */
+		case "P_SUPERIOR_PACIENTE_AGENDAR_CITA":
+			ventanaP.getpPPrincipal().cambiarVisibilidad(2);
+			break;
+	/*	case "P_SUPERIOR_PACIENTE_REAGENDAR_CITA":
+			ventanaP.getpPPrincipal().cambiarVisibilidad(2);
+			break;
+		case "P_SUPERIOR_PACIENTE_CANCELAR_CITA":
+			ventanaP.getpPPrincipal().cambiarVisibilidad(2);
+			break; */
+		case "P_SUPERIOR_PACIENTE_CERRAR_SESION":
+			ventanaP.getpPPrincipal().cambiarVisibilidad(1);
+			vistaE.mostrarInformacion("Cerrando sesion, hasta la proxima...", 1);
+			ventanaP.cambiarVisibilidad(1);
+			break;
+		case "P_SUPERIOR_PACIENTE_VER_MAS":
+			ventanaP.getpPPrincipal().cambiarVisibilidad(3);
+			break;
+		case "P_VER_MAS_PACIENTE_ATRAS":
+			ventanaP.getpPPrincipal().cambiarVisibilidad(1);
+			break;
+		case "P_VER_MAS_PACIENTE_SUBMIT":
+			ventanaP.getpPPrincipal().cambiarVisibilidad(1);
+			vistaE.mostrarInformacion("FATAL ERROR: AUN NO HAY CAMBIOS", 0);
 			break;
 		default:
 			break;

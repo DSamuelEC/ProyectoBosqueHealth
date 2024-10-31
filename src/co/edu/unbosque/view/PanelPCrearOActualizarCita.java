@@ -80,7 +80,7 @@ public class PanelPCrearOActualizarCita extends JPanel {
 		setLayout(null);
 		setBackground(new Color(255, 255, 255));
 		inicializarComponentes();
-		setVisible(true);
+		setVisible(false);
 	}
 
 	/**
@@ -107,31 +107,32 @@ public class PanelPCrearOActualizarCita extends JPanel {
 		btnAgendar.setActionCommand("P_CREAR_O_ACTUALIZAR_PACIENTE_AGENDAR");
 
 		lblDisponinilidad = new JLabel("DISPONIBILIDAD");
-		lblDisponinilidad.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblDisponinilidad.setBounds(610, 100, 300, 30);
 
 		lblCita = new JLabel("Cita");
-		lblCita.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblCita.setBounds(10, 120, 300, 30);
 
 		lblExamen = new JLabel("Exámen");
-		lblExamen.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblExamen.setBounds(10, 120, 300, 30);
+		lblExamen.setVisible(false);
 
 		lblNombreEspecialista = new JLabel("Nombre Especialista");
-		lblNombreEspecialista.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblNombreEspecialista.setBounds(210, 120, 300, 30);
 
 		lblFecha = new JLabel("Fecha");
-		lblFecha.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblFecha.setBounds(810, 120, 300, 30);
 
 		lblHora = new JLabel("Hora");
-		lblHora.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblHora.setBounds(1110, 120, 300, 30);
 
 		tblCrearOActualizar = new JTable(50, 4);
 		tblCrearOActualizar.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		TableColumnModel columnModel = tblCrearOActualizar.getColumnModel();
 		columnModel.getColumn(0).setPreferredWidth(200);
-		columnModel.getColumn(1).setPreferredWidth(500);
+		columnModel.getColumn(1).setPreferredWidth(600);
 		columnModel.getColumn(2).setPreferredWidth(300);
-		columnModel.getColumn(3).setPreferredWidth(300);
-		tblCrearOActualizar.setBounds(0, 400, 1300, 590);
+		columnModel.getColumn(3).setPreferredWidth(200);
+		tblCrearOActualizar.setBounds(0, 150, 1300, 590);
 		
 		scrollPane = new JScrollPane(tblCrearOActualizar);
 		

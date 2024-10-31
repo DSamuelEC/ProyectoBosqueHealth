@@ -44,6 +44,10 @@ public class PanelPSuperior extends JPanel {
 	 * Acceso
 	 */
 	private JButton btnCerrarSesion;
+	/**
+	 * Atributo encargado de mostrar un boton que de acceso al Panel VerMas del Paciente
+	 */
+	private JButton btnVerMas;
 
 	/**
 	 * Metodo Constructor de la clase
@@ -62,31 +66,36 @@ public class PanelPSuperior extends JPanel {
 	public void inicializarComponentes() {
 
 		lblNombre = new JLabel("Nombre Usuario");
-		lblNombre.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblNombre.setBounds(50, 20, 700, 60);
 
 		btnVerCitas = new JButton("Ver Citas");
-		btnVerCitas.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnVerCitas.setBounds(240, 30, 130, 40);
 		btnVerCitas.setActionCommand("P_SUPERIOR_PACIENTE_VER_CITAS");
 
 		btnVerExamenes = new JButton("Ver Examenes");
-		btnVerExamenes.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnVerExamenes.setBounds(390, 30, 130, 40);
 		btnVerExamenes.setActionCommand("P_SUPERIOR_PACIENTE_VER_EXAMENES");
 		
 		btnAgendarCita = new JButton("Agendar Cita");
-		btnAgendarCita.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnAgendarCita.setBounds(690, 30, 130, 40);
 		btnAgendarCita.setActionCommand("P_SUPERIOR_PACIENTE_AGENDAR_CITA");
 
 		btnReagendarCita = new JButton("Reagendar Cita");
-		btnReagendarCita.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnReagendarCita.setBounds(840, 30, 130, 40);
 		btnReagendarCita.setActionCommand("P_SUPERIOR_PACIENTE_REAGENDAR_CITA");
 
 		btnCancelarCita = new JButton("Cancelar Cita");
-		btnCancelarCita.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnCancelarCita.setBounds(990, 30, 130, 40);
 		btnCancelarCita.setActionCommand("P_SUPERIOR_PACIENTE_CANCELAR_CITA");
 
 		btnCerrarSesion = new JButton("Cerrar Sesion");
-		btnCerrarSesion.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnCerrarSesion.setBounds(1140, 30, 130, 40);
 		btnCerrarSesion.setActionCommand("P_SUPERIOR_PACIENTE_CERRAR_SESION");
+		
+		btnVerMas = new JButton("Ver Mas");
+		btnVerMas.setBounds(540, 30, 130, 40);
+		btnVerMas.setActionCommand("P_SUPERIOR_PACIENTE_VER_MAS");
+		
 		
 		add(lblNombre);
 		add(btnAgendarCita);
@@ -95,6 +104,7 @@ public class PanelPSuperior extends JPanel {
 		add(btnReagendarCita);
 		add(btnVerCitas);
 		add(btnVerExamenes);
+		add(btnVerMas);
 
 	}
 
@@ -223,6 +233,22 @@ public class PanelPSuperior extends JPanel {
 
 	public void setBtnCerrarSesion(JButton btnCerrarSesion) {
 		this.btnCerrarSesion = btnCerrarSesion;
+	}
+	/**
+	 * Metodo que retorna el valor del atributo btnVerMas
+	 * 
+	 * @return Contenido del atributo btnVerMas
+	 */
+	public JButton getBtnVerMas() {
+		return btnVerMas;
+	}
+	/**
+	 * Metodo que actualiza el valor del atributo btnVerMas
+	 * 
+	 * @param btnVerMas valor a actualizar
+	 */
+	public void setBtnVerMas(JButton btnVerMas) {
+		this.btnVerMas = btnVerMas;
 	}
 
 }

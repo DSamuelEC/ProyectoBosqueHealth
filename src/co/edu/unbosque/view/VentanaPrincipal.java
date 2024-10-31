@@ -21,6 +21,8 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	public void inicializarComponentes() {
+		
+	
 		pAccesosPrincipal = new PanelAccesosPrincipal();
 		pAccesosPrincipal.setBounds(0, 0, 1300, 700);
 		getContentPane().add(pAccesosPrincipal);
@@ -32,17 +34,20 @@ public class VentanaPrincipal extends JFrame {
 		pPPrincipal = new PanelPPrincipal();
 		pPPrincipal.setBounds(0, 0, 1300, 700);
 		getContentPane().add(pPPrincipal);
+
+		
 	}
 
 	/**
 	 * Metodo que cambia la visibilidad de los paneles principales, el orden son 1 =
-	 * pAccesosPrincipal, 3 = pEPrincipal, y faltan los otros 2 paneles principales
+	 * pAccesosPrincipal, 2 = pPPrincipal 3 = pEPrincipal, y falta Admin
 	 * 
 	 * @param panelVisible index panel que se hara visible
 	 */
 	public void cambiarVisibilidad(int panelVisible) {
 		switch (panelVisible) {
 		case 1:
+			pPPrincipal.setVisible(false);
 			pEPrincipal.setVisible(false);
 			pAccesosPrincipal.setVisible(true);
 			break;
@@ -51,6 +56,7 @@ public class VentanaPrincipal extends JFrame {
 			pPPrincipal.setVisible(true);
 			break;
 		case 3:
+			pPPrincipal.setVisible(false);
 			pAccesosPrincipal.setVisible(false);
 			pEPrincipal.setVisible(true);
 			break;
@@ -85,5 +91,7 @@ public class VentanaPrincipal extends JFrame {
 	public void setpPPrincipal(PanelPPrincipal pPPrincipal) {
 		this.pPPrincipal = pPPrincipal;
 	}
+
 	
+
 }

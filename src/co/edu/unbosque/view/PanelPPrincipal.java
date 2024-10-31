@@ -32,18 +32,17 @@ public class PanelPPrincipal extends JPanel {
 		setLayout(null);
 
 		inicializarComponentes();
-		setVisible(true);
+		setVisible(false);
 	}
 	/**
 	 * Metodo encargado de inicializar todos los atributos de la clase
 	 */
 	public void inicializarComponentes() {
+		pPSuperior = new PanelPSuperior();
+		pPSuperior.setBounds(0, 0, 1300, 100);
 		
 		pPCrearOActualizarCita = new PanelPCrearOActualizarCita();
 		pPCrearOActualizarCita.setBounds(0, 110, 1300, 590);
-		
-		pPSuperior = new PanelPSuperior();
-		pPSuperior.setBounds(0, 0, 1300, 100);
 		
 		pPVerCitasOExamen = new PanelPVerCitasOExamen();
 		pPVerCitasOExamen.setBounds(0, 110, 1300, 590);
@@ -51,8 +50,8 @@ public class PanelPPrincipal extends JPanel {
 		pPVerMas = new PanelPVerMas();
 		pPVerMas.setBounds(0, 110, 1300, 590);
 	
-		add(pPCrearOActualizarCita);
 		add(pPSuperior);
+		add(pPCrearOActualizarCita);
 		add(pPVerCitasOExamen);
 		add(pPVerMas);
 		
@@ -60,29 +59,26 @@ public class PanelPPrincipal extends JPanel {
 	}
 	/**
 	 * Metodo que cambia la visibilidad de los paneles, el orden son 1 =
-	 * pPVerCitasOExamen, 2 = pPVerMas, 3 = pPCrearOActualizarCita, 
+	 * pPVerCitasOExamen, 2 = pPCrearOActualizarCita, 3 = pPVerMas, 
 	 * 
 	 * @param panelVisible index panel que se hara visible
 	 */
 	public void cambiarVisibilidad(int panelVisible) {
 		switch (panelVisible) {
 		case 1:
-			pPVerCitasOExamen.setVisible(false);
 			pPVerMas.setVisible(false);
 			pPCrearOActualizarCita.setVisible(false);
-			
+			pPVerCitasOExamen.setVisible(true);
 			break;
 		case 2:
 			pPVerCitasOExamen.setVisible(false);
-			pPCrearOActualizarCita.setVisible(false);
 			pPVerMas.setVisible(false);
-			
+			pPCrearOActualizarCita.setVisible(true);
 			break;
 		case 3:
-			pPVerMas.setVisible(false);
-			pPCrearOActualizarCita.setVisible(false);
 			pPVerCitasOExamen.setVisible(false);
-			
+			pPCrearOActualizarCita.setVisible(false);
+			pPVerMas.setVisible(true);
 			break;
 		default:
 			break;

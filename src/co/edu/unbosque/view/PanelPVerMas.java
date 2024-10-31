@@ -58,6 +58,15 @@ public class PanelPVerMas extends JPanel {
 	 * Resultado del Examen del paciente
 	 */
 	private JButton btnResultadoExamen;
+	/**
+	 * Atributo encargado de mostrar un boton que guarde la información y vuelva al
+	 * panel VerCitasOexamen
+	 */
+	private JButton btnSubmit;
+	/**
+	 * Atributo encargado de mostrar un boton de volver al VerCitasOexamen
+	 */
+	private JButton btnAtras;
 
 	/**
 	 * Metodo Constructor de la clase
@@ -76,37 +85,45 @@ public class PanelPVerMas extends JPanel {
 	public void inicializarComponentes() {
 
 		lblFecha = new JLabel("Fecha");
-		lblFecha.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblFecha.setBounds(50, 30, 100, 30);
 
 		lblHora = new JLabel("Hora");
-		lblHora.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblHora.setBounds(900, 30, 100, 30);
 
 		lblNombreEspecialista = new JLabel("Nombre Especialista");
-		lblNombreEspecialista.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblNombreEspecialista.setBounds(50, 100, 200, 30);
 
 		lblCorreoEspecialista = new JLabel("Correo Especialista");
-		lblCorreoEspecialista.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblCorreoEspecialista.setBounds(50, 140, 200, 30);
 
 		lblNombrePaciente = new JLabel("Nombre Paciente");
-		lblNombrePaciente.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblNombrePaciente.setBounds(50, 180, 200, 30);
 
 		lblCorreoPaciente = new JLabel("Correro Paciente");
-		lblCorreoPaciente.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblCorreoPaciente.setBounds(50, 220, 200, 30);
 
 		lblEspecialidad = new JLabel("Especialidad");
-		lblEspecialidad.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblEspecialidad.setBounds(50, 260, 200, 30);
 
 		btnTratamiento = new JButton("Tratamiento");
-		btnTratamiento.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnTratamiento.setBounds(150, 400, 300, 40);
 		btnTratamiento.setActionCommand("P_VER_MAS_PACIENTE_TRATAMIENTO");
 
 		btnExamenes = new JButton("Exámenes");
-		btnTratamiento.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnExamenes.setBounds(500, 400, 300, 40);
 		btnExamenes.setActionCommand("P_VER_MAS_PACIENTE_EXAMENES");
 
 		btnResultadoExamen = new JButton("Resultado Exámen");
-		btnResultadoExamen.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnResultadoExamen.setBounds(850, 400, 300, 40);
 		btnResultadoExamen.setActionCommand("P_VER_MAS_PACIENTE_RESULTADO_EXAMEN");
+		
+		btnSubmit = new JButton("Submit");
+		btnSubmit.setBounds(680, 480, 100, 30);
+		btnSubmit.setActionCommand("P_VER_MAS_PACIENTE_SUBMIT");
+
+		btnAtras = new JButton("Atras");
+		btnAtras.setBounds(510, 480, 100, 30);
+		btnAtras.setActionCommand("P_VER_MAS_PACIENTE_ATRAS");
 
 		add(lblCorreoEspecialista);
 		add(lblCorreoPaciente);
@@ -118,7 +135,8 @@ public class PanelPVerMas extends JPanel {
 		add(lblHora);
 		add(lblNombreEspecialista);
 		add(lblNombrePaciente);
-
+		add(btnAtras);
+		add(btnSubmit);
 	}
 
 	/**
@@ -144,7 +162,7 @@ public class PanelPVerMas extends JPanel {
 	 * 
 	 * @return Contenido del atributo lblHora
 	 */
-	public JLabel getLblHOra() {
+	public JLabel getLblHora() {
 		return lblHora;
 	}
 
@@ -153,7 +171,7 @@ public class PanelPVerMas extends JPanel {
 	 * 
 	 * @param lblHora valor a actualizar
 	 */
-	public void setLblHOra(JLabel lblHOra) {
+	public void setLblHora(JLabel lblHOra) {
 		this.lblHora = lblHOra;
 	}
 
@@ -216,7 +234,7 @@ public class PanelPVerMas extends JPanel {
 	 * 
 	 * @return Contenido del atributo lblCorreoPaciente
 	 */
-	public JLabel getLblCorreroPaciente() {
+	public JLabel getLblCorreoPaciente() {
 		return lblCorreoPaciente;
 	}
 
@@ -225,7 +243,7 @@ public class PanelPVerMas extends JPanel {
 	 * 
 	 * @param lblCorreoPaciente valor a actualizar
 	 */
-	public void setLblCorreroPaciente(JLabel lblCorreroPaciente) {
+	public void setLblCorreoPaciente(JLabel lblCorreroPaciente) {
 		this.lblCorreoPaciente = lblCorreroPaciente;
 	}
 
@@ -288,7 +306,7 @@ public class PanelPVerMas extends JPanel {
 	 * 
 	 * @return Contenido del atributo btnResultadoExamen
 	 */
-	public JButton getBtnResultadoExamrn() {
+	public JButton getBtnResultadoExamen() {
 		return btnResultadoExamen;
 	}
 
@@ -297,8 +315,41 @@ public class PanelPVerMas extends JPanel {
 	 * 
 	 * @param btnResultadoExamen valor a actualizar
 	 */
-	public void setBtnResultadoExamrn(JButton btnResultadoExamrn) {
+	public void setBtnResultadoExamen(JButton btnResultadoExamrn) {
 		this.btnResultadoExamen = btnResultadoExamrn;
 	}
+	/**
+	 * Metodo que retorna el valor del atributo btnSubmit
+	 * 
+	 * @return Contenido del atributo btnSubmit
+	 */
+	public JButton getBtnSubmit() {
+		return btnSubmit;
+	}
+	/**
+	 * Metodo que actualiza el valor del atributo btnSubmit
+	 * 
+	 * @param btnSubmit valor a actualizar
+	 */
+	public void setBtnSubmit(JButton btnSubmit) {
+		this.btnSubmit = btnSubmit;
+	}
+	/**
+	 * Metodo que retorna el valor del atributo btnAtras
+	 * 
+	 * @return Contenido del atributo btnAtras
+	 */
+	public JButton getBtnAtras() {
+		return btnAtras;
+	}
+	/**
+	 * Metodo que actualiza el valor del atributo btnAtras
+	 * 
+	 * @param btnAtras valor a actualizar
+	 */
+	public void setBtnAtras(JButton btnAtras) {
+		this.btnAtras = btnAtras;
+	}
+	
 
 }
