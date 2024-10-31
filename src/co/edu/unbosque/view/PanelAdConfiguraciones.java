@@ -1,5 +1,9 @@
 package co.edu.unbosque.view;
 
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -88,7 +92,7 @@ public class PanelAdConfiguraciones extends JPanel {
 	public PanelAdConfiguraciones() {
 		setSize(1300, 700);
 		setLayout(null);
-
+		setBackground(new Color(255, 255, 255));
 		inicializarComponentes();
 		setVisible(false);
 	}
@@ -98,54 +102,56 @@ public class PanelAdConfiguraciones extends JPanel {
 	 */
 	public void inicializarComponentes() {
 		lblTurnos = new JLabel("Número de turnos al mes");
-		lblTurnos.setBounds(550, 100, 400, 100);
+		lblTurnos.setBounds(130, 50, 400, 100);
 
 		lblEstadoTurnos = new JLabel("1");
-		lblEstadoTurnos.setBounds(550, 100, 400, 100);
+		lblEstadoTurnos.setBounds(900, 50, 400, 100);
 
 		btnMenosTurnos = new JButton("Menos");
-		btnMenosTurnos.setBounds(570, 250, 150, 60);
+		btnMenosTurnos.setBounds(680, 70, 150, 60);
 		btnMenosTurnos.setActionCommand("P_AD_CONFIGURACIONES_MENOS_TURNOS");
 
 		btnMasTurnos = new JButton("Más");
-		btnMasTurnos.setBounds(570, 250, 150, 60);
+		btnMasTurnos.setBounds(980, 70, 150, 60);
 		btnMasTurnos.setActionCommand("P_AD_CONFIGURACIONES_MAS_TURNOS");
 
 		lblEspecialistas = new JLabel("Número de especialistas por área");
-		lblEspecialistas.setBounds(550, 100, 400, 100);
+		lblEspecialistas.setBounds(130, 180, 400, 100);
 
 		lblEstadoEspecialistas = new JLabel("1");
-		lblEstadoEspecialistas.setBounds(550, 100, 400, 100);
+		lblEstadoEspecialistas.setBounds(900, 180, 400, 100);
 
 		btnMenosEspecialistas = new JButton("Menos");
-		btnMenosEspecialistas.setBounds(570, 250, 150, 60);
+		btnMenosEspecialistas.setBounds(680, 200, 150, 60);
 		btnMenosEspecialistas.setActionCommand("P_AD_CONFIGURACIONES_MENOS_TURNOS");
 
 		btnMasEspecialistas = new JButton("Más");
-		btnMasEspecialistas.setBounds(570, 250, 150, 60);
+		btnMasEspecialistas.setBounds(980, 200, 150, 60);
 		btnMasEspecialistas.setActionCommand("P_AD_CONFIGURACIONES_MAS_TURNOS");
 
 		lblDias = new JLabel("Número de días para el recordatorio");
-		lblDias.setBounds(550, 100, 400, 100);
+		lblDias.setBounds(130, 310, 400, 100);
 
 		lblEstadoDias = new JLabel("1");
-		lblEstadoDias.setBounds(550, 100, 400, 100);
+		lblEstadoDias.setBounds(900, 310, 400, 100);
 
 		btnMenosDias = new JButton("Menos");
-		btnMenosDias.setBounds(570, 250, 150, 60);
+		btnMenosDias.setBounds(680, 330, 150, 60);
 		btnMenosDias.setActionCommand("P_AD_CONFIGURACIONES_MENOS_DIAS");
 
 		btnMasDias = new JButton("Más");
-		btnMasDias.setBounds(570, 250, 150, 60);
+		btnMasDias.setBounds(980, 330, 150, 60);
 		btnMasDias.setActionCommand("P_AD_CONFIGURACIONES_MAS_DIAS");
 
 		btnAtras = new JButton("Atras");
-		btnAtras.setBounds(570, 250, 150, 60);
+		btnAtras.setBounds(500, 460, 100, 40);
 		btnAtras.setActionCommand("P_AD_CONFIGURACIONES_ATRAS");
 
 		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(570, 250, 150, 60);
+		btnSubmit.setBounds(670, 460, 100, 40);
 		btnSubmit.setActionCommand("P_AD_CONFIGURACIONES_SUBMIT");
+		
+		
 
 		add(lblTurnos);
 		add(lblEstadoTurnos);
@@ -162,7 +168,7 @@ public class PanelAdConfiguraciones extends JPanel {
 		add(btnAtras);
 		add(btnSubmit);
 	}
-
+	
 	/**
 	 * Metodo que retorna el valor del atributo lblTurnos
 	 * 

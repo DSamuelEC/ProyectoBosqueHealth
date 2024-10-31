@@ -3,6 +3,8 @@ package co.edu.unbosque.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JLabel;
+
 import co.edu.unbosque.view.VentanaPrincipal;
 import co.edu.unbosque.view.VistaVentanasEmergentes;
 
@@ -51,7 +53,7 @@ public class Controller implements ActionListener {
 
 		ventanaP.getpEPrincipal().getpSolicitudTurno().getBtnAceptar().addActionListener(this);
 		ventanaP.getpEPrincipal().getpSolicitudTurno().getBtnRechazar().addActionListener(this);
-		
+
 //		Paciente
 		ventanaP.getpPPrincipal().getpPSuperior().getBtnAgendarCita().addActionListener(this);
 		ventanaP.getpPPrincipal().getpPSuperior().getBtnCancelarCita().addActionListener(this);
@@ -60,18 +62,18 @@ public class Controller implements ActionListener {
 		ventanaP.getpPPrincipal().getpPSuperior().getBtnVerCitas().addActionListener(this);
 		ventanaP.getpPPrincipal().getpPSuperior().getBtnVerExamenes().addActionListener(this);
 		ventanaP.getpPPrincipal().getpPSuperior().getBtnVerMas().addActionListener(this);
-		
+
 		ventanaP.getpPPrincipal().getpPVerMas().getBtnAtras().addActionListener(this);
 		ventanaP.getpPPrincipal().getpPVerMas().getBtnExamenes().addActionListener(this);
 		ventanaP.getpPPrincipal().getpPVerMas().getBtnResultadoExamen().addActionListener(this);
 		ventanaP.getpPPrincipal().getpPVerMas().getBtnSubmit().addActionListener(this);
 		ventanaP.getpPPrincipal().getpPVerMas().getBtnTratamiento().addActionListener(this);
-		
+
 		ventanaP.getpPPrincipal().getpPCrearOActualizarCita().getBtnAgendar().addActionListener(this);
 		ventanaP.getpPPrincipal().getpPCrearOActualizarCita().getBtnBuscarDisponibilidad().addActionListener(this);
 
 //      Admin
-		
+
 		ventanaP.getpAdPrincipal().getpAdBotones().getBtnAsignarTurnos().addActionListener(this);
 		ventanaP.getpAdPrincipal().getpAdBotones().getBtnCerrarSesion().addActionListener(this);
 		ventanaP.getpAdPrincipal().getpAdBotones().getBtnConfiguraciones().addActionListener(this);
@@ -79,7 +81,7 @@ public class Controller implements ActionListener {
 		ventanaP.getpAdPrincipal().getpAdBotones().getBtnReportes().addActionListener(this);
 		ventanaP.getpAdPrincipal().getpAdBotones().getBtnVerEspecialistas().addActionListener(this);
 		ventanaP.getpAdPrincipal().getpAdBotones().getBtnVerPacientes().addActionListener(this);
-		
+
 		ventanaP.getpAdPrincipal().getpAdConfiguraciones().getBtnAtras().addActionListener(this);
 		ventanaP.getpAdPrincipal().getpAdConfiguraciones().getBtnMasDias().addActionListener(this);
 		ventanaP.getpAdPrincipal().getpAdConfiguraciones().getBtnMasEspecialistas().addActionListener(this);
@@ -88,11 +90,54 @@ public class Controller implements ActionListener {
 		ventanaP.getpAdPrincipal().getpAdConfiguraciones().getBtnMenosEspecialistas().addActionListener(this);
 		ventanaP.getpAdPrincipal().getpAdConfiguraciones().getBtnMenosTurnos().addActionListener(this);
 		ventanaP.getpAdPrincipal().getpAdConfiguraciones().getBtnSubmit().addActionListener(this);
-		
+
 		ventanaP.getpAdPrincipal().getpAdRegistrarEspecialista().getBtnAtras().addActionListener(this);
 		ventanaP.getpAdPrincipal().getpAdRegistrarEspecialista().getBtnSubmit().addActionListener(this);
-		
-		
+
+//      Admin Configuraciones
+
+		ventanaP.getpAdPrincipal().getpAdConfiguraciones().getBtnMasTurnos().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				incrementarValor(ventanaP.getpAdPrincipal().getpAdConfiguraciones().getLblEstadoTurnos());
+			}
+		});
+
+		ventanaP.getpAdPrincipal().getpAdConfiguraciones().getBtnMenosTurnos().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				decrementarValor(ventanaP.getpAdPrincipal().getpAdConfiguraciones().getLblEstadoTurnos());
+			}
+		});
+
+		ventanaP.getpAdPrincipal().getpAdConfiguraciones().getBtnMasEspecialistas().addActionListener(new ActionListener() {
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		        incrementarValor(ventanaP.getpAdPrincipal().getpAdConfiguraciones().getLblEstadoEspecialistas());
+		    }
+		});
+
+		ventanaP.getpAdPrincipal().getpAdConfiguraciones().getBtnMenosEspecialistas().addActionListener(new ActionListener() {
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		        decrementarValor(ventanaP.getpAdPrincipal().getpAdConfiguraciones().getLblEstadoEspecialistas());
+		    }
+		});
+
+		ventanaP.getpAdPrincipal().getpAdConfiguraciones().getBtnMasDias().addActionListener(new ActionListener() {
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		        incrementarValor(ventanaP.getpAdPrincipal().getpAdConfiguraciones().getLblEstadoDias());
+		    }
+		});
+
+		ventanaP.getpAdPrincipal().getpAdConfiguraciones().getBtnMenosDias().addActionListener(new ActionListener() {
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		        decrementarValor(ventanaP.getpAdPrincipal().getpAdConfiguraciones().getLblEstadoDias());
+		    }
+		});
+
 	}
 
 	public void run() {
@@ -189,23 +234,24 @@ public class Controller implements ActionListener {
 			ventanaP.getpEPrincipal().cambiarVisibilidad(1);
 			vistaE.mostrarInformacion("Haz rechazado el turno de tu compañero .:Nombre:. mas info al correo", 1);
 			break;
-			
+
 //		     PACIENTE
 		case "P_SUPERIOR_PACIENTE_VER_CITAS":
 			ventanaP.getpPPrincipal().cambiarVisibilidad(1);
 			break;
-	/*	case "P_SUPERIOR_PACIENTE_VER_EXAMENES":
-			ventanaP.getpPPrincipal().cambiarVisibilidad(1);
-			break; */
+		/*
+		 * case "P_SUPERIOR_PACIENTE_VER_EXAMENES":
+		 * ventanaP.getpPPrincipal().cambiarVisibilidad(1); break;
+		 */
 		case "P_SUPERIOR_PACIENTE_AGENDAR_CITA":
 			ventanaP.getpPPrincipal().cambiarVisibilidad(2);
 			break;
-	/*	case "P_SUPERIOR_PACIENTE_REAGENDAR_CITA":
-			ventanaP.getpPPrincipal().cambiarVisibilidad(2);
-			break;
-		case "P_SUPERIOR_PACIENTE_CANCELAR_CITA":
-			ventanaP.getpPPrincipal().cambiarVisibilidad(2);
-			break; */
+		/*
+		 * case "P_SUPERIOR_PACIENTE_REAGENDAR_CITA":
+		 * ventanaP.getpPPrincipal().cambiarVisibilidad(2); break; case
+		 * "P_SUPERIOR_PACIENTE_CANCELAR_CITA":
+		 * ventanaP.getpPPrincipal().cambiarVisibilidad(2); break;
+		 */
 		case "P_SUPERIOR_PACIENTE_CERRAR_SESION":
 			ventanaP.getpPPrincipal().cambiarVisibilidad(1);
 			vistaE.mostrarInformacion("Cerrando sesion, hasta la proxima...", 1);
@@ -240,13 +286,42 @@ public class Controller implements ActionListener {
 		case "P_BOTONES_ADMIN_CONFIGURACIONES":
 			ventanaP.getpAdPrincipal().cambiarVisibilidad(3);
 			break;
-		case "P_BOTONES_ADMIN_CERRAR_SESION": 
+		case "P_BOTONES_ADMIN_CERRAR_SESION":
 			ventanaP.getpAdPrincipal().cambiarVisibilidad(1);
 			vistaE.mostrarInformacion("Cerrando sesion, hasta la proxima...", 1);
 			ventanaP.cambiarVisibilidad(1);
 			break;
+		case "P_AD_CONFIGURACIONES_ATRAS":
+			ventanaP.getpAdPrincipal().cambiarVisibilidad(1);
+			break;
+		case "P_AD_CONFIGURACIONES_SUBMIT":
+			ventanaP.getpAdPrincipal().cambiarVisibilidad(1);
+			vistaE.mostrarInformacion("FATAL ERROR: AUN NO HAY CAMBIOS", 0);
+		case "P_AD_REGISTRAR_ESPECIALISTA_ATRAS":
+			ventanaP.getpAdPrincipal().cambiarVisibilidad(1);
+			break;
+		case "P_AD_REGISTRAR_ESPECIALISTA_SUBMIT":
+			ventanaP.getpAdPrincipal().cambiarVisibilidad(1);
+			vistaE.mostrarInformacion("FATAL ERROR: AUN NO HAY CAMBIOS", 0);
+			break;
 		default:
 			break;
+		}
+
+	}
+
+	private void incrementarValor(JLabel label) {
+		int valorActual = Integer.parseInt(label.getText());
+		label.setText(String.valueOf(valorActual + 1));
+	}
+
+	/**
+	 * Método para decrementar el valor del JLabel, con un mínimo de 1
+	 */
+	private void decrementarValor(JLabel label) {
+		int valorActual = Integer.parseInt(label.getText());
+		if (valorActual > 1) {
+			label.setText(String.valueOf(valorActual - 1));
 		}
 	}
 }

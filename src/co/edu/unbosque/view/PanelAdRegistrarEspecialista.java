@@ -67,7 +67,7 @@ public class PanelAdRegistrarEspecialista extends JPanel {
 	public PanelAdRegistrarEspecialista() {
 		setSize(1300, 700);
 		setLayout(null);
-
+		setBackground(new Color(255, 255, 255));
 		inicializarComponentes();
 		setVisible(false);
 	}
@@ -77,39 +77,39 @@ public class PanelAdRegistrarEspecialista extends JPanel {
 	 */
 	public void inicializarComponentes() {
 		lblRegistroEspecialistas = new JLabel("Registrar Especialista");
-		lblRegistroEspecialistas.setBounds(550, 100, 400, 100);
+		lblRegistroEspecialistas.setBounds(580, 20, 300, 30);
 
 		txtNombre = new JTextField();
-		txtNombre.setBounds(300, 120, 700, 60);
+		txtNombre.setBounds(30, 120, 900, 60);
 		configurarPlaceHolder(txtNombre, "Nombre");
 
 		txtCorreo = new JTextField();
-		txtCorreo.setBounds(300, 120, 700, 60);
-		configurarPlaceHolder(txtCorreo, "Nombre");
+		txtCorreo.setBounds(30, 200, 1220, 60);
+		configurarPlaceHolder(txtCorreo, "Correo");
 
 		txtEdad = new JTextField();
-		txtEdad.setBounds(300, 120, 700, 60);
-		configurarPlaceHolder(txtEdad, "Nombre");
+		txtEdad.setBounds(140, 320, 300, 60);
+		configurarPlaceHolder(txtEdad, "Edad");
 
 		txtCedula = new JTextField();
-		txtCedula.setBounds(300, 120, 700, 60);
-		configurarPlaceHolder(txtCedula, "Nombre");
+		txtCedula.setBounds(490, 320, 300, 60);
+		configurarPlaceHolder(txtCedula, "Cedula");
 
 		String[] opcionesSexo = { "F", "M" };
 		ldSexo = new JComboBox<String>(opcionesSexo);
-		ldSexo.setBounds(300, 370, 330, 60);
+		ldSexo.setBounds(840, 320, 300, 60);
 
 		String[] opcionesEspecialidades = { "Cirugía", "Oncología", "Dermatología", "Neumología", "Cardiología",
 				"Medicina Interna" };
 		ldEspecialidad = new JComboBox<String>(opcionesEspecialidades);
-		ldEspecialidad.setBounds(300, 370, 330, 60);
+		ldEspecialidad.setBounds(950, 120, 300, 60);
 
 		btnAtras = new JButton("Atras");
-		btnAtras.setBounds(375, 450, 250, 60);
+		btnAtras.setBounds(360, 450, 200, 40);
 		btnAtras.setActionCommand("P_AD_REGISTRAR_ESPECIALISTA_ATRAS");
 
 		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(670, 450, 250, 60);
+		btnSubmit.setBounds(710, 450, 200, 40);
 		btnSubmit.setActionCommand("P_AD_REGISTRAR_ESPECIALISTA_SUBMIT");
 
 		add(lblRegistroEspecialistas);
