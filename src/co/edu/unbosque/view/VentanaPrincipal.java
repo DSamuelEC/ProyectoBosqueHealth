@@ -47,7 +47,8 @@ public class VentanaPrincipal extends JFrame {
 			pAccesosPrincipal.setVisible(true);
 			break;
 		case 2:
-
+			pAccesosPrincipal.setVisible(false);
+			pPPrincipal.setVisible(true);
 			break;
 		case 3:
 			pAccesosPrincipal.setVisible(false);

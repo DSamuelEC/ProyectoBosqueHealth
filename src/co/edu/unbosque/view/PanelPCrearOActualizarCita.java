@@ -88,22 +88,22 @@ public class PanelPCrearOActualizarCita extends JPanel {
 	 */
 	public void inicializarComponentes() {
 		lblAgendamiento = new JLabel("AGENDAMIENTO DE CITAS");
-		lblAgendamiento.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		lblAgendamiento.setBounds(580, 15, 300, 30);
 
 		String[] opciones = { "Cirugía", "Oncología", "Dermatología", "Neumología", "Cardiología", "Medicina Interna" };
 		ldIngreseEspecialista = new JComboBox<String>(opciones);
-		ldIngreseEspecialista.setBounds(300, 370, 330, 60);
+		ldIngreseEspecialista.setBounds(50, 50, 350, 30);
 
 		txtDigiteFecha = new JTextField();
-		txtDigiteFecha.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		txtDigiteFecha.setBounds(420, 50, 400, 30);
 		configurarPlaceHolder(txtDigiteFecha, "Digite Fecha AA/MM/DD");
 
 		btnBuscarDisponibilidad = new JButton("Buscar Disponibilidad");
-		btnBuscarDisponibilidad.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnBuscarDisponibilidad.setBounds(860, 50, 250, 30);
 		btnBuscarDisponibilidad.setActionCommand("P_CREAR_O_ACTUALIZAR_PACIENTE_BUSCAR_DISPONIBILIDAD");
 
 		btnAgendar = new JButton("Agendar");
-		btnAgendar.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		btnAgendar.setBounds(1150, 50, 100, 30);
 		btnAgendar.setActionCommand("P_CREAR_O_ACTUALIZAR_PACIENTE_AGENDAR");
 
 		lblDisponinilidad = new JLabel("DISPONIBILIDAD");
@@ -131,7 +131,7 @@ public class PanelPCrearOActualizarCita extends JPanel {
 		columnModel.getColumn(1).setPreferredWidth(500);
 		columnModel.getColumn(2).setPreferredWidth(300);
 		columnModel.getColumn(3).setPreferredWidth(300);
-		tblCrearOActualizar.setBounds(0, 40, 1300, 590);
+		tblCrearOActualizar.setBounds(0, 400, 1300, 590);
 		
 		scrollPane = new JScrollPane(tblCrearOActualizar);
 		

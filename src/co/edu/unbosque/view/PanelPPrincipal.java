@@ -40,16 +40,16 @@ public class PanelPPrincipal extends JPanel {
 	public void inicializarComponentes() {
 		
 		pPCrearOActualizarCita = new PanelPCrearOActualizarCita();
-		pPCrearOActualizarCita.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		pPCrearOActualizarCita.setBounds(0, 110, 1300, 590);
 		
 		pPSuperior = new PanelPSuperior();
-		pPSuperior.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		pPSuperior.setBounds(0, 0, 1300, 100);
 		
 		pPVerCitasOExamen = new PanelPVerCitasOExamen();
-		pPVerCitasOExamen.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		pPVerCitasOExamen.setBounds(0, 110, 1300, 590);
 		
 		pPVerMas = new PanelPVerMas();
-		pPVerMas.setBounds(ALLBITS, ABORT, WIDTH, HEIGHT);
+		pPVerMas.setBounds(0, 110, 1300, 590);
 	
 		add(pPCrearOActualizarCita);
 		add(pPSuperior);
@@ -69,19 +69,19 @@ public class PanelPPrincipal extends JPanel {
 		case 1:
 			pPVerCitasOExamen.setVisible(false);
 			pPVerMas.setVisible(false);
-			pPCrearOActualizarCita.setVisible(true);
+			pPCrearOActualizarCita.setVisible(false);
 			
 			break;
 		case 2:
 			pPVerCitasOExamen.setVisible(false);
 			pPCrearOActualizarCita.setVisible(false);
-			pPVerMas.setVisible(true);
+			pPVerMas.setVisible(false);
 			
 			break;
 		case 3:
 			pPVerMas.setVisible(false);
 			pPCrearOActualizarCita.setVisible(false);
-			pPVerCitasOExamen.setVisible(true);
+			pPVerCitasOExamen.setVisible(false);
 			
 			break;
 		default:
