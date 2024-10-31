@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 public class VentanaPrincipal extends JFrame {
 	private PanelAccesosPrincipal pAccesosPrincipal;
 	private PanelEPrincipal pEPrincipal;
+	private PanelPPrincipal pPPrincipal;
 
 	public VentanaPrincipal() {
 		setTitle("BosqueHealthApp");
@@ -27,6 +28,10 @@ public class VentanaPrincipal extends JFrame {
 		pEPrincipal = new PanelEPrincipal();
 		pEPrincipal.setBounds(0, 0, 1300, 700);
 		getContentPane().add(pEPrincipal);
+		
+		pPPrincipal = new PanelPPrincipal();
+		pPPrincipal.setBounds(0, 0, 1300, 700);
+		getContentPane().add(pPPrincipal);
 	}
 
 	/**
@@ -71,4 +76,13 @@ public class VentanaPrincipal extends JFrame {
 	public void setpEPrincipal(PanelEPrincipal pEPrincipal) {
 		this.pEPrincipal = pEPrincipal;
 	}
+
+	public PanelPPrincipal getpPPrincipal() {
+		return pPPrincipal;
+	}
+
+	public void setpPPrincipal(PanelPPrincipal pPPrincipal) {
+		this.pPPrincipal = pPPrincipal;
+	}
+	
 }
