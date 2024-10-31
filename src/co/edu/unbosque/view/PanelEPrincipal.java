@@ -3,7 +3,7 @@ package co.edu.unbosque.view;
 import javax.swing.*;
 
 /**
- * Panel encargado de tner todos los paneles que se utilizan para el
+ * Clase encargada de tener todos los paneles que se utilizan para el
  * Especialista
  * 
  * @author Mariana Ovallos
