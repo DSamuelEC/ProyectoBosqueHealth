@@ -45,16 +45,16 @@ public class VentanaPrincipal extends JFrame {
 
 	/**
 	 * Metodo que cambia la visibilidad de los paneles principales, el orden son 1 =
-	 * pAccesosPrincipal, 2 = pPPrincipal 3 = pEPrincipal, y falta Admin
+	 * pAccesosPrincipal, 2 = pPPrincipal, 3 = pEPrincipal, y 4 = pAdPrincipal
 	 * 
 	 * @param panelVisible index panel que se hara visible
 	 */
 	public void cambiarVisibilidad(int panelVisible) {
 		switch (panelVisible) {
 		case 1:
-			pAdPrincipal.setVisible(false);
 			pPPrincipal.setVisible(false);
 			pEPrincipal.setVisible(false);
+			pAdPrincipal.setVisible(false);
 			pAccesosPrincipal.setVisible(true);
 			break;
 		case 2:
@@ -70,8 +70,8 @@ public class VentanaPrincipal extends JFrame {
 			pEPrincipal.setVisible(true);
 			break;
 		case 4:
-			pPPrincipal.setVisible(false);
 			pAccesosPrincipal.setVisible(false);
+			pPPrincipal.setVisible(false);
 			pEPrincipal.setVisible(false);
 			pAdPrincipal.setVisible(true);
 			break;

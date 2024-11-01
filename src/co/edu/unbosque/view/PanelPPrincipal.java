@@ -66,8 +66,8 @@ public class PanelPPrincipal extends JPanel {
 	public void cambiarVisibilidad(int panelVisible) {
 		switch (panelVisible) {
 		case 1:
-			pPVerMas.setVisible(false);
 			pPCrearOActualizarCita.setVisible(false);
+			pPVerMas.setVisible(false);
 			pPVerCitasOExamen.setVisible(true);
 			break;
 		case 2:
