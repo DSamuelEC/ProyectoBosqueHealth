@@ -1,9 +1,9 @@
 package co.edu.unbosque.view;
 
 import javax.swing.*;
+
 /**
- * Clase encargada de tener todos los paneles que se utilizan para el
- * Paciente
+ * Clase encargada de tener todos los paneles que se utilizan para el Paciente
  * 
  * @author Mariana Ovallos
  */
@@ -24,6 +24,7 @@ public class PanelPPrincipal extends JPanel {
 	 * Atributo encragado de traer el PanelPVerMas
 	 */
 	private PanelPVerMas pPVerMas;
+
 	/**
 	 * Metodo Constructor de la clase
 	 */
@@ -34,32 +35,33 @@ public class PanelPPrincipal extends JPanel {
 		inicializarComponentes();
 		setVisible(false);
 	}
+
 	/**
 	 * Metodo encargado de inicializar todos los atributos de la clase
 	 */
 	public void inicializarComponentes() {
 		pPSuperior = new PanelPSuperior();
 		pPSuperior.setBounds(0, 0, 1300, 100);
-		
+
 		pPCrearOActualizarCita = new PanelPCrearOActualizarCita();
 		pPCrearOActualizarCita.setBounds(0, 110, 1300, 590);
-		
+
 		pPVerCitasOExamen = new PanelPVerCitasOExamen();
 		pPVerCitasOExamen.setBounds(0, 110, 1300, 590);
-		
+
 		pPVerMas = new PanelPVerMas();
 		pPVerMas.setBounds(0, 110, 1300, 590);
-	
+
 		add(pPSuperior);
 		add(pPCrearOActualizarCita);
 		add(pPVerCitasOExamen);
 		add(pPVerMas);
-		
-		
+
 	}
+
 	/**
 	 * Metodo que cambia la visibilidad de los paneles, el orden son 1 =
-	 * pPVerCitasOExamen, 2 = pPCrearOActualizarCita, 3 = pPVerMas, 
+	 * pPVerCitasOExamen, 2 = pPCrearOActualizarCita, 3 = pPVerMas,
 	 * 
 	 * @param panelVisible index panel que se hara visible
 	 */
@@ -84,6 +86,7 @@ public class PanelPPrincipal extends JPanel {
 			break;
 		}
 	}
+
 	/**
 	 * Metodo que retorna el valor del atributo pPSuperior
 	 * 
@@ -92,6 +95,7 @@ public class PanelPPrincipal extends JPanel {
 	public PanelPSuperior getpPSuperior() {
 		return pPSuperior;
 	}
+
 	/**
 	 * Metodo que actualiza el valor del atributo pPSuperior
 	 * 
@@ -100,6 +104,7 @@ public class PanelPPrincipal extends JPanel {
 	public void setpPSuperior(PanelPSuperior pPSuperior) {
 		this.pPSuperior = pPSuperior;
 	}
+
 	/**
 	 * Metodo que retorna el valor del atributo pPVerCitasOExamen
 	 * 
@@ -108,6 +113,7 @@ public class PanelPPrincipal extends JPanel {
 	public PanelPVerCitasOExamen getpPVerCitasOExamen() {
 		return pPVerCitasOExamen;
 	}
+
 	/**
 	 * Metodo que actualiza el valor del atributo pPVerCitasOExamen
 	 * 
@@ -116,6 +122,7 @@ public class PanelPPrincipal extends JPanel {
 	public void setpPVerCitasOExamen(PanelPVerCitasOExamen pPVerCitasOExamen) {
 		this.pPVerCitasOExamen = pPVerCitasOExamen;
 	}
+
 	/**
 	 * Metodo que retorna el valor del atributo pPCrearOActualizarCita
 	 * 
@@ -124,6 +131,7 @@ public class PanelPPrincipal extends JPanel {
 	public PanelPCrearOActualizarCita getpPCrearOActualizarCita() {
 		return pPCrearOActualizarCita;
 	}
+
 	/**
 	 * Metodo que actualiza el valor del atributo pPCrearOActualizarCita
 	 * 
@@ -132,6 +140,7 @@ public class PanelPPrincipal extends JPanel {
 	public void setpPCrearOActualizarCita(PanelPCrearOActualizarCita pPCrearOActualizarCita) {
 		this.pPCrearOActualizarCita = pPCrearOActualizarCita;
 	}
+
 	/**
 	 * Metodo que retorna el valor del atributo pPVerMas
 	 * 
@@ -140,6 +149,7 @@ public class PanelPPrincipal extends JPanel {
 	public PanelPVerMas getpPVerMas() {
 		return pPVerMas;
 	}
+
 	/**
 	 * Metodo que actualiza el valor del atributo pPVerMas
 	 * 

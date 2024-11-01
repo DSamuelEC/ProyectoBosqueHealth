@@ -133,9 +133,9 @@ public class PanelPCrearOActualizarCita extends JPanel {
 		columnModel.getColumn(2).setPreferredWidth(300);
 		columnModel.getColumn(3).setPreferredWidth(200);
 		tblCrearOActualizar.setBounds(0, 150, 1300, 590);
-		
+
 		scrollPane = new JScrollPane(tblCrearOActualizar);
-		
+
 		add(lblAgendamiento);
 		add(lblCita);
 		add(lblDisponinilidad);
