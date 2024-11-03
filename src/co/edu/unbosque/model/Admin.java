@@ -1,13 +1,16 @@
 package co.edu.unbosque.model;
 
+import java.util.ArrayList;
+
 public class Admin extends Persona implements InterfaceCRUD<Persona> {
+	private ArrayList<Paciente> pacientes;
+	private ArrayList<Especialista> especialistas;
 
-	// private ArrayList<Paciente> pacientes;
-	// private ArrayList<Especialista> especialistas;
-
-	public Admin(String nombre, int cedula, String correo, String sexo, int edad) {
+	public Admin(String nombre, int cedula, String correo, String sexo, int edad, ArrayList<Paciente> pacientes,
+			ArrayList<Especialista> especialistas) {
 		super(nombre, cedula, correo, sexo, edad);
-		// TODO Auto-generated constructor stub
+		this.pacientes = pacientes;
+		this.especialistas = especialistas;
 	}
 
 	@Override
@@ -40,4 +43,19 @@ public class Admin extends Persona implements InterfaceCRUD<Persona> {
 		return false;
 	}
 
+	public ArrayList<Paciente> getPacientes() {
+		return pacientes;
+	}
+
+	public void setPacientes(ArrayList<Paciente> pacientes) {
+		this.pacientes = pacientes;
+	}
+
+	public ArrayList<Especialista> getEspecialistas() {
+		return especialistas;
+	}
+
+	public void setEspecialistas(ArrayList<Especialista> especialistas) {
+		this.especialistas = especialistas;
+	}
 }
