@@ -1,15 +1,19 @@
 package co.edu.unbosque.model;
 
-public class Persona {
-	
+public abstract class Persona {
+
 	protected String nombre;
 	protected int cedula;
 	protected String correo;
 	protected String sexo;
 	protected int edad;
-	
+
 	public Persona(String nombre, int cedula, String correo, String sexo, int edad) {
-		
+		this.nombre = nombre;
+		this.cedula = cedula;
+		this.correo = correo;
+		this.sexo = sexo;
+		this.edad = edad;
 	}
 
 	public String getNombre() {
@@ -51,7 +55,4 @@ public class Persona {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-
-	
-	
 }

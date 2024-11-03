@@ -3,7 +3,7 @@ package co.edu.unbosque.model;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Cita extends Actividad<Cita> {
+public class Cita extends Actividad {
 	private String nombrePaciente;
 	private String correoPaciente;
 	private String nombreEspecialista;
@@ -26,8 +26,6 @@ public class Cita extends Actividad<Cita> {
 		this.diagnostico = diagnostico;
 		this.examenes = examenes;
 	}
-	
-	
 
 	public String getNombrePaciente() {
 		return nombrePaciente;
@@ -92,5 +90,4 @@ public class Cita extends Actividad<Cita> {
 	public void setExamenes(String examenes) {
 		this.examenes = examenes;
 	}
-
 }

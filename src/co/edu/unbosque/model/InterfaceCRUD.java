@@ -1,13 +1,13 @@
 package co.edu.unbosque.model;
-
-import java.time.LocalDate;
-import java.time.LocalTime;
-
+/**
+ * @author Samuel Diaz
+ * @param <T>
+ */
 public interface InterfaceCRUD <T>{
 	
 	String verTodo();
 	boolean añadir(T x);
 	boolean actualizar(T x, T y);
 	boolean eliminar(T x);
-	T buscar(LocalDate fecha, LocalTime hora);
+	boolean buscar(T x);
 }
