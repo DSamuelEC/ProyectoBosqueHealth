@@ -123,11 +123,11 @@ public class PanelAdConfiguraciones extends JPanel {
 
 		btnMenosEspecialistas = new JButton("Menos");
 		btnMenosEspecialistas.setBounds(680, 200, 150, 60);
-		btnMenosEspecialistas.setActionCommand("P_AD_CONFIGURACIONES_MENOS_TURNOS");
+		btnMenosEspecialistas.setActionCommand("P_AD_CONFIGURACIONES_MENOS_ESPECIALISTAS");
 
 		btnMasEspecialistas = new JButton("Más");
 		btnMasEspecialistas.setBounds(980, 200, 150, 60);
-		btnMasEspecialistas.setActionCommand("P_AD_CONFIGURACIONES_MAS_TURNOS");
+		btnMasEspecialistas.setActionCommand("P_AD_CONFIGURACIONES_MAS_ESPECIALISTAS");
 
 		lblDias = new JLabel("Número de días para el recordatorio");
 		lblDias.setBounds(130, 310, 400, 100);
@@ -150,8 +150,6 @@ public class PanelAdConfiguraciones extends JPanel {
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(670, 460, 100, 40);
 		btnSubmit.setActionCommand("P_AD_CONFIGURACIONES_SUBMIT");
-		
-		
 
 		add(lblTurnos);
 		add(lblEstadoTurnos);
@@ -168,7 +166,52 @@ public class PanelAdConfiguraciones extends JPanel {
 		add(btnAtras);
 		add(btnSubmit);
 	}
-	
+
+	/**
+	 * Metodo que permite cambiar los estados de los lblEstados para que se
+	 * actualicen al tocar los botones correspondientes a cada uno
+	 * 
+	 * @param estado       Valor que representa cual estado se quiere modificar
+	 * @param accion       Valor que representa la accion a hacer
+	 * @param valorInicial Valor que tomarán inicialmente los estados
+	 */
+	public void cambiarEstados(String estado, String accion, int valorInicial) {
+		int aux;
+		switch (accion) {
+		case "MAS":
+			if (estado == "turnos") {
+				aux = Integer.parseInt(lblEstadoTurnos.getText());
+				lblEstadoTurnos.setText(String.valueOf(aux + 1));
+				System.out.println(lblEstadoTurnos.getText());
+			} else if (estado == "especialistas") {
+				lblEstadoEspecialistas.setText(String.valueOf(Integer.parseInt(lblEstadoEspecialistas.getText()) + 1));
+			} else if (estado == "dias") {
+				lblEstadoDias.setText(String.valueOf(Integer.parseInt(lblEstadoDias.getText()) + 1));
+			}
+			break;
+		case "MENOS":
+			if (estado == "turnos") {
+				lblEstadoTurnos.setText(String.valueOf(Integer.parseInt(lblEstadoTurnos.getText()) - 1));
+			} else if (estado == "especialistas") {
+				lblEstadoEspecialistas.setText(String.valueOf(Integer.parseInt(lblEstadoEspecialistas.getText()) - 1));
+			} else if (estado == "dias") {
+				lblEstadoDias.setText(String.valueOf(Integer.parseInt(lblEstadoDias.getText()) - 1));
+			}
+			break;
+		case "INICIAL":
+			if (estado == "turnos") {
+				lblEstadoTurnos.setText(String.valueOf(valorInicial));
+			} else if (estado == "especialistas") {
+				lblEstadoEspecialistas.setText(String.valueOf(valorInicial));
+			} else if (estado == "dias") {
+				lblEstadoDias.setText(String.valueOf(valorInicial));
+			}
+			break;
+		default:
+			break;
+		}
+	}
+
 	/**
 	 * Metodo que retorna el valor del atributo lblTurnos
 	 * 
