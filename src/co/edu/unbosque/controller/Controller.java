@@ -1,5 +1,6 @@
 package co.edu.unbosque.controller;
 
+import co.edu.unbosque.model.Hospital;
 import co.edu.unbosque.view.VentanaPrincipal;
 import co.edu.unbosque.view.VistaVentanasEmergentes;
 
@@ -10,6 +11,7 @@ public class Controller {
 	private ControllerPaciente controllerPaciente;
 	private ControllerEspecialista controllerEspecialista;
 	private ControllerAdmin controllerAdmin;
+	private Hospital hospital;
 
 	public Controller() {
 		ventanaP = new VentanaPrincipal();
@@ -18,7 +20,6 @@ public class Controller {
 		controllerPaciente = new ControllerPaciente(this, ventanaP, vistaE);
 		controllerEspecialista = new ControllerEspecialista(this, ventanaP, vistaE);
 		controllerAdmin = new ControllerAdmin(this, ventanaP, vistaE);
-//		mostrarAccesos();
 	}
 
 	public void run() {
