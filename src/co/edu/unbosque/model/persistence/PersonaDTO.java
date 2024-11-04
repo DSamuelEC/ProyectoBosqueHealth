@@ -1,19 +1,14 @@
-package co.edu.unbosque.model;
+package co.edu.unbosque.model.persistence;
 
-public abstract class Persona {
-	protected String nombre;
-	protected int cedula;
-	protected String correo;
-	protected String sexo;
-	protected int edad;
+import java.io.Serializable;
 
-	public Persona(String nombre, int cedula, String correo, String sexo, int edad) {
-		this.nombre = nombre;
-		this.cedula = cedula;
-		this.correo = correo;
-		this.sexo = sexo;
-		this.edad = edad;
-	}
+public class PersonaDTO implements Serializable {
+	private static final long serialVersionUID = 1L;
+	private String nombre;
+	private int cedula;
+	private String correo;
+	private String sexo;
+	private int edad;
 
 	public String getNombre() {
 		return nombre;
@@ -53,5 +48,9 @@ public abstract class Persona {
 
 	public void setEdad(int edad) {
 		this.edad = edad;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 }

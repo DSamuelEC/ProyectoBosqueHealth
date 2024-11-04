@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Especialista extends Persona implements InterfaceCRUD<Actividad> {
 	private ArrayList<Turno> turnos;
 	private ArrayList<Cita> citas;
-	String especializacion;
+	private String especializacion;
 
 	public Especialista(String nombre, int cedula, String correo, String sexo, int edad, ArrayList<Turno> turnos,
 			ArrayList<Cita> citas, String especializacion) {
