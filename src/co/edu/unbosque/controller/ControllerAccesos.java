@@ -67,8 +67,9 @@ public class ControllerAccesos implements ActionListener {
 			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(2);
 			break;
 		case "P_ACCESOSCREARPACIENTE_SUBMIT":
-			vistaE.mostrarInformacion("Paciente creado con exito. Por favor loguese", 1);
-			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(2);
+			capturarDatos();
+//			vistaE.mostrarInformacion("Paciente creado con exito. Por favor loguese", 1);
+//			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(2);
 			break;
 		case "P_ACCESOESPECIALISTA_ATRAS":
 			ventanaP.getpAccesosPrincipal().cambiarVisibilidad(1);
@@ -89,5 +90,18 @@ public class ControllerAccesos implements ActionListener {
 		default:
 			break;
 		}
+	}
+
+	public void capturarDatos() {
+		String nombre = ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtNombre().getText();
+		int cedula = Integer.parseInt(ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtCedula().getText());
+		String correo = ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtCorreo().getText();
+		String sexo = ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getLdSexo().getSelectedItem().toString();
+		int edad = Integer.parseInt(ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtEdad().getText());
+		controllerPrincipal.capturarDaatosCrearPersonas(nombre, cedula, correo, sexo, edad, "PACIENTE");
+	}
+
+	public void cambiarPanel(int index) {
+		ventanaP.getpAccesosPrincipal().cambiarVisibilidad(index);
 	}
 }

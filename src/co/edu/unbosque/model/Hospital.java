@@ -10,10 +10,14 @@ public class Hospital {
 	private Persona persona;
 	private Actividad actividad;
 
-	public Hospital(Persona persona, Actividad actividad) {
-		super();
-		this.persona = persona;
-		this.actividad = actividad;
+	public Hospital() {
+		this.todasPersonas = new ArrayList<Persona>();
+		this.hospitalDAO = new HospitalDAO();
+	}
+
+	public boolean crearPaciente(String nombre, int cedula, String correo, String sexo, int edad) {
+		persona = new Paciente(nombre, cedula, correo, sexo, edad);
+		return hospitalDAO.add(persona);
 	}
 
 	public Persona getPersona() {
@@ -47,5 +51,5 @@ public class Hospital {
 	public void setHospitalDAO(HospitalDAO hospitalDAO) {
 		this.hospitalDAO = hospitalDAO;
 	}
-	
+
 }

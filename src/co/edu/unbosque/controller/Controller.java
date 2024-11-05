@@ -14,6 +14,7 @@ public class Controller {
 	private Hospital hospital;
 
 	public Controller() {
+		hospital = new  Hospital();
 		ventanaP = new VentanaPrincipal();
 		vistaE = new VistaVentanasEmergentes();
 		controllerAccesos = new ControllerAccesos(this, ventanaP, vistaE);
@@ -25,7 +26,18 @@ public class Controller {
 	public void run() {
 	}
 
-	public void mostrarAccesos() {
+	public void capturarDaatosCrearPersonas(String nombre, int cedula, String correo, String sexo, int edad,
+			String rol) {
+		switch (rol) {
+		case "PACIENTE":
+			boolean creado = hospital.crearPaciente(nombre, cedula, correo, sexo, edad);
+			if (creado) {
+				controllerAccesos.cambiarPanel(2);
+			}
+			break;
 
+		default:
+			break;
+		}
 	}
 }
