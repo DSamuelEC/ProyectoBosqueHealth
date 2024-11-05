@@ -7,7 +7,7 @@ public class Turno extends Actividad {
 	private String estado;
 
 	public Turno(LocalDate fecha, LocalTime horaInicio, LocalTime horaFinal, String estado) {
-		super(fecha, horaInicio, horaFinal);
+		super(fecha, horaInicio, horaFinal,"TURNO");
 		this.estado = estado;
 	}
 

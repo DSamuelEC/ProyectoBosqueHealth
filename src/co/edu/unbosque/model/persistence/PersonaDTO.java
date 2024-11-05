@@ -9,6 +9,7 @@ public class PersonaDTO implements Serializable {
 	private String correo;
 	private String sexo;
 	private int edad;
+	private String rol;
 
 	public String getNombre() {
 		return nombre;
@@ -50,7 +51,11 @@ public class PersonaDTO implements Serializable {
 		this.edad = edad;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public String getRol() {
+		return rol;
+	}
+
+	public void setRol(String rol) {
+		this.rol = rol;
 	}
 }

@@ -6,11 +6,10 @@ public class Admin extends Persona implements InterfaceCRUD<Persona> {
 	private ArrayList<Paciente> pacientes;
 	private ArrayList<Especialista> especialistas;
 
-	public Admin(String nombre, int cedula, String correo, String sexo, int edad, ArrayList<Paciente> pacientes,
-			ArrayList<Especialista> especialistas) {
-		super(nombre, cedula, correo, sexo, edad);
-		this.pacientes = pacientes;
-		this.especialistas = especialistas;
+	public Admin(String nombre, int cedula, String correo, String sexo, int edad) {
+		super(nombre, cedula, correo, sexo, edad, "ADMIN");
+		this.pacientes = new ArrayList<Paciente>();
+		this.especialistas = new ArrayList<Especialista>();
 	}
 
 	@Override

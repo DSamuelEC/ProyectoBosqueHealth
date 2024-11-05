@@ -22,8 +22,4 @@ public class AdminDTO extends PersonaDTO {
 	public void setEspecialistas(ArrayList<EspecialistaDTO> especialistas) {
 		this.especialistas = especialistas;
 	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 }

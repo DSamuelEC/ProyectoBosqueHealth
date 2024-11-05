@@ -1,6 +1,7 @@
 package co.edu.unbosque.model.persistence;
 
 public class CitaDTO extends ActividadDTO {
+	private static final long serialVersionUID = 1L;
 	private String nombrePaciente;
 	private String correoPaciente;
 	private String nombreEspecialista;

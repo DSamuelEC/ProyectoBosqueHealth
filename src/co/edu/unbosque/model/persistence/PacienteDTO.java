@@ -22,8 +22,4 @@ public class PacienteDTO extends PersonaDTO {
 	public void setExamenes(ArrayList<CitaDTO> examenes) {
 		this.examenes = examenes;
 	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 }

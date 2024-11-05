@@ -31,8 +31,4 @@ public class EspecialistaDTO extends PersonaDTO {
 	public void setEspecializacion(String especializacion) {
 		this.especializacion = especializacion;
 	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 }

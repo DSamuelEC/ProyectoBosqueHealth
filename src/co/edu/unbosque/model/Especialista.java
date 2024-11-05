@@ -7,11 +7,10 @@ public class Especialista extends Persona implements InterfaceCRUD<Actividad> {
 	private ArrayList<Cita> citas;
 	private String especializacion;
 
-	public Especialista(String nombre, int cedula, String correo, String sexo, int edad, ArrayList<Turno> turnos,
-			ArrayList<Cita> citas, String especializacion) {
-		super(nombre, cedula, correo, sexo, edad);
-		this.turnos = turnos;
-		this.citas = citas;
+	public Especialista(String nombre, int cedula, String correo, String sexo, int edad, String especializacion) {
+		super(nombre, cedula, correo, sexo, edad, "ESPECIALISTA");
+		this.turnos = new ArrayList<Turno>();
+		this.citas = new ArrayList<Cita>();
 		this.especializacion = especializacion;
 	}
 

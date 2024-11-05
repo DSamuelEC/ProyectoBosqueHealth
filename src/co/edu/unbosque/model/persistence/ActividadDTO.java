@@ -1,12 +1,15 @@
 package co.edu.unbosque.model.persistence;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class ActividadDTO {
+public class ActividadDTO implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private LocalDate fecha;
 	private LocalTime horaInicio;
 	private LocalTime horaFinal;
+	private String tipo;
 
 	public LocalDate getFecha() {
 		return fecha;
@@ -30,5 +33,13 @@ public class ActividadDTO {
 
 	public void setHoraFinal(LocalTime horaFinal) {
 		this.horaFinal = horaFinal;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 }

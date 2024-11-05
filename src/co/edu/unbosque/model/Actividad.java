@@ -4,14 +4,17 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public abstract class Actividad {
-	private LocalDate fecha;
-	private LocalTime horaInicio;
-	private LocalTime horaFinal;
+	protected LocalDate fecha;
+	protected LocalTime horaInicio;
+	protected LocalTime horaFinal;
+	protected String tipo; 
 
-	public Actividad(LocalDate fecha, LocalTime horaInicio, LocalTime horaFinal) {
+	public Actividad(LocalDate fecha, LocalTime horaInicio, LocalTime horaFinal, String tipo) {
+		super();
 		this.fecha = fecha;
 		this.horaInicio = horaInicio;
 		this.horaFinal = horaFinal;
+		this.tipo = tipo;
 	}
 
 	public LocalDate getFecha() {

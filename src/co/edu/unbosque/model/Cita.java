@@ -16,7 +16,7 @@ public class Cita extends Actividad {
 	public Cita(LocalDate fecha, LocalTime horaInicio, LocalTime horaFinal, String nombrePaciente,
 			String correoPaciente, String nombreEspecialista, String correoEspecialista, String especialidad,
 			String tratamiento, String diagnostico, String examenes) {
-		super(fecha, horaInicio, horaFinal);
+		super(fecha, horaInicio, horaFinal, "CITA");
 		this.nombrePaciente = nombrePaciente;
 		this.correoPaciente = correoPaciente;
 		this.nombreEspecialista = nombreEspecialista;

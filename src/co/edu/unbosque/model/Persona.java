@@ -6,13 +6,15 @@ public abstract class Persona {
 	protected String correo;
 	protected String sexo;
 	protected int edad;
+	protected String rol;
 
-	public Persona(String nombre, int cedula, String correo, String sexo, int edad) {
+	public Persona(String nombre, int cedula, String correo, String sexo, int edad, String rol) {
 		this.nombre = nombre;
 		this.cedula = cedula;
 		this.correo = correo;
 		this.sexo = sexo;
 		this.edad = edad;
+		this.rol = rol;
 	}
 
 	public String getNombre() {
@@ -53,5 +55,13 @@ public abstract class Persona {
 
 	public void setEdad(int edad) {
 		this.edad = edad;
+	}
+
+	public String getRol() {
+		return rol;
+	}
+
+	public void setRol(String rol) {
+		this.rol = rol;
 	}
 }
