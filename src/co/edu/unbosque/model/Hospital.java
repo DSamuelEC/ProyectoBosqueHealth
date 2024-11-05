@@ -20,6 +20,15 @@ public class Hospital {
 		return hospitalDAO.add(persona);
 	}
 
+	public Persona find(int cedula) {
+		persona = hospitalDAO.find(cedula);
+		return persona;
+	}
+
+	public void actualizarBD() {
+		hospitalDAO.actualizarBD();
+	}
+
 	public Persona getPersona() {
 		return persona;
 	}

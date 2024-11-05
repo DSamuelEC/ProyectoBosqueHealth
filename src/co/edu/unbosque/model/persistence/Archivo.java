@@ -32,17 +32,26 @@ public class Archivo {
 	}
 
 	public void escribirArchivoBinario(ArrayList<Persona> personas) {
-		try {
-			salida = new ObjectOutputStream(new FileOutputStream(ubicacionArchivoBinario));
-			ArrayList<PersonaDTO> datos = MapHandler.convertirPersonastoPersonasDTO(personas);
-			salida.writeObject(datos);
-			salida.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	    try {
+	        salida = new ObjectOutputStream(new FileOutputStream(ubicacionArchivoBinario));
+	        ArrayList<PersonaDTO> datosDTO = MapHandler.convertirPersonastoPersonasDTO(personas);
+	        
+	        // Comprobación de rol asignado antes de guardar
+	        for (PersonaDTO dto : datosDTO) {
+	            if (dto.getRol() == null) {
+	                System.out.println("Error: PersonaDTO sin rol al escribir en archivo.");
+	            }
+	        }
+
+	        salida.writeObject(datosDTO);
+	        salida.close();
+	    } catch (FileNotFoundException e) {
+	        e.printStackTrace();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
+
 
 	public String escribirArchivoTxt(String frase) {
 		try {
@@ -66,6 +75,12 @@ public class Archivo {
 			try {
 				entrada = new ObjectInputStream(new FileInputStream(ubicacionArchivoBinario));
 				ArrayList<PersonaDTO> datos = (ArrayList<PersonaDTO>) entrada.readObject();
+				// Comprobación para verificar que todos los PersonaDTO tienen el rol configurado
+	            for (PersonaDTO dto : datos) {
+	                if (dto.getRol() == null) {
+	                    System.out.println("Error: Rol no configurado en PersonaDTO");
+	                }
+	            }
 				clientes = MapHandler.convertirPersonasDTOtoPersonas(datos);
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();

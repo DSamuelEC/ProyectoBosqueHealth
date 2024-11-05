@@ -153,6 +153,7 @@ public class MapHandler {
 			pD.setCorreo(p.getCorreo());
 			pD.setSexo(p.getSexo());
 			pD.setEdad(p.getEdad());
+			pD.setRol("PACIENTE");
 			pD.setCitas(convertirCitaToCitaDTO(p.getCitas()));
 			pD.setExamenes(convertirCitaToCitaDTO(p.getExamenes()));
 			x = pD;
@@ -165,6 +166,7 @@ public class MapHandler {
 			eD.setCorreo(e.getCorreo());
 			eD.setSexo(e.getSexo());
 			eD.setEdad(e.getEdad());
+			eD.setRol("ESPECIALISTA");
 			eD.setEspecializacion(e.getEspecializacion());
 			eD.setCitas(convertirCitaToCitaDTO(e.getCitas()));
 			eD.setTurnos(convertirTurnoToTurnoDTO(e.getTurnos()));
@@ -178,6 +180,7 @@ public class MapHandler {
 			aD.setCorreo(a.getCorreo());
 			aD.setSexo(a.getSexo());
 			aD.setEdad(a.getEdad());
+			aD.setRol("ADMIN");
 			aD.setPacientes(convertirPacientesToPacientesDTO(a.getPacientes()));
 			aD.setEspecialistas(convertirEspecialistasToEspecialistasDTO(a.getEspecialistas()));
 			x = aD;
@@ -203,6 +206,7 @@ public class MapHandler {
 		ArrayList<PersonaDTO> x = new ArrayList<PersonaDTO>();
 		for (Persona p : personas) {
 			aux = convertirPersonatoPersonaDTO(p);
+			x.add(aux);
 		}
 		return x;
 	}

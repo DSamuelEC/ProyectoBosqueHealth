@@ -14,19 +14,20 @@ public class Controller {
 	private Hospital hospital;
 
 	public Controller() {
-		hospital = new  Hospital();
+		hospital = new Hospital();
 		ventanaP = new VentanaPrincipal();
 		vistaE = new VistaVentanasEmergentes();
 		controllerAccesos = new ControllerAccesos(this, ventanaP, vistaE);
 		controllerPaciente = new ControllerPaciente(this, ventanaP, vistaE);
 		controllerEspecialista = new ControllerEspecialista(this, ventanaP, vistaE);
 		controllerAdmin = new ControllerAdmin(this, ventanaP, vistaE);
+		hospital.actualizarBD();
 	}
 
 	public void run() {
 	}
 
-	public void capturarDaatosCrearPersonas(String nombre, int cedula, String correo, String sexo, int edad,
+	public void capturarDatosCrearPersonas(String nombre, int cedula, String correo, String sexo, int edad,
 			String rol) {
 		switch (rol) {
 		case "PACIENTE":
@@ -38,6 +39,15 @@ public class Controller {
 
 		default:
 			break;
+		}
+	}
+
+	public void capturarDatosLogin(String nombre, int cedula) {
+		hospital.find(cedula);
+		System.out.println(hospital.getPersona().getNombre() + hospital.getPersona().getCedula());
+		if (hospital.getPersona().getRol() == "PACIENTE") {
+			ventanaP.cambiarVisibilidad(2);
+			controllerAccesos.cambiarPanel(1);
 		}
 	}
 }
