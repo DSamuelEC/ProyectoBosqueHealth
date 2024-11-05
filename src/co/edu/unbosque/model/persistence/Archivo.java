@@ -17,13 +17,14 @@ import co.edu.unbosque.model.Persona;
 public class Archivo {
 	private ObjectInputStream entrada;
 	private ObjectOutputStream salida;
-	private File ubicacionArchivo; // = new File("data/dataTexto.txt");
+	private File ubicacionArchivoTxt = new File("data/dataTexto.txt");
+	private File ubicacionArchivoBinario = new File("data/dataBinaria.dat");
 
-	public Archivo(String ubicacion) {
-		ubicacionArchivo = new File(ubicacion);
-		if (!ubicacionArchivo.exists()) {
+	public Archivo() {
+		if (!ubicacionArchivoTxt.exists() && !ubicacionArchivoBinario.exists()) {
 			try {
-				ubicacionArchivo.createNewFile();
+				ubicacionArchivoTxt.createNewFile();
+				ubicacionArchivoBinario.createNewFile();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -32,7 +33,7 @@ public class Archivo {
 
 	public void escribirArchivoBinario(ArrayList<Persona> personas) {
 		try {
-			salida = new ObjectOutputStream(new FileOutputStream(ubicacionArchivo));
+			salida = new ObjectOutputStream(new FileOutputStream(ubicacionArchivoBinario));
 			ArrayList<PersonaDTO> datos = MapHandler.convertirPersonastoPersonasDTO(personas);
 			salida.writeObject(datos);
 			salida.close();
@@ -47,7 +48,7 @@ public class Archivo {
 		try {
 			InputStreamReader isr = new InputStreamReader(System.in);
 			BufferedReader linea = new BufferedReader(isr);
-			FileWriter lineatx = new FileWriter(ubicacionArchivo);
+			FileWriter lineatx = new FileWriter(ubicacionArchivoTxt);
 			String linea_arch = frase;
 			lineatx.write(linea_arch + "\r\n");
 			lineatx.close();
@@ -61,9 +62,9 @@ public class Archivo {
 	public ArrayList<Persona> leerArchivoBinario() {
 		ArrayList<Persona> clientes = null;
 
-		if (ubicacionArchivo.length() != 0) {
+		if (ubicacionArchivoBinario.length() != 0) {
 			try {
-				entrada = new ObjectInputStream(new FileInputStream(ubicacionArchivo));
+				entrada = new ObjectInputStream(new FileInputStream(ubicacionArchivoBinario));
 				ArrayList<PersonaDTO> datos = (ArrayList<PersonaDTO>) entrada.readObject();
 				clientes = MapHandler.convertirPersonasDTOtoPersonas(datos);
 			} catch (FileNotFoundException e) {
@@ -82,11 +83,11 @@ public class Archivo {
 		InputStreamReader isr;
 		BufferedReader linea;
 		try {
-			fis = new FileInputStream(ubicacionArchivo);
+			fis = new FileInputStream(ubicacionArchivoTxt);
 			isr = new InputStreamReader(fis);
 			linea = new BufferedReader(isr);
 
-			if (ubicacionArchivo.exists()) {
+			if (ubicacionArchivoTxt.exists()) {
 				String linea_arch = linea.readLine();
 				String archivo_total = linea_arch;
 				while (linea_arch != null) {
@@ -97,7 +98,7 @@ public class Archivo {
 				}
 				linea.close();
 				return archivo_total;
-			} else {//le agregue lo de abajo porque salia una sugerencia de eso
+			} else {// le agregue lo de abajo porque salia una sugerencia de eso
 //				linea.close();
 				return "El archivo no existe";
 			}
@@ -122,12 +123,19 @@ public class Archivo {
 		this.salida = salida;
 	}
 
-	public File getUbicacionArchivo() {
-		return ubicacionArchivo;
+	public File getUbicacionArchivoTxt() {
+		return ubicacionArchivoTxt;
 	}
 
-	public void setUbicacionArchivo(File ubicacionArchivo) {
-		this.ubicacionArchivo = ubicacionArchivo;
+	public void setUbicacionArchivoTxt(File ubicacionArchivoTxt) {
+		this.ubicacionArchivoTxt = ubicacionArchivoTxt;
 	}
 
+	public File getUbicacionArchivoBinario() {
+		return ubicacionArchivoBinario;
+	}
+
+	public void setUbicacionArchivoBinario(File ubicacionArchivoBinario) {
+		this.ubicacionArchivoBinario = ubicacionArchivoBinario;
+	}
 }
