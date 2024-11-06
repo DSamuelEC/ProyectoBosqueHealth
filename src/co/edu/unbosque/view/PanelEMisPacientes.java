@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.*;
 import javax.swing.table.TableColumnModel;
@@ -60,12 +61,18 @@ public class PanelEMisPacientes extends JPanel {
 		
 		lblNombrePaciente = new JLabel("Nombre paciente");
 		lblNombrePaciente.setBounds(30, 10, 300, 20);
+		lblNombrePaciente.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNombrePaciente.setForeground(new Color(5, 25, 35 ));
 		
 		lblFecha = new JLabel("Fecha");
 		lblFecha.setBounds(700, 10, 300, 20);
+		lblFecha.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblFecha.setForeground(new Color(5, 25, 35 ));
 
 		lblHora = new JLabel("Hora");
 		lblHora.setBounds(1000, 10, 300, 20);
+		lblHora.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblHora.setForeground(new Color(5, 25, 35 ));
 		
 		add(scrollPane);
 		add(tblMisPacientes);

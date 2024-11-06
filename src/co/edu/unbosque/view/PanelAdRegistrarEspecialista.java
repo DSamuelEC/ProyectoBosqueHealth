@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
@@ -77,7 +78,9 @@ public class PanelAdRegistrarEspecialista extends JPanel {
 	 */
 	public void inicializarComponentes() {
 		lblRegistroEspecialistas = new JLabel("Registrar Especialista");
-		lblRegistroEspecialistas.setBounds(580, 20, 300, 30);
+		lblRegistroEspecialistas.setBounds(550, 20, 300, 30);
+		lblRegistroEspecialistas.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblRegistroEspecialistas.setForeground(new Color(5, 25, 35 ));
 
 		txtNombre = new JTextField();
 		txtNombre.setBounds(30, 120, 900, 60);
@@ -107,10 +110,16 @@ public class PanelAdRegistrarEspecialista extends JPanel {
 		btnAtras = new JButton("Atras");
 		btnAtras.setBounds(360, 450, 200, 40);
 		btnAtras.setActionCommand("P_AD_REGISTRAR_ESPECIALISTA_ATRAS");
+		btnAtras.setBackground(new Color(244, 158, 76));
+		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnAtras.setForeground(new Color(5, 25, 35 ));
 
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(710, 450, 200, 40);
 		btnSubmit.setActionCommand("P_AD_REGISTRAR_ESPECIALISTA_SUBMIT");
+		btnSubmit.setBackground(new Color(244, 158, 76));
+		btnSubmit.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnSubmit.setForeground(new Color(5, 25, 35 ));
 
 		add(lblRegistroEspecialistas);
 		add(txtNombre);

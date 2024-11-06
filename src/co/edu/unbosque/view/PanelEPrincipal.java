@@ -1,5 +1,7 @@
 package co.edu.unbosque.view;
 
+import java.awt.Color;
+
 import javax.swing.*;
 
 /**
@@ -37,7 +39,7 @@ public class PanelEPrincipal extends JPanel {
 	public PanelEPrincipal() {
 		setSize(1300, 700);
 		setLayout(null);
-
+		setBackground(new Color(250, 246, 245));
 		inicializarComponentes();
 		setVisible(false);
 	}

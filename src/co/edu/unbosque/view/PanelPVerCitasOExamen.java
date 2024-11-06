@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.*;
 import javax.swing.table.TableColumnModel;
@@ -68,19 +69,29 @@ public class PanelPVerCitasOExamen extends JPanel {
 
 		lblCita = new JLabel("Cita");
 		lblCita.setBounds(10, 10, 300, 20);
-
+		lblCita.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblCita.setForeground(new Color(5, 25, 35 ));
+		
 		lblExamen = new JLabel("Exámen");
 		lblExamen.setBounds(10, 10, 300, 20);
 		lblExamen.setVisible(false);
+		lblExamen.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblExamen.setForeground(new Color(5, 25, 35 ));
 
 		lblNombreEspecialista = new JLabel("Nombre Especialista");
 		lblNombreEspecialista.setBounds(210, 10, 300, 20);
+		lblNombreEspecialista.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNombreEspecialista.setForeground(new Color(5, 25, 35 ));
 
 		lblFecha = new JLabel("Fecha");
 		lblFecha.setBounds(810, 10, 300, 20);
+		lblFecha.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblFecha.setForeground(new Color(5, 25, 35 ));
 
 		lblHora = new JLabel("Hora");
 		lblHora.setBounds(1110, 10, 300, 20);
+		lblHora.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblHora.setForeground(new Color(5, 25, 35 ));
 
 		scrollPane = new JScrollPane(tblVerCitasOExamen);
 		

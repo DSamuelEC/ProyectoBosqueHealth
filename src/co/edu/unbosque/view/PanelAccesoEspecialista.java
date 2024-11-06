@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
@@ -41,7 +42,7 @@ public class PanelAccesoEspecialista extends JPanel {
 	public PanelAccesoEspecialista() {
 		setSize(1300, 700);
 		setLayout(null);
-
+		setBackground(new Color(255, 255, 255));
 		inicializarComponentes();
 		setVisible(false);
 	}
@@ -61,10 +62,17 @@ public class PanelAccesoEspecialista extends JPanel {
 		btnAtras = new JButton("Atras");
 		btnAtras.setBounds(440, 370, 150, 60);
 		btnAtras.setActionCommand("P_ACCESOESPECIALISTA_ATRAS");
+		btnAtras.setBackground(new Color(244, 158, 76));
+		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnAtras.setForeground(new Color(5, 25, 35 ));
 
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(690, 370, 150, 60);
 		btnSubmit.setActionCommand("P_ACCESOESPECIALISTA_SUBMIT");
+		btnSubmit.setBackground(new Color(244, 158, 76));
+		btnSubmit.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnSubmit.setForeground(new Color(5, 25, 35 ));
+
 
 		add(txtNombre);
 		add(txtCedula);

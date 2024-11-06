@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.*;
 
@@ -61,30 +62,50 @@ public class PanelEBotones extends JPanel {
 
 		lblNombreEspecialista = new JLabel("Nombre Especialista");
 		lblNombreEspecialista.setBounds(50, 20, 700, 60);
+		lblNombreEspecialista.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNombreEspecialista.setForeground(new Color(5, 25, 35 ));
 	
 		btnTurnos = new JButton("Turnos");
 		btnTurnos.setBounds(250, 30, 150, 40);
 		btnTurnos.setActionCommand("P_BOTONES_ESPECIALISTA_TURNOS");
+		btnTurnos.setBackground(new Color(244, 158, 76));
+		btnTurnos.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnTurnos.setForeground(new Color(5, 25, 35 ));
 		
 		btnMisPacientes = new JButton("Mis Pacientes");
 		btnMisPacientes.setBounds(420, 30, 150, 40);
 		btnMisPacientes.setActionCommand("P_BOTONES_ESPECIALISTA_MIS_PACIENTES");
+		btnMisPacientes.setBackground(new Color(244, 158, 76));
+		btnMisPacientes.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnMisPacientes.setForeground(new Color(5, 25, 35 ));
 		
 		btnVerMas = new JButton("Ver Más");
 		btnVerMas.setBounds(590, 30, 150, 40);
 		btnVerMas.setActionCommand("P_BOTONES_ESPECIALISTA_VER_MAS");
+		btnVerMas.setBackground(new Color(244, 158, 76));
+		btnVerMas.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnVerMas.setForeground(new Color(5, 25, 35 ));
 
 		btnCambiarTurno = new JButton("Cambiar Turno");
 		btnCambiarTurno.setBounds(760, 30, 150, 40);
 		btnCambiarTurno.setActionCommand("P_BOTONES_ESPECIALISTA_CAMBIAR_TURNO");
+		btnCambiarTurno.setBackground(new Color(244, 158, 76));
+		btnCambiarTurno.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnCambiarTurno.setForeground(new Color(5, 25, 35 ));
 		
 		btnSolicitudTurno = new JButton("Solicitud Turno");
 		btnSolicitudTurno.setBounds(930, 30, 150, 40);
 		btnSolicitudTurno.setActionCommand("P_BOTONES_ESPECIALISTA_SOLICITUD_TURNO");
+		btnSolicitudTurno.setBackground(new Color(244, 158, 76));
+		btnSolicitudTurno.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnSolicitudTurno.setForeground(new Color(5, 25, 35 ));
 
 		btnCerrarSesion = new JButton("Cerrar Sesión");
 		btnCerrarSesion.setBounds(1100, 30, 150, 40);
 		btnCerrarSesion.setActionCommand("P_BOTONES_ESPECIALISTA_CERRAR_SESION");
+		btnCerrarSesion.setBackground(new Color(244, 158, 76));
+		btnCerrarSesion.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnCerrarSesion.setForeground(new Color(5, 25, 35 ));
 
 		add(btnCambiarTurno);
 		add(btnCerrarSesion);

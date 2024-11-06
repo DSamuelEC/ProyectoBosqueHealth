@@ -1,5 +1,8 @@
 package co.edu.unbosque.view;
 
+import java.awt.Color;
+import java.awt.Font;
+
 import javax.swing.*;
 
 /**
@@ -39,7 +42,7 @@ public class PanelAcceso extends JPanel {
 	public PanelAcceso() {
 		setSize(1300, 700);
 		setLayout(null);
-
+		setBackground(new Color(255, 255, 255));
 		inicializarComponentes();
 		setVisible(true);
 	}
@@ -49,23 +52,36 @@ public class PanelAcceso extends JPanel {
 	 */
 	public void inicializarComponentes() {
 		lblBienvenida = new JLabel("¡Bienvenidos a BOSQUEHEALTH!");
-		lblBienvenida.setBounds(550, 100, 400, 100);
+		lblBienvenida.setBounds(480, 100, 400, 100);
+		lblBienvenida.setFont(new Font("Tahoma", Font. BOLD, 20));
+		lblBienvenida.setForeground(new Color(5, 25, 35));
 
 		lblModoDeAcceso = new JLabel("Ingrese el modo de acceso");
-		lblModoDeAcceso.setBounds(565, 130, 400, 100);
+		lblModoDeAcceso.setBounds(545, 130, 400, 100);
+		lblModoDeAcceso.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblBienvenida.setForeground(new Color(5, 25, 35));
 
 		btnUsuario = new JButton("Usuario");
 		btnUsuario.setBounds(570, 250, 150, 60);
 		btnUsuario.setActionCommand("P_ACCESO_USUARIO");
+		btnUsuario.setBackground(new Color(244, 158, 76));
+		btnUsuario.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnUsuario.setForeground(new Color(5, 25, 35 ));
 
 		btnEspecialista = new JButton("Especialista");
 		btnEspecialista.setBounds(570, 350, 150, 60);
 		btnEspecialista.setActionCommand("P_ACCESO_ESPECIALISTA");
+		btnEspecialista.setBackground(new Color(244, 158, 76));
+		btnEspecialista.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnEspecialista.setForeground(new Color(5, 25, 35 ));
 
 		btnAdmin = new JButton("Admin");
 		btnAdmin.setBounds(570, 450, 150, 60);
 		btnAdmin.setActionCommand("P_ACCESO_ADMIN");
-
+		btnAdmin.setBackground(new Color(244, 158, 76));
+		btnAdmin.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnAdmin.setForeground(new Color(5, 25, 35 ));
+		
 		add(lblBienvenida);
 		add(lblModoDeAcceso);
 		add(btnUsuario);

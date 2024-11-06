@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
@@ -95,27 +96,43 @@ public class PanelEVerMas extends JPanel {
 	public void inicializarComponentes() {
 		lblNombrePaciente = new JLabel("Nombre del paciente: ");
 		lblNombrePaciente.setBounds(40, 30, 300, 20);
+		lblNombrePaciente.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNombrePaciente.setForeground(new Color(5, 25, 35 ));
 
 		lblNombreEspecialista = new JLabel("Nombre del especialista: ");
 		lblNombreEspecialista.setBounds(40, 70, 300, 20);
+		lblNombreEspecialista.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNombreEspecialista.setForeground(new Color(5, 25, 35 ));
 
 		lblFecha = new JLabel("Fecha: ");
 		lblFecha.setBounds(760, 30, 300, 20);
+		lblFecha.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblFecha.setForeground(new Color(5, 25, 35 ));
 
 		lblHora = new JLabel("Hora: ");
 		lblHora.setBounds(1050, 30, 300, 20);
+		lblHora.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblHora.setForeground(new Color(5, 25, 35 ));
 
 		lblSexo = new JLabel("Sexo: ");
 		lblSexo.setBounds(40, 110, 300, 20);
+		lblSexo.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblSexo.setForeground(new Color(5, 25, 35 ));
 
 		lblEdad = new JLabel("Edad: ");
 		lblEdad.setBounds(40, 150, 300, 20);
+		lblEdad.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblEdad.setForeground(new Color(5, 25, 35 ));
 
 		lblCorreo = new JLabel("Correo: ");
 		lblCorreo.setBounds(40, 190, 300, 20);
+		lblCorreo.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblCorreo.setForeground(new Color(5, 25, 35 ));
 
 		lblCedula = new JLabel("Cedula: ");
 		lblCedula.setBounds(40, 230, 300, 20);
+		lblCedula.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblCedula.setForeground(new Color(5, 25, 35 ));
 
 		txtTratamiento = new JTextField();
 		txtTratamiento.setBounds(40, 270, 1200, 50);
@@ -132,10 +149,16 @@ public class PanelEVerMas extends JPanel {
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(660, 480, 100, 30);
 		btnSubmit.setActionCommand("P_VER_MAS_ESPECIALISTA_SUBMIT");
+		btnSubmit.setBackground(new Color(244, 158, 76));
+		btnSubmit.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnSubmit.setForeground(new Color(5, 25, 35 ));
 
 		btnAtras = new JButton("Atras");
 		btnAtras.setBounds(490, 480, 100, 30);
 		btnAtras.setActionCommand("P_VER_MAS_ESPECIALISTA_ATRAS");
+		btnAtras.setBackground(new Color(244, 158, 76));
+		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnAtras.setForeground(new Color(5, 25, 35 ));
 		
 		add(btnSubmit);
 		add(lblCedula);

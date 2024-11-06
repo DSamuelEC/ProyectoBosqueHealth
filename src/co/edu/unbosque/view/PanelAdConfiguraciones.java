@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -103,53 +104,88 @@ public class PanelAdConfiguraciones extends JPanel {
 	public void inicializarComponentes() {
 		lblTurnos = new JLabel("Número de turnos al mes");
 		lblTurnos.setBounds(130, 50, 400, 100);
+		lblTurnos.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblTurnos.setForeground(new Color(5, 25, 35 ));
 
 		lblEstadoTurnos = new JLabel("1");
 		lblEstadoTurnos.setBounds(900, 50, 400, 100);
+		lblEstadoTurnos.setForeground(new Color(5, 25, 35 ));
 
 		btnMenosTurnos = new JButton("Menos");
-		btnMenosTurnos.setBounds(680, 70, 150, 60);
+		btnMenosTurnos.setBounds(730, 70, 100, 60);
 		btnMenosTurnos.setActionCommand("P_AD_CONFIGURACIONES_MENOS_TURNOS");
+		btnMenosTurnos.setBackground(new Color(244, 158, 76));
+		btnMenosTurnos.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnMenosTurnos.setForeground(new Color(5, 25, 35 ));
 
 		btnMasTurnos = new JButton("Más");
-		btnMasTurnos.setBounds(980, 70, 150, 60);
+		btnMasTurnos.setBounds(980, 70, 100, 60);
 		btnMasTurnos.setActionCommand("P_AD_CONFIGURACIONES_MAS_TURNOS");
+		btnMasTurnos.setBackground(new Color(244, 158, 76));
+		btnMasTurnos.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnMasTurnos.setForeground(new Color(5, 25, 35 ));
 
 		lblEspecialistas = new JLabel("Número de especialistas por área");
 		lblEspecialistas.setBounds(130, 180, 400, 100);
+		lblEspecialistas.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblEspecialistas.setForeground(new Color(5, 25, 35 ));
 
 		lblEstadoEspecialistas = new JLabel("1");
 		lblEstadoEspecialistas.setBounds(900, 180, 400, 100);
+		lblEstadoEspecialistas.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblEstadoEspecialistas.setForeground(new Color(5, 25, 35 ));
 
 		btnMenosEspecialistas = new JButton("Menos");
-		btnMenosEspecialistas.setBounds(680, 200, 150, 60);
+		btnMenosEspecialistas.setBounds(730, 200, 100, 60);
 		btnMenosEspecialistas.setActionCommand("P_AD_CONFIGURACIONES_MENOS_ESPECIALISTAS");
+		btnMenosEspecialistas.setBackground(new Color(244, 158, 76));
+		btnMenosEspecialistas.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnMenosEspecialistas.setForeground(new Color(5, 25, 35 ));
 
 		btnMasEspecialistas = new JButton("Más");
-		btnMasEspecialistas.setBounds(980, 200, 150, 60);
+		btnMasEspecialistas.setBounds(980, 200, 100, 60);
 		btnMasEspecialistas.setActionCommand("P_AD_CONFIGURACIONES_MAS_ESPECIALISTAS");
+		btnMasEspecialistas.setBackground(new Color(244, 158, 76));
+		btnMasEspecialistas.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnMasEspecialistas.setForeground(new Color(5, 25, 35 ));
 
 		lblDias = new JLabel("Número de días para el recordatorio");
 		lblDias.setBounds(130, 310, 400, 100);
+		lblDias.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblDias.setForeground(new Color(5, 25, 35 ));
 
 		lblEstadoDias = new JLabel("1");
 		lblEstadoDias.setBounds(900, 310, 400, 100);
+		lblEstadoDias.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblEstadoDias.setForeground(new Color(5, 25, 35 ));
 
 		btnMenosDias = new JButton("Menos");
-		btnMenosDias.setBounds(680, 330, 150, 60);
+		btnMenosDias.setBounds(730, 330, 100, 60);
 		btnMenosDias.setActionCommand("P_AD_CONFIGURACIONES_MENOS_DIAS");
+		btnMenosDias.setBackground(new Color(244, 158, 76));
+		btnMenosDias.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnMenosDias.setForeground(new Color(5, 25, 35 ));
 
 		btnMasDias = new JButton("Más");
-		btnMasDias.setBounds(980, 330, 150, 60);
+		btnMasDias.setBounds(980, 330, 100, 60);
 		btnMasDias.setActionCommand("P_AD_CONFIGURACIONES_MAS_DIAS");
+		btnMasDias.setBackground(new Color(244, 158, 76));
+		btnMasDias.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnMasDias.setForeground(new Color(5, 25, 35 ));
 
 		btnAtras = new JButton("Atras");
 		btnAtras.setBounds(500, 460, 100, 40);
 		btnAtras.setActionCommand("P_AD_CONFIGURACIONES_ATRAS");
+		btnAtras.setBackground(new Color(244, 158, 76));
+		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnAtras.setForeground(new Color(5, 25, 35 ));
 
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(670, 460, 100, 40);
 		btnSubmit.setActionCommand("P_AD_CONFIGURACIONES_SUBMIT");
+		btnSubmit.setBackground(new Color(244, 158, 76));
+		btnSubmit.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnSubmit.setForeground(new Color(5, 25, 35 ));
 
 		add(lblTurnos);
 		add(lblEstadoTurnos);

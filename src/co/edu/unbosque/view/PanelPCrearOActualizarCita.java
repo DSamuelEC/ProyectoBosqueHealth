@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
@@ -88,7 +89,9 @@ public class PanelPCrearOActualizarCita extends JPanel {
 	 */
 	public void inicializarComponentes() {
 		lblAgendamiento = new JLabel("AGENDAMIENTO DE CITAS");
-		lblAgendamiento.setBounds(580, 15, 300, 30);
+		lblAgendamiento.setBounds(545, 12, 300, 30);
+		lblAgendamiento.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblAgendamiento.setForeground(new Color(5, 25, 35 ));
 
 		String[] opciones = { "Cirugía", "Oncología", "Dermatología", "Neumología", "Cardiología", "Medicina Interna" };
 		ldIngreseEspecialista = new JComboBox<String>(opciones);
@@ -101,29 +104,47 @@ public class PanelPCrearOActualizarCita extends JPanel {
 		btnBuscarDisponibilidad = new JButton("Buscar Disponibilidad");
 		btnBuscarDisponibilidad.setBounds(860, 50, 250, 30);
 		btnBuscarDisponibilidad.setActionCommand("P_CREAR_O_ACTUALIZAR_PACIENTE_BUSCAR_DISPONIBILIDAD");
+		btnBuscarDisponibilidad.setBackground(new Color(244, 158, 76));
+		btnBuscarDisponibilidad.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnBuscarDisponibilidad.setForeground(new Color(5, 25, 35 ));
 
 		btnAgendar = new JButton("Agendar");
 		btnAgendar.setBounds(1150, 50, 100, 30);
 		btnAgendar.setActionCommand("P_CREAR_O_ACTUALIZAR_PACIENTE_AGENDAR");
+		btnAgendar.setBackground(new Color(244, 158, 76));
+		btnAgendar.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnAgendar.setForeground(new Color(5, 25, 35 ));
 
 		lblDisponinilidad = new JLabel("DISPONIBILIDAD");
-		lblDisponinilidad.setBounds(610, 100, 300, 30);
+		lblDisponinilidad.setBounds(580, 100, 300, 30);
+		lblDisponinilidad.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblDisponinilidad.setForeground(new Color(5, 25, 35 ));
 
 		lblCita = new JLabel("Cita");
 		lblCita.setBounds(10, 120, 300, 30);
+		lblCita.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblCita.setForeground(new Color(5, 25, 35 ));
 
 		lblExamen = new JLabel("Exámen");
 		lblExamen.setBounds(10, 120, 300, 30);
 		lblExamen.setVisible(false);
+		lblExamen.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblExamen.setForeground(new Color(5, 25, 35 ));
 
 		lblNombreEspecialista = new JLabel("Nombre Especialista");
 		lblNombreEspecialista.setBounds(210, 120, 300, 30);
+		lblNombreEspecialista.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNombreEspecialista.setForeground(new Color(5, 25, 35 ));
 
 		lblFecha = new JLabel("Fecha");
 		lblFecha.setBounds(810, 120, 300, 30);
+		lblFecha.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblFecha.setForeground(new Color(5, 25, 35 ));
 
 		lblHora = new JLabel("Hora");
 		lblHora.setBounds(1110, 120, 300, 30);
+		lblHora.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblHora.setForeground(new Color(5, 25, 35 ));
 
 		tblCrearOActualizar = new JTable(50, 4);
 		tblCrearOActualizar.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);

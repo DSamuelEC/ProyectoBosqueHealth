@@ -2,6 +2,7 @@ package co.edu.unbosque.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.*;
 import javax.swing.table.TableColumnModel;
@@ -64,18 +65,28 @@ public class PanelESolicitudTurno extends JPanel {
 		btnAceptar = new JButton("Aceptar Cambio");
 		btnAceptar.setBounds(870, 505, 170, 30);
 		btnAceptar.setActionCommand("P_SOLICITUD_TURNO_ESPECIALISTA_ACEPTAR");
+		btnAceptar.setBackground(new Color(244, 158, 76));
+		btnAceptar.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnAceptar.setForeground(new Color(5, 25, 35 ));
 		
 		btnRechazar = new JButton("Rechazar Cambio");
 		btnRechazar.setBounds(1070, 505, 170, 30);
 		btnRechazar.setActionCommand("P_SOLICITUD_TURNO_ESPECIALISTA_RECHAZAR");
+		btnRechazar.setBackground(new Color(244, 158, 76));
+		btnRechazar.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnRechazar.setForeground(new Color(5, 25, 35 ));
 
 		scrollPane = new JScrollPane(tblSolicitudTurno);
 
 		lblFecha = new JLabel("Fecha");
 		lblFecha.setBounds(810, 10, 300, 20);
+		lblFecha.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblFecha.setForeground(new Color(5, 25, 35 ));
 
 		lblNombreCompañero = new JLabel("Nombre Compañero");
 		lblNombreCompañero.setBounds(30, 10, 300, 20);
+		lblNombreCompañero.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNombreCompañero.setForeground(new Color(5, 25, 35 ));
 
 		add(lblNombreCompañero);
 		add(lblFecha);

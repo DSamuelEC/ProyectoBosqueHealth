@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.*;
 import javax.swing.table.TableColumnModel;
@@ -52,6 +53,8 @@ public class PanelAdVerTodos extends JPanel {
 
 		lblNombre = new JLabel("Nombre paciente");
 		lblNombre.setBounds(30, 10, 300, 20);
+		lblNombre.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNombre.setForeground(new Color(5, 25, 35 ));
 
 		add(scrollPane);
 		add(tblTodos);

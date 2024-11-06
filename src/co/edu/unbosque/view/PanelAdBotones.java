@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -70,34 +71,57 @@ public class PanelAdBotones extends JPanel {
 	public void inicializarComponentes() {
 		lblNombreAdmin = new JLabel("Nombre Admin");
 		lblNombreAdmin.setBounds(50, 20, 700, 60);
+		lblNombreAdmin.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNombreAdmin.setForeground(new Color(5, 25, 35 ));
 
 		btnRegistrarEspecialistas = new JButton("Crear Especialista");
 		btnRegistrarEspecialistas.setBounds(250, 30, 140, 40);
 		btnRegistrarEspecialistas.setActionCommand("P_BOTONES_ADMIN_REGISTRAR_ESPECIALISTA");
+		btnRegistrarEspecialistas.setBackground(new Color(244, 158, 76));
+		btnRegistrarEspecialistas.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnRegistrarEspecialistas.setForeground(new Color(5, 25, 35 ));
 
 		btnAsignarTurnos = new JButton("Asignar Turnos");
 		btnAsignarTurnos.setBounds(400, 30, 130, 40);
 		btnAsignarTurnos.setActionCommand("P_BOTONES_ADMIN_ASIGNAR_TURNOS");
+		btnAsignarTurnos.setBackground(new Color(244, 158, 76));
+		btnAsignarTurnos.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnAsignarTurnos.setForeground(new Color(5, 25, 35 ));
 
 		btnVerPacientes = new JButton("Ver Pacientes");
 		btnVerPacientes.setBounds(540, 30, 130, 40);
 		btnVerPacientes.setActionCommand("P_BOTONES_ADMIN_VER_PACIENTES");
+		btnVerPacientes.setBackground(new Color(244, 158, 76));
+		btnVerPacientes.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnVerPacientes.setForeground(new Color(5, 25, 35 ));
 
 		btnVerEspecialistas = new JButton("Ver Especialistas");
 		btnVerEspecialistas.setBounds(680, 30, 140, 40);
 		btnVerEspecialistas.setActionCommand("P_BOTONES_ADMIN_VER_ESPECIALISTAS");
+		btnVerEspecialistas.setBackground(new Color(244, 158, 76));
+		btnVerEspecialistas.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnVerEspecialistas.setForeground(new Color(5, 25, 35 ));
 
 		btnReportes = new JButton("Reportes");
 		btnReportes.setBounds(830, 30, 120, 40);
 		btnReportes.setActionCommand("P_BOTONES_ADMIN_REPORTES");
+		btnReportes.setBackground(new Color(244, 158, 76));
+		btnReportes.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnReportes.setForeground(new Color(5, 25, 35 ));
 
 		btnConfiguraciones = new JButton("Configuraciones");
 		btnConfiguraciones.setBounds(960, 30, 140, 40);
 		btnConfiguraciones.setActionCommand("P_BOTONES_ADMIN_CONFIGURACIONES");
+		btnConfiguraciones.setBackground(new Color(244, 158, 76));
+		btnConfiguraciones.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnConfiguraciones.setForeground(new Color(5, 25, 35 ));
 
 		btnCerrarSesion = new JButton("Cerrar Sesion");
 		btnCerrarSesion.setBounds(1110, 30, 140, 40);
 		btnCerrarSesion.setActionCommand("P_BOTONES_ADMIN_CERRAR_SESION");
+		btnCerrarSesion.setBackground(new Color(244, 158, 76));
+		btnCerrarSesion.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnCerrarSesion.setForeground(new Color(5, 25, 35 ));
 
 		add(lblNombreAdmin);
 		add(btnRegistrarEspecialistas);

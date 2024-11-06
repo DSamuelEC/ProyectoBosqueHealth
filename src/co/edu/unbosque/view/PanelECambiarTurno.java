@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
@@ -63,6 +64,9 @@ public class PanelECambiarTurno extends JPanel {
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(600, 340, 100, 30);
 		btnSubmit.setActionCommand("P_CAMBIAR_TURNO_ESPECIALISTA_SUBMIT");
+		btnSubmit.setBackground(new Color(244, 158, 76));
+		btnSubmit.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnSubmit.setForeground(new Color(5, 25, 35 ));
 
 		add(btnSubmit);
 		add(txtFechaMiTurno);

@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
@@ -51,7 +52,7 @@ public class PanelAccesoCrearPaciente extends JPanel {
 	public PanelAccesoCrearPaciente() {
 		setSize(1300, 700);
 		setLayout(null);
-
+		setBackground(new Color(255, 255, 255));
 		inicializarComponentes();
 		setVisible(false);
 	}
@@ -79,14 +80,21 @@ public class PanelAccesoCrearPaciente extends JPanel {
 		String[] opciones = { "F", "M" };
 		ldSexo = new JComboBox<String>(opciones);
 		ldSexo.setBounds(300, 370, 330, 60);
+		
 
 		btnAtras = new JButton("Atras");
 		btnAtras.setBounds(375, 450, 250, 60);
 		btnAtras.setActionCommand("P_ACCESOSCREARPACIENTE_ATRAS");
+		btnAtras.setBackground(new Color(244, 158, 76));
+		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnAtras.setForeground(new Color(5, 25, 35 ));
 
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(670, 450, 250, 60);
 		btnSubmit.setActionCommand("P_ACCESOSCREARPACIENTE_SUBMIT");
+		btnSubmit.setBackground(new Color(244, 158, 76));
+		btnSubmit.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnSubmit.setForeground(new Color(5, 25, 35 ));
 
 		add(txtNombre);
 		add(txtCedula);

@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.*;
 
@@ -67,34 +68,57 @@ public class PanelPSuperior extends JPanel {
 
 		lblNombre = new JLabel("Nombre Usuario");
 		lblNombre.setBounds(50, 20, 700, 60);
+		lblNombre.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNombre.setForeground(new Color(5, 25, 35 ));
 
 		btnVerCitas = new JButton("Ver Citas");
 		btnVerCitas.setBounds(240, 30, 130, 40);
 		btnVerCitas.setActionCommand("P_SUPERIOR_PACIENTE_VER_CITAS");
+		btnVerCitas.setBackground(new Color(244, 158, 76));
+		btnVerCitas.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnVerCitas.setForeground(new Color(5, 25, 35 ));
 
 		btnVerExamenes = new JButton("Ver Examenes");
 		btnVerExamenes.setBounds(390, 30, 130, 40);
 		btnVerExamenes.setActionCommand("P_SUPERIOR_PACIENTE_VER_EXAMENES");
+		btnVerExamenes.setBackground(new Color(244, 158, 76));
+		btnVerExamenes.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnVerExamenes.setForeground(new Color(5, 25, 35 ));
 		
 		btnAgendarCita = new JButton("Agendar Cita");
 		btnAgendarCita.setBounds(690, 30, 130, 40);
 		btnAgendarCita.setActionCommand("P_SUPERIOR_PACIENTE_AGENDAR_CITA");
+		btnAgendarCita.setBackground(new Color(244, 158, 76));
+		btnAgendarCita.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnAgendarCita.setForeground(new Color(5, 25, 35 ));
 
 		btnReagendarCita = new JButton("Reagendar Cita");
 		btnReagendarCita.setBounds(840, 30, 130, 40);
 		btnReagendarCita.setActionCommand("P_SUPERIOR_PACIENTE_REAGENDAR_CITA");
+		btnReagendarCita.setBackground(new Color(244, 158, 76));
+		btnReagendarCita.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnReagendarCita.setForeground(new Color(5, 25, 35 ));
 
 		btnCancelarCita = new JButton("Cancelar Cita");
 		btnCancelarCita.setBounds(990, 30, 130, 40);
 		btnCancelarCita.setActionCommand("P_SUPERIOR_PACIENTE_CANCELAR_CITA");
+		btnCancelarCita.setBackground(new Color(244, 158, 76));
+		btnCancelarCita.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnCancelarCita.setForeground(new Color(5, 25, 35 ));
 
 		btnCerrarSesion = new JButton("Cerrar Sesion");
 		btnCerrarSesion.setBounds(1140, 30, 130, 40);
 		btnCerrarSesion.setActionCommand("P_SUPERIOR_PACIENTE_CERRAR_SESION");
+		btnCerrarSesion.setBackground(new Color(244, 158, 76));
+		btnCerrarSesion.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnCerrarSesion.setForeground(new Color(5, 25, 35 ));
 		
 		btnVerMas = new JButton("Ver Mas");
 		btnVerMas.setBounds(540, 30, 130, 40);
 		btnVerMas.setActionCommand("P_SUPERIOR_PACIENTE_VER_MAS");
+		btnVerMas.setBackground(new Color(244, 158, 76));
+		btnVerMas.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnVerMas.setForeground(new Color(5, 25, 35 ));
 		
 		
 		add(lblNombre);
