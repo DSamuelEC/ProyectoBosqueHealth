@@ -119,8 +119,7 @@ public class PanelPSuperior extends JPanel {
 		btnVerMas.setBackground(new Color(244, 158, 76));
 		btnVerMas.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnVerMas.setForeground(new Color(5, 25, 35 ));
-		
-		
+				
 		add(lblNombre);
 		add(btnAgendarCita);
 		add(btnCancelarCita);

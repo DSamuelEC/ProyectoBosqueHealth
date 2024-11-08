@@ -2,7 +2,9 @@ package co.edu.unbosque.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
+import co.edu.unbosque.model.Cita;
 import co.edu.unbosque.model.Paciente;
 import co.edu.unbosque.model.Persona;
 import co.edu.unbosque.view.VentanaPrincipal;
@@ -85,6 +87,25 @@ public class ControllerPaciente implements ActionListener {
 	public void setearDatosPaciente(Paciente persona) {
 		ventanaP.getpPPrincipal().getpPSuperior().getLblNombre().setText(persona.getNombre());
 		ventanaP.getpPPrincipal().getpPSuperior().getLblNombre().setText(persona.getNombre());
-		
+
+	}
+
+	public void setearTable(ArrayList<Cita> citas, String tipo) {
+		if (citas.size() == 0) {
+			switch (tipo) {
+			case "CITAS":
+				vistaE.mostrarInformacion("NO TIENE CITAS AUN", 1);
+				break;
+			case "EXAMENES":
+				vistaE.mostrarInformacion("NO TIENE EXAMENES AUN", 1);
+				break;
+			default:
+				break;
+			}
+		} else {
+			for (Cita cita : citas) {
+//				implementar la vista para mostrarlo
+			}
+		}
 	}
 }
