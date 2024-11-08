@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class AdminDTO extends PersonaDTO {
 	private static final long serialVersionUID = 1L;
-	private ArrayList<PacienteDTO> pacientes;
-	private ArrayList<EspecialistaDTO> especialistas;
+	private ArrayList<PacienteDTO> pacientes = new ArrayList<PacienteDTO>();
+	private ArrayList<EspecialistaDTO> especialistas = new ArrayList<EspecialistaDTO>();
 
 	public ArrayList<PacienteDTO> getPacientes() {
 		return pacientes;

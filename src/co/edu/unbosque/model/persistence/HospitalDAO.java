@@ -29,7 +29,7 @@ public class HospitalDAO implements InterfaceDAO<Persona> {
 
 	@Override
 	public boolean add(Persona x) {
-		if (find(x.getCedula()) == null) {
+		if (find(x.getNombre(), x.getCedula()) == null) {
 			datos.add(x);
 			archivo.escribirArchivoBinario(datos);
 			return true;
@@ -39,7 +39,7 @@ public class HospitalDAO implements InterfaceDAO<Persona> {
 
 	@Override
 	public boolean delete(Persona x) {
-		Persona y = find(x.getCedula());
+		Persona y = find(x.getNombre(), x.getCedula());
 		if (y != null) {
 			try {
 				datos.remove(y);
@@ -57,7 +57,7 @@ public class HospitalDAO implements InterfaceDAO<Persona> {
 
 	@Override
 	public boolean update(Persona x, Persona y) {
-		Persona e = find(x.getCedula());
+		Persona e = find(x.getNombre(), x.getCedula());
 		if (e != null) {
 			datos.remove(e);
 			datos.add(y);
@@ -67,12 +67,13 @@ public class HospitalDAO implements InterfaceDAO<Persona> {
 	}
 
 	@Override
-	public Persona find(int cedula) {
+	public Persona find(String nombre, int cedula) {
 		Persona encontrado = null;
 		if (!datos.isEmpty()) {
 			for (Persona persona : datos) {
-				if (persona.getCedula() == cedula) {
+				if (persona.getNombre().equals(nombre) && persona.getCedula() == cedula) {
 					encontrado = persona;
+					break;
 				}
 			}
 		}

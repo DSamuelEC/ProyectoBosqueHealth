@@ -3,6 +3,8 @@ package co.edu.unbosque.model;
 import java.util.ArrayList;
 
 import co.edu.unbosque.model.persistence.HospitalDAO;
+import co.edu.unbosque.model.persistence.MapHandler;
+import co.edu.unbosque.model.persistence.PersonaDTO;
 
 public class Hospital {
 	private ArrayList<Persona> todasPersonas;
@@ -15,14 +17,18 @@ public class Hospital {
 		this.hospitalDAO = new HospitalDAO();
 	}
 
-	public boolean crearPaciente(String nombre, int cedula, String correo, String sexo, int edad) {
-		persona = new Paciente(nombre, cedula, correo, sexo, edad);
+	public boolean crearPersona(PersonaDTO personaDto) {
+		persona = MapHandler.convertirPersonaDTOtoPersona(personaDto);
 		return hospitalDAO.add(persona);
 	}
 
-	public Persona find(int cedula) {
-		persona = hospitalDAO.find(cedula);
-		return persona;
+	public String find(String nombre, int cedula, String rol) {
+		persona = hospitalDAO.find(nombre, cedula);
+		if (persona.getRol() == rol) {
+			return "ACESSO CONCEDIDO";
+		} else {
+			return "ACCESO DENEGADO, INTENTE DE NUEVO";
+		}
 	}
 
 	public void actualizarBD() {

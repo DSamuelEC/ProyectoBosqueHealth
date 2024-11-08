@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class EspecialistaDTO extends PersonaDTO {
 	private static final long serialVersionUID = 1L;
-	private ArrayList<TurnoDTO> turnos;
-	private ArrayList<CitaDTO> citas;
+	private ArrayList<TurnoDTO> turnos = new ArrayList<TurnoDTO>();
+	private ArrayList<CitaDTO> citas = new ArrayList<CitaDTO>();
 	private String especializacion;
 
 	public ArrayList<TurnoDTO> getTurnos() {

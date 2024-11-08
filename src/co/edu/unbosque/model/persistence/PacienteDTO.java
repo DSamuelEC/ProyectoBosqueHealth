@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class PacienteDTO extends PersonaDTO {
 	private static final long serialVersionUID = 1L;
-	private ArrayList<CitaDTO> citas;
-	private ArrayList<CitaDTO> examenes;
+	private ArrayList<CitaDTO> citas = new ArrayList<CitaDTO>();
+	private ArrayList<CitaDTO> examenes = new ArrayList<CitaDTO>();
 
 	public ArrayList<CitaDTO> getCitas() {
 		return citas;
