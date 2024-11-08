@@ -1,6 +1,8 @@
 package co.edu.unbosque.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Admin extends Persona implements InterfaceCRUD<Persona> {
 	private ArrayList<Paciente> pacientes;
@@ -10,6 +12,29 @@ public class Admin extends Persona implements InterfaceCRUD<Persona> {
 		super(nombre, cedula, correo, sexo, edad, "ADMIN");
 		this.pacientes = new ArrayList<Paciente>();
 		this.especialistas = new ArrayList<Especialista>();
+	}
+
+	public Map<String, ArrayList<Especialista>> agruparEspecialistasPorArea() {
+		Map<String, ArrayList<Especialista>> especialistasPorArea = new HashMap<>();
+
+		especialistasPorArea.put("Cirugia", new ArrayList<>());
+		especialistasPorArea.put("Oncologia", new ArrayList<>());
+		especialistasPorArea.put("Dermatologia", new ArrayList<>());
+		especialistasPorArea.put("Neumologia", new ArrayList<>());
+		especialistasPorArea.put("Cardiologia", new ArrayList<>());
+		especialistasPorArea.put("Medicina Interna", new ArrayList<>());
+
+		for (Especialista especialista : especialistas) {
+			String area = especialista.getEspecializacion();
+
+			if (especialistasPorArea.containsKey(area)) {
+				especialistasPorArea.get(area).add(especialista);
+			} else {
+				System.out.println("Área desconocida: " + area);
+				return especialistasPorArea = null;
+			}
+		}
+		return especialistasPorArea;
 	}
 
 	@Override
