@@ -1,6 +1,7 @@
 package co.edu.unbosque.controller;
 
 import co.edu.unbosque.model.Hospital;
+import co.edu.unbosque.model.Paciente;
 import co.edu.unbosque.model.persistence.AdminDTO;
 import co.edu.unbosque.model.persistence.EspecialistaDTO;
 import co.edu.unbosque.model.persistence.PacienteDTO;
@@ -91,8 +92,16 @@ public class Controller {
 		String mensaje = hospital.find(nombre, cedula, rol);
 		if (mensaje == "ACESSO CONCEDIDO") {
 			controllerAccesos.mostrarVentanaEmergente(mensaje, 2);
-			controllerAccesos.cambiarPanel(2);
+			controllerAccesos.cambiarPanel(1);
 			ventanaP.cambiarVisibilidad(index);
+			switch (rol) {
+			case "PACIENTE":
+				controllerPaciente.setearDatosPaciente((Paciente) hospital.getPersona());
+				break;
+
+			default:
+				break;
+			}
 		} else {
 			controllerAccesos.mostrarVentanaEmergente(mensaje, 1);
 		}

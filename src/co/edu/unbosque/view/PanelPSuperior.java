@@ -129,7 +129,6 @@ public class PanelPSuperior extends JPanel {
 		add(btnVerCitas);
 		add(btnVerExamenes);
 		add(btnVerMas);
-
 	}
 
 	/**

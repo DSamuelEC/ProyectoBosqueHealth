@@ -58,7 +58,6 @@ public class PanelPPrincipal extends JPanel {
 		add(pPCrearOActualizarCita);
 		add(pPVerCitasOExamen);
 		add(pPVerMas);
-
 	}
 
 	/**

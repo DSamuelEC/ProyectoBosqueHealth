@@ -3,6 +3,8 @@ package co.edu.unbosque.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import co.edu.unbosque.model.Paciente;
+import co.edu.unbosque.model.Persona;
 import co.edu.unbosque.view.VentanaPrincipal;
 import co.edu.unbosque.view.VistaVentanasEmergentes;
 
@@ -52,6 +54,7 @@ public class ControllerPaciente implements ActionListener {
 		 */
 		case "P_SUPERIOR_PACIENTE_AGENDAR_CITA":
 			ventanaP.getpPPrincipal().cambiarVisibilidad(2);
+//			ventanaP.getpPPrincipal().getpPSuperior().getLblNombre().setText("ola");
 			break;
 		/*
 		 * case "P_SUPERIOR_PACIENTE_REAGENDAR_CITA":
@@ -77,5 +80,11 @@ public class ControllerPaciente implements ActionListener {
 		default:
 			break;
 		}
+	}
+
+	public void setearDatosPaciente(Paciente persona) {
+		ventanaP.getpPPrincipal().getpPSuperior().getLblNombre().setText(persona.getNombre());
+		ventanaP.getpPPrincipal().getpPSuperior().getLblNombre().setText(persona.getNombre());
+		
 	}
 }
