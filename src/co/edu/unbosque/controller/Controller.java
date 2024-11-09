@@ -22,18 +22,18 @@ public class Controller {
 		hospital = new Hospital();
 		ventanaP = new VentanaPrincipal();
 		vistaE = new VistaVentanasEmergentes();
-		controllerAccesos = new ControllerAccesos(this, ventanaP, vistaE);
+		controllerAccesos = new ControllerAccesos(this, ventanaP);
 		controllerPaciente = new ControllerPaciente(this, ventanaP, vistaE);
 		controllerEspecialista = new ControllerEspecialista(this, ventanaP, vistaE);
-		controllerAdmin = new ControllerAdmin(this, ventanaP, vistaE);
+		controllerAdmin = new ControllerAdmin(this, ventanaP);
 		hospital.actualizarBD();
 	}
 
 	public void run() {
 	}
 
-	public void capturarDatosCrearPersonas(String nombre, int cedula, String correo, String sexo, int edad,
-			String rol) {
+	public void capturarDatosCrearPersonas(String nombre, int cedula, String correo, String sexo, int edad, String rol,
+			String especialidad) {
 		PersonaDTO personadto;
 		switch (rol) {
 		case "PACIENTE":
@@ -45,24 +45,26 @@ public class Controller {
 			personadto.setEdad(edad);
 			personadto.setRol(rol);
 			if (hospital.crearPersona(personadto)) {
-				controllerAccesos.mostrarVentanaEmergente("Se creo con exito, por favor logueese", 2);
+				vistaE.mostrarInformacion("Se creo con exito UN PACIENTE, por favor logueese", 2);
 				controllerAccesos.cambiarPanel(2);
 			} else {
 //				manejo de errores
 			}
 			break;
 		case "ESPECIALISTA":
-			personadto = new EspecialistaDTO();
-			personadto.setNombre(nombre);
-			personadto.setCedula(cedula);
-			personadto.setCorreo(correo);
-			personadto.setSexo(sexo);
-			personadto.setEdad(edad);
-			personadto.setRol(rol);
+			EspecialistaDTO especialistaDto = new EspecialistaDTO();
+			especialistaDto.setNombre(nombre);
+			especialistaDto.setEspecializacion(especialidad);
+			especialistaDto.setCedula(cedula);
+			especialistaDto.setCorreo(correo);
+			especialistaDto.setSexo(sexo);
+			especialistaDto.setEdad(edad);
+			especialistaDto.setRol(rol);
+			personadto = especialistaDto;
 //			VALIDACIONES DE SI SE PUDO CREAR O NO, Y MANEJAR LOS CASOS EXCEPCIONALES
 			if (hospital.crearPersona(personadto)) {
-				controllerAccesos.mostrarVentanaEmergente("Se creo con exito, por favor logueese", 2);
-				controllerAccesos.cambiarPanel(2);
+				vistaE.mostrarInformacion("Se creo con exito UN ESPECIALISTA", 2);
+				controllerAdmin.cambiarPanel(1);
 			} else {
 //				manejo de errores
 			}
@@ -77,7 +79,7 @@ public class Controller {
 			personadto.setRol(rol);
 //			VALIDACIONES DE SI SE PUDO CREAR O NO, Y MANEJAR LOS CASOS EXCEPCIONALES, IGUAL AMDIN SOLO HAY 1
 			if (hospital.crearPersona(personadto)) {
-				controllerAccesos.mostrarVentanaEmergente("Se creo con exito, por favor logueese", 2);
+				vistaE.mostrarInformacion("Se creo con exito UN ADMIN, por favor logueese", 2);
 				controllerAccesos.cambiarPanel(2);
 			} else {
 //				manejo de errores
@@ -91,19 +93,20 @@ public class Controller {
 	public void capturarDatosLogin(String nombre, int cedula, String rol, int index) {
 		String mensaje = hospital.find(nombre, cedula, rol);
 		if (mensaje == "ACESSO CONCEDIDO") {
-			controllerAccesos.mostrarVentanaEmergente(mensaje, 2);
+			vistaE.mostrarInformacion(mensaje, 2);
 			controllerAccesos.cambiarPanel(1);
 			ventanaP.cambiarVisibilidad(index);
 			switch (rol) {
 			case "PACIENTE":
 				controllerPaciente.setearDatosPaciente((Paciente) hospital.getPersona());
 				break;
-
+			case "ADMIN":
+				break;
 			default:
 				break;
 			}
 		} else {
-			controllerAccesos.mostrarVentanaEmergente(mensaje, 1);
+			vistaE.mostrarInformacion(mensaje, 1);
 		}
 	}
 }

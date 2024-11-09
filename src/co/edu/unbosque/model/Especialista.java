@@ -3,7 +3,7 @@ package co.edu.unbosque.model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Especialista extends Persona implements InterfaceCRUD<Actividad> {
+public class Especialista extends Persona {
 	private ArrayList<Turno> turnos;
 	private ArrayList<Cita> citas;
 	private String especializacion;
@@ -15,12 +15,11 @@ public class Especialista extends Persona implements InterfaceCRUD<Actividad> {
 		this.especializacion = especializacion;
 	}
 
-	public boolean puedeTomarTurno(int maxTurnosPorSemana) {
-		// Contar turnos asignados en la semana actual
+	public boolean puedeTomarTurno(LocalDate inicioSemana, int maxTurnosPorSemana) {
 		int turnosSemana = 0;
-		LocalDate inicioSemana = LocalDate.now().withDayOfMonth(1);
+
 		for (Turno turno : turnos) {
-			if (turno.getFecha().isAfter(inicioSemana) && turno.getFecha().isBefore(inicioSemana.plusDays(7))) {
+			if (!turno.getFecha().isBefore(inicioSemana) && turno.getFecha().isBefore(inicioSemana.plusDays(7))) {
 				turnosSemana++;
 			}
 		}
@@ -29,36 +28,6 @@ public class Especialista extends Persona implements InterfaceCRUD<Actividad> {
 
 	public void agregarTurno(Turno turno) {
 		turnos.add(turno);
-	}
-
-	@Override
-	public String verTodo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean añadir(Actividad x) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean actualizar(Actividad x, Actividad y) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean eliminar(Actividad x) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean buscar(Actividad x) {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 	public String getEspecializacion() {

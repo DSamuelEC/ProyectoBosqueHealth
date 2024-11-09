@@ -4,18 +4,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import co.edu.unbosque.view.VentanaPrincipal;
-import co.edu.unbosque.view.VistaVentanasEmergentes;
 
 public class ControllerAccesos implements ActionListener {
 	private Controller controllerPrincipal;
 	private VentanaPrincipal ventanaP;
-	private VistaVentanasEmergentes vistaE;
 
-	public ControllerAccesos(Controller controllerPrincipal, VentanaPrincipal ventanaP,
-			VistaVentanasEmergentes vistaE) {
+	public ControllerAccesos(Controller controllerPrincipal, VentanaPrincipal ventanaP) {
 		this.controllerPrincipal = controllerPrincipal;
 		this.ventanaP = ventanaP;
-		this.vistaE = vistaE;
 		asignarOyentes();
 	}
 
@@ -94,17 +90,7 @@ public class ControllerAccesos implements ActionListener {
 		String correo = ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtCorreo().getText();
 		String sexo = ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getLdSexo().getSelectedItem().toString();
 		int edad = Integer.parseInt(ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtEdad().getText());
-		controllerPrincipal.capturarDatosCrearPersonas(nombre, cedula, correo, sexo, edad, "PACIENTE");
-	}
-
-//	ESP
-	public void capturarDatosCrearEspecialista() {
-		String nombre = ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtNombre().getText();
-		int cedula = Integer.parseInt(ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtCedula().getText());
-		String correo = ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtCorreo().getText();
-		String sexo = ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getLdSexo().getSelectedItem().toString();
-		int edad = Integer.parseInt(ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtEdad().getText());
-		controllerPrincipal.capturarDatosCrearPersonas(nombre, cedula, correo, sexo, edad, "ESPECIALISTA");
+		controllerPrincipal.capturarDatosCrearPersonas(nombre, cedula, correo, sexo, edad, "PACIENTE", null);
 	}
 
 //	ADM
@@ -114,7 +100,7 @@ public class ControllerAccesos implements ActionListener {
 		String correo = ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtCorreo().getText();
 		String sexo = ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getLdSexo().getSelectedItem().toString();
 		int edad = Integer.parseInt(ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtEdad().getText());
-		controllerPrincipal.capturarDatosCrearPersonas(nombre, cedula, correo, sexo, edad, "ADMIN");
+		controllerPrincipal.capturarDatosCrearPersonas(nombre, cedula, correo, sexo, edad, "ADMIN", null);
 	}
 
 	public void capturarAcceso(int index) {
@@ -141,9 +127,5 @@ public class ControllerAccesos implements ActionListener {
 		default:
 			break;
 		}
-	}
-
-	public void mostrarVentanaEmergente(String mensaje, int n) {
-		vistaE.mostrarInformacion(mensaje, n);
 	}
 }

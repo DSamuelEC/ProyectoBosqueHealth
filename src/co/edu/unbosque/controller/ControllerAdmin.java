@@ -4,18 +4,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import co.edu.unbosque.view.VentanaPrincipal;
-import co.edu.unbosque.view.VistaVentanasEmergentes;
 
 public class ControllerAdmin implements ActionListener {
 	private Controller controllerPrincipal;
 	private VentanaPrincipal ventanaP;
-	private VistaVentanasEmergentes vistaE;
 
-	public ControllerAdmin(Controller controllerPrincipal, VentanaPrincipal ventanaP,
-			VistaVentanasEmergentes vistaE) {
+	public ControllerAdmin(Controller controllerPrincipal, VentanaPrincipal ventanaP) {
 		this.controllerPrincipal = controllerPrincipal;
 		this.ventanaP = ventanaP;
-		this.vistaE = vistaE;
 		asignarOyentes();
 	}
 
@@ -47,40 +43,41 @@ public class ControllerAdmin implements ActionListener {
 		System.out.println(comando);
 		switch (comando) {
 		case "P_BOTONES_ADMIN_REGISTRAR_ESPECIALISTA":
-			ventanaP.getpAdPrincipal().cambiarVisibilidad(2);
+			cambiarPanel(2);
 			break;
 		case "P_BOTONES_ADMIN_ASIGNAR_TURNOS":
-			vistaE.mostrarInformacion("FATAL ERROR: NO SE PUDO MANDAR EL CORREO AUN", 0);
+//			vistaE.mostrarInformacion("FATAL ERROR: NO SE PUDO MANDAR EL CORREO AUN", 0);
 			break;
 		case "P_BOTONES_ADMIN_VER_PACIENTES":
-			ventanaP.getpAdPrincipal().cambiarVisibilidad(1);
+			cambiarPanel(1);
 			break;
 		case "P_BOTONES_ADMIN_VER_ESPECIALISTAS":
-			ventanaP.getpAdPrincipal().cambiarVisibilidad(1);
+			cambiarPanel(1);
 			break;
 		case "P_BOTONES_ADMIN_REPORTES":
-			vistaE.mostrarInformacion("FATAL ERROR: NO SE PUDO MANDAR EL CORREO AUN", 0);
+//			vistaE.mostrarInformacion("FATAL ERROR: NO SE PUDO MANDAR EL CORREO AUN", 0);
 			break;
 		case "P_BOTONES_ADMIN_CONFIGURACIONES":
-			ventanaP.getpAdPrincipal().cambiarVisibilidad(3);
+			cambiarPanel(3);
 			break;
 		case "P_BOTONES_ADMIN_CERRAR_SESION":
-			ventanaP.getpAdPrincipal().cambiarVisibilidad(1);
-			vistaE.mostrarInformacion("Cerrando sesion, hasta la proxima...", 1);
-			ventanaP.cambiarVisibilidad(1);
+			cambiarPanel(1);
+//			vistaE.mostrarInformacion("Cerrando sesion, hasta la proxima...", 1);
+//			ventanaP.cambiarVisibilidad(1);
 			break;
 		case "P_AD_CONFIGURACIONES_ATRAS":
-			ventanaP.getpAdPrincipal().cambiarVisibilidad(1);
+			cambiarPanel(1);
 			break;
 		case "P_AD_CONFIGURACIONES_SUBMIT":
-			ventanaP.getpAdPrincipal().cambiarVisibilidad(1);
-			vistaE.mostrarInformacion("FATAL ERROR: AUN NO HAY CAMBIOS", 0);
+//			cambiarPanel(1);
+//			vistaE.mostrarInformacion("FATAL ERROR: AUN NO HAY CAMBIOS", 0);
 		case "P_AD_REGISTRAR_ESPECIALISTA_ATRAS":
-			ventanaP.getpAdPrincipal().cambiarVisibilidad(1);
+			cambiarPanel(1);
 			break;
 		case "P_AD_REGISTRAR_ESPECIALISTA_SUBMIT":
-			ventanaP.getpAdPrincipal().cambiarVisibilidad(1);
-			vistaE.mostrarInformacion("FATAL ERROR: AUN NO HAY CAMBIOS", 0);
+			capturarDatosCrearEspecialista();
+//			cambiarPanel(1);
+//			vistaE.mostrarInformacion("FATAL ERROR: AUN NO HAY CAMBIOS", 0);
 			break;
 		case "P_AD_CONFIGURACIONES_MAS_TURNOS":
 			ventanaP.getpAdPrincipal().getpAdConfiguraciones().cambiarEstados("turnos", "MAS", 0);
@@ -103,5 +100,23 @@ public class ControllerAdmin implements ActionListener {
 		default:
 			break;
 		}
+	}
+
+	public void cambiarPanel(int index) {
+		ventanaP.getpAdPrincipal().cambiarVisibilidad(index);
+	}
+
+	public void capturarDatosCrearEspecialista() {
+		String nombre = ventanaP.getpAdPrincipal().getpAdRegistrarEspecialista().getTxtNombre().getText();
+		String especialidad = ventanaP.getpAdPrincipal().getpAdRegistrarEspecialista().getLdEspecialidad()
+				.getSelectedItem().toString();
+		String correo = ventanaP.getpAdPrincipal().getpAdRegistrarEspecialista().getTxtCorreo().getText();
+		int cedula = Integer
+				.parseInt(ventanaP.getpAdPrincipal().getpAdRegistrarEspecialista().getTxtCedula().getText());
+		String sexo = ventanaP.getpAdPrincipal().getpAdRegistrarEspecialista().getLdSexo().getSelectedItem().toString();
+		int edad = Integer.parseInt(ventanaP.getpAdPrincipal().getpAdRegistrarEspecialista().getTxtEdad().getText());
+
+		controllerPrincipal.capturarDatosCrearPersonas(nombre, cedula, correo, sexo, edad, "ESPECIALISTA",
+				especialidad);
 	}
 }
