@@ -5,21 +5,38 @@ import java.util.ArrayList;
 
 import co.edu.unbosque.model.Persona;
 
+/**
+ * Clase encargada de manipular el archivo binario
+ * 
+ * @author Samuel Diaz
+ */
 public class HospitalDAO implements InterfaceDAO<Persona> {
+	/**
+	 * Atributo encargado de almacenar todos los datos del archivo
+	 */
 	private ArrayList<Persona> datos;
+	/**
+	 * Atributo encargado de almacenar una instancia del archivo binario para poder
+	 * manipularlo
+	 */
 	private Archivo archivo;
 
+	/**
+	 * Constructor de la clase, inicializa los atributos
+	 */
 	public HospitalDAO() {
 		this.datos = new ArrayList<Persona>();
 		this.archivo = new Archivo();
 	}
 
+	/**
+	 * 
+	 */
 	public void actualizarBD() {
 		ArrayList<Persona> personasExistentes = archivo.leerArchivoBinario();
 		if (personasExistentes != null) {
 			datos = personasExistentes;
 		}
-
 	}
 
 	@Override
