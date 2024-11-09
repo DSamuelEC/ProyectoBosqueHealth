@@ -102,7 +102,7 @@ public class PanelAdRegistrarEspecialista extends JPanel {
 		ldSexo = new JComboBox<String>(opcionesSexo);
 		ldSexo.setBounds(840, 320, 300, 60);
 
-		String[] opcionesEspecialidades = { "Cirugía", "Oncología", "Dermatología", "Neumología", "Cardiología",
+		String[] opcionesEspecialidades = { "Cirugia", "Oncologia", "Dermatologia", "Neumologia", "Cardiologia",
 				"Medicina Interna" };
 		ldEspecialidad = new JComboBox<String>(opcionesEspecialidades);
 		ldEspecialidad.setBounds(950, 120, 300, 60);

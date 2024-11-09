@@ -1,5 +1,6 @@
 package co.edu.unbosque.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Especialista extends Persona implements InterfaceCRUD<Actividad> {
@@ -12,6 +13,22 @@ public class Especialista extends Persona implements InterfaceCRUD<Actividad> {
 		this.turnos = new ArrayList<Turno>();
 		this.citas = new ArrayList<Cita>();
 		this.especializacion = especializacion;
+	}
+
+	public boolean puedeTomarTurno(int maxTurnosPorSemana) {
+		// Contar turnos asignados en la semana actual
+		int turnosSemana = 0;
+		LocalDate inicioSemana = LocalDate.now().withDayOfMonth(1);
+		for (Turno turno : turnos) {
+			if (turno.getFecha().isAfter(inicioSemana) && turno.getFecha().isBefore(inicioSemana.plusDays(7))) {
+				turnosSemana++;
+			}
+		}
+		return turnosSemana < maxTurnosPorSemana;
+	}
+
+	public void agregarTurno(Turno turno) {
+		turnos.add(turno);
 	}
 
 	@Override
