@@ -1,5 +1,6 @@
 package co.edu.unbosque.controller;
 
+import co.edu.unbosque.model.Admin;
 import co.edu.unbosque.model.Hospital;
 import co.edu.unbosque.model.Paciente;
 import co.edu.unbosque.model.persistence.AdminDTO;
@@ -25,7 +26,7 @@ public class Controller {
 		controllerAccesos = new ControllerAccesos(this, ventanaP);
 		controllerPaciente = new ControllerPaciente(this, ventanaP, vistaE);
 		controllerEspecialista = new ControllerEspecialista(this, ventanaP, vistaE);
-		controllerAdmin = new ControllerAdmin(this, ventanaP);
+		controllerAdmin = new ControllerAdmin(this, ventanaP, vistaE);
 		hospital.actualizarBD();
 	}
 
@@ -101,6 +102,7 @@ public class Controller {
 				controllerPaciente.setearDatosPaciente((Paciente) hospital.getPersona());
 				break;
 			case "ADMIN":
+				controllerAdmin.setearDatosAdmin((Admin) hospital.getPersona());
 				break;
 			default:
 				break;

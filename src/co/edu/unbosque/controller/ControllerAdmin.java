@@ -2,16 +2,24 @@ package co.edu.unbosque.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
+import co.edu.unbosque.model.Admin;
+import co.edu.unbosque.model.Especialista;
+import co.edu.unbosque.model.Paciente;
 import co.edu.unbosque.view.VentanaPrincipal;
+import co.edu.unbosque.view.VistaVentanasEmergentes;
 
 public class ControllerAdmin implements ActionListener {
 	private Controller controllerPrincipal;
 	private VentanaPrincipal ventanaP;
+	private VistaVentanasEmergentes vistaE;
+	private Admin admin;
 
-	public ControllerAdmin(Controller controllerPrincipal, VentanaPrincipal ventanaP) {
+	public ControllerAdmin(Controller controllerPrincipal, VentanaPrincipal ventanaP, VistaVentanasEmergentes vistaE) {
 		this.controllerPrincipal = controllerPrincipal;
 		this.ventanaP = ventanaP;
+		this.vistaE = vistaE;
 		asignarOyentes();
 	}
 
@@ -50,9 +58,11 @@ public class ControllerAdmin implements ActionListener {
 			break;
 		case "P_BOTONES_ADMIN_VER_PACIENTES":
 			cambiarPanel(1);
+			setearTablePacientes(admin.getPacientes());
 			break;
 		case "P_BOTONES_ADMIN_VER_ESPECIALISTAS":
 			cambiarPanel(1);
+			setearTableEspecialistas(admin.getEspecialistas());
 			break;
 		case "P_BOTONES_ADMIN_REPORTES":
 //			vistaE.mostrarInformacion("FATAL ERROR: NO SE PUDO MANDAR EL CORREO AUN", 0);
@@ -118,5 +128,35 @@ public class ControllerAdmin implements ActionListener {
 
 		controllerPrincipal.capturarDatosCrearPersonas(nombre, cedula, correo, sexo, edad, "ESPECIALISTA",
 				especialidad);
+	}
+
+	public void setearDatosAdmin(Admin admin) {
+		this.admin = admin;
+		ventanaP.getpAdPrincipal().getpAdBotones().getLblNombreAdmin().setText(this.admin.getNombre());
+		setearTablePacientes(this.admin.getPacientes());
+	}
+
+	public void setearTablePacientes(ArrayList<Paciente> pacientes) {
+		if (pacientes.size() == 0) {
+			vistaE.mostrarInformacion("No existen pacientes aun", 1);
+		} else {
+			ventanaP.getpAdPrincipal().getpAdVerTodos().cambiarEncabezado(0, "Paciente");
+			for (Paciente paciente : pacientes) {
+				ventanaP.getpAdPrincipal().getpAdVerTodos().agregarFilaTabla(paciente.getNombre(),
+						paciente.getCorreo());
+			}
+		}
+	}
+
+	public void setearTableEspecialistas(ArrayList<Especialista> especialistas) {
+		if (especialistas.size() == 0) {
+			vistaE.mostrarInformacion("No existen especialistas aun", 1);
+		} else {
+			ventanaP.getpAdPrincipal().getpAdVerTodos().cambiarEncabezado(0, "Especialista");
+			for (Especialista especialista : especialistas) {
+				ventanaP.getpAdPrincipal().getpAdVerTodos().agregarFilaTabla(especialista.getNombre(),
+						especialista.getCorreo());
+			}
+		}
 	}
 }

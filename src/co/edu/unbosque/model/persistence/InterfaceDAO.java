@@ -9,4 +9,5 @@ public interface InterfaceDAO <T>{
 	boolean delete(T x);
 	boolean update(T x, T y);
 	T find(String nombre, int cedula);
+	T find(String rol);
 }

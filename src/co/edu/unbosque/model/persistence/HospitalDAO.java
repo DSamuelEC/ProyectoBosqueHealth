@@ -96,4 +96,19 @@ public class HospitalDAO implements InterfaceDAO<Persona> {
 		}
 		return encontrado;
 	}
+
+	@Override
+	public Persona find(String rol) {
+		Persona encontrado = null;
+		if (!datos.isEmpty()) {
+			for (Persona persona : datos) {
+				if (persona.getNombre().equals(rol)) {
+					encontrado = persona;
+					break;
+				}
+			}
+		}
+		return encontrado;
+	}
+
 }

@@ -25,6 +25,9 @@ public class Hospital {
 	public String find(String nombre, int cedula, String rol) {
 		persona = hospitalDAO.find(nombre, cedula);
 		if (persona.getRol() == rol) {
+			if (rol == "ADMIN") {
+				
+			}
 			return "ACESSO CONCEDIDO";
 		} else {
 			return "ACCESO DENEGADO, INTENTE DE NUEVO";
