@@ -79,6 +79,7 @@ public class HospitalDAO implements InterfaceDAO<Persona> {
 			datos.remove(e);
 			datos.add(y);
 			archivo.escribirArchivoBinario(datos);
+			return true;
 		}
 		return false;
 	}

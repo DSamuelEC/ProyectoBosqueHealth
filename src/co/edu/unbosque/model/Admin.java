@@ -42,6 +42,7 @@ public class Admin extends Persona {
 					if (especialista.puedeTomarTurno(inicioSemana, maxTurnosPorSemana)) {
 						Turno turno = new Turno(fechaTurno, horaInicioTurno, horaFinTurno.plusHours(24), "Asignado");
 						especialista.agregarTurno(turno);
+						System.out.println(especialista + " tomo turno " + fechaTurno.toString());
 					}
 				}
 			}

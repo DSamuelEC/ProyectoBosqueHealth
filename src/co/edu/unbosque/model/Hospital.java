@@ -30,6 +30,12 @@ public class Hospital {
 		return creado;
 	}
 
+	public boolean actualizarPersona(PersonaDTO personaDto) {
+		persona = MapHandler.convertirPersonaDTOtoPersona(personaDto);
+		System.out.println("llegoooooooooooooooooo" + hospitalDAO.update(persona, persona));
+		return hospitalDAO.update(persona, persona);
+	}
+
 	public String find(String nombre, long cedula, String rol) {
 		persona = hospitalDAO.find(nombre, cedula);
 		if (persona.getRol() == rol) {

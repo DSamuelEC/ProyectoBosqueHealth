@@ -1,10 +1,14 @@
 package co.edu.unbosque.controller;
 
+import java.util.ArrayList;
+
 import co.edu.unbosque.model.Admin;
+import co.edu.unbosque.model.Especialista;
 import co.edu.unbosque.model.Hospital;
 import co.edu.unbosque.model.Paciente;
 import co.edu.unbosque.model.persistence.AdminDTO;
 import co.edu.unbosque.model.persistence.EspecialistaDTO;
+import co.edu.unbosque.model.persistence.MapHandler;
 import co.edu.unbosque.model.persistence.PacienteDTO;
 import co.edu.unbosque.model.persistence.PersonaDTO;
 import co.edu.unbosque.view.VentanaPrincipal;
@@ -102,8 +106,10 @@ public class Controller {
 			case "PACIENTE":
 				controllerPaciente.setearDatosPaciente((Paciente) hospital.getPersona());
 				break;
+			case "ESPECIALISTA":
+				controllerEspecialista.setearDatosEspecialista((Especialista) hospital.getPersona());
+				break;
 			case "ADMIN":
-				System.out.println(((Admin) hospital.getPersona()).toString());
 				controllerAdmin.setearDatosAdmin((Admin) hospital.getPersona());
 				break;
 			default:
@@ -111,6 +117,31 @@ public class Controller {
 			}
 		} else {
 			vistaE.mostrarInformacion(mensaje, 1);
+		}
+	}
+
+	public void cerrarSesiones(int index) {
+		vistaE.mostrarInformacion("Cerrando sesion, hasta la proxima...", 1);
+		ventanaP.cambiarVisibilidad(index);
+	}
+
+	public void actualizarLaDBConEspecialistas(ArrayList<Especialista> especialistas) {
+		PersonaDTO personadto;
+		EspecialistaDTO especialistaDto = new EspecialistaDTO();
+		for (Especialista especialista : especialistas) {
+			especialistaDto.setNombre(especialista.getNombre());
+			especialistaDto.setEspecializacion(especialista.getEspecializacion());
+			especialistaDto.setCedula(especialista.getCedula());
+			especialistaDto.setCorreo(especialista.getCorreo());
+			especialistaDto.setSexo(especialista.getSexo());
+			especialistaDto.setEdad(especialista.getEdad());
+			especialistaDto.setRol(especialista.getRol());
+			especialistaDto.setTurnos(MapHandler.convertirTurnoToTurnoDTO(especialista.getTurnos()));
+			personadto = especialistaDto;
+			
+			if (hospital.actualizarPersona(personadto)) {
+				System.out.println("SE ASIGNARON TURNOS AUTOMATICAMENTE!!!");
+			}
 		}
 	}
 }

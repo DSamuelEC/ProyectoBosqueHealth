@@ -54,8 +54,8 @@ public class ControllerAdmin implements ActionListener {
 			cambiarPanel(2);
 			break;
 		case "P_BOTONES_ADMIN_ASIGNAR_TURNOS":
-//			vistaE.mostrarInformacion(admin.getNombre(), 2);
-//			vistaE.mostrarInformacion("FATAL ERROR: NO SE PUDO MANDAR EL CORREO AUN", 0);
+			admin.asignarTurnosMensuales();
+			controllerPrincipal.actualizarLaDBConEspecialistas(admin.getEspecialistas());
 			break;
 		case "P_BOTONES_ADMIN_VER_PACIENTES":
 			cambiarPanel(1);
@@ -73,8 +73,7 @@ public class ControllerAdmin implements ActionListener {
 			break;
 		case "P_BOTONES_ADMIN_CERRAR_SESION":
 			cambiarPanel(1);
-//			vistaE.mostrarInformacion("Cerrando sesion, hasta la proxima...", 1);
-//			ventanaP.cambiarVisibilidad(1);
+			controllerPrincipal.cerrarSesiones(1);
 			break;
 		case "P_AD_CONFIGURACIONES_ATRAS":
 			cambiarPanel(1);
