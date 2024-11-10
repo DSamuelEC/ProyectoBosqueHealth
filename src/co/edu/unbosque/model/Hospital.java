@@ -20,7 +20,7 @@ public class Hospital {
 	public boolean crearPersona(PersonaDTO personaDto) {
 		persona = MapHandler.convertirPersonaDTOtoPersona(personaDto);
 		boolean creado = hospitalDAO.add(persona);
-		if (creado == true) {
+		if (creado == true && !personaDto.getRol().equals("ADMIN")) {
 			Admin aux = (Admin) hospitalDAO.find("ADMIN");
 			aux.setPacientes(null);
 			aux.setEspecialistas(null);
@@ -30,12 +30,19 @@ public class Hospital {
 		return creado;
 	}
 
-	public String find(String nombre, int cedula, String rol) {
+	public String find(String nombre, long cedula, String rol) {
 		persona = hospitalDAO.find(nombre, cedula);
 		if (persona.getRol() == rol) {
 			return "ACESSO CONCEDIDO";
 		} else {
 			return "ACCESO DENEGADO, INTENTE DE NUEVO";
+		}
+	}
+
+	public void verTodos() {
+		todasPersonas = hospitalDAO.getAll();
+		for (Persona persona : todasPersonas) {
+			System.out.println(persona.getNombre() + "    " + persona.getRol());
 		}
 	}
 
@@ -74,5 +81,4 @@ public class Hospital {
 	public void setHospitalDAO(HospitalDAO hospitalDAO) {
 		this.hospitalDAO = hospitalDAO;
 	}
-
 }

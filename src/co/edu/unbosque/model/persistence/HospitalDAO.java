@@ -84,7 +84,7 @@ public class HospitalDAO implements InterfaceDAO<Persona> {
 	}
 
 	@Override
-	public Persona find(String nombre, int cedula) {
+	public Persona find(String nombre, long cedula) {
 		Persona encontrado = null;
 		if (!datos.isEmpty()) {
 			for (Persona persona : datos) {

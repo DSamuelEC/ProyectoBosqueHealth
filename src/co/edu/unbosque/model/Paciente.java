@@ -6,7 +6,7 @@ public class Paciente extends Persona implements InterfaceCRUD<Cita> {
 	private ArrayList<Cita> citas;
 	private ArrayList<Cita> examenes;
 
-	public Paciente(String nombre, int cedula, String correo, String sexo, int edad) {
+	public Paciente(String nombre, long cedula, String correo, String sexo, int edad) {
 		super(nombre, cedula, correo, sexo, edad, "PACIENTE");
 		this.citas = new ArrayList<Cita>();
 		this.examenes = new ArrayList<Cita>();

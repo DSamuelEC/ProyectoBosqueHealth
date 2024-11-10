@@ -28,6 +28,7 @@ public class Controller {
 		controllerEspecialista = new ControllerEspecialista(this, ventanaP, vistaE);
 		controllerAdmin = new ControllerAdmin(this, ventanaP, vistaE);
 		hospital.actualizarBD();
+		hospital.verTodos();
 	}
 
 	public void run() {

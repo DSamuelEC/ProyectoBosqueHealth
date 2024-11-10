@@ -2,13 +2,13 @@ package co.edu.unbosque.model;
 
 public abstract class Persona {
 	protected String nombre;
-	protected int cedula;
+	protected long cedula;
 	protected String correo;
 	protected String sexo;
 	protected int edad;
 	protected String rol;
 
-	public Persona(String nombre, int cedula, String correo, String sexo, int edad, String rol) {
+	public Persona(String nombre, long cedula, String correo, String sexo, int edad, String rol) {
 		this.nombre = nombre;
 		this.cedula = cedula;
 		this.correo = correo;
@@ -25,11 +25,11 @@ public abstract class Persona {
 		this.nombre = nombre;
 	}
 
-	public int getCedula() {
+	public long getCedula() {
 		return cedula;
 	}
 
-	public void setCedula(int cedula) {
+	public void setCedula(long cedula) {
 		this.cedula = cedula;
 	}
 

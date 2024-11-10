@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class PersonaDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String nombre;
-	private int cedula;
+	private long cedula;
 	private String correo;
 	private String sexo;
 	private int edad;
@@ -19,11 +19,11 @@ public class PersonaDTO implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public int getCedula() {
+	public long getCedula() {
 		return cedula;
 	}
 
-	public void setCedula(int cedula) {
+	public void setCedula(long cedula) {
 		this.cedula = cedula;
 	}
 

@@ -10,7 +10,7 @@ public class Admin extends Persona {
 	private ArrayList<Paciente> pacientes;
 	private ArrayList<Especialista> especialistas;
 
-	public Admin(String nombre, int cedula, String correo, String sexo, int edad) {
+	public Admin(String nombre, long cedula, String correo, String sexo, int edad) {
 		super(nombre, cedula, correo, sexo, edad, "ADMIN");
 		this.pacientes = new ArrayList<Paciente>();
 		this.especialistas = new ArrayList<Especialista>();

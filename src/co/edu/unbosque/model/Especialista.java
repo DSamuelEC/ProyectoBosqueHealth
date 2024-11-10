@@ -8,7 +8,7 @@ public class Especialista extends Persona {
 	private ArrayList<Cita> citas;
 	private String especializacion;
 
-	public Especialista(String nombre, int cedula, String correo, String sexo, int edad, String especializacion) {
+	public Especialista(String nombre, long cedula, String correo, String sexo, int edad, String especializacion) {
 		super(nombre, cedula, correo, sexo, edad, "ESPECIALISTA");
 		this.turnos = new ArrayList<Turno>();
 		this.citas = new ArrayList<Cita>();

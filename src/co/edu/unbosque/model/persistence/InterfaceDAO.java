@@ -8,6 +8,6 @@ public interface InterfaceDAO <T>{
 	boolean add(T x);
 	boolean delete(T x);
 	boolean update(T x, T y);
-	T find(String nombre, int cedula);
+	T find(String nombre, long cedula);
 	T find(String rol);
 }
