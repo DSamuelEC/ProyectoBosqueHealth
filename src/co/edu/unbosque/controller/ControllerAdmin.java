@@ -137,6 +137,7 @@ public class ControllerAdmin implements ActionListener {
 	}
 
 	public void setearTablePacientes(ArrayList<Paciente> pacientes) {
+		ventanaP.getpAdPrincipal().getpAdVerTodos().limpiarTabla();
 		if (pacientes.size() == 0) {
 			vistaE.mostrarInformacion("No existen pacientes aun", 1);
 		} else {
@@ -149,6 +150,7 @@ public class ControllerAdmin implements ActionListener {
 	}
 
 	public void setearTableEspecialistas(ArrayList<Especialista> especialistas) {
+		ventanaP.getpAdPrincipal().getpAdVerTodos().limpiarTabla();
 		if (especialistas.size() == 0) {
 			vistaE.mostrarInformacion("No existen especialistas aun", 1);
 		} else {

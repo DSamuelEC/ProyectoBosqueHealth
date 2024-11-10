@@ -1,7 +1,6 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
-import java.awt.Font;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -21,10 +20,6 @@ public class PanelAdVerTodos extends JPanel {
 	 * Atribujo encargado de mostrar un panel de desplazamiento
 	 */
 	private JScrollPane scrollPane;
-//	/**
-//	 * Atributo encargado de mostrar un texto del nombre de la columna
-//	 */
-//	private JLabel lblNombre;
 
 	/**
 	 * Metodo Constructor de la clase
@@ -41,23 +36,21 @@ public class PanelAdVerTodos extends JPanel {
 	 * Metodo encargado de inicializar todos los atributos de la clase
 	 */
 	public void inicializarComponentes() {
-		DefaultTableModel modeloTabla = new DefaultTableModel(new Object[] { "Nombre", "correo" }, 0);
+		DefaultTableModel modeloTabla = new DefaultTableModel(new Object[] { "Nombre", "correo" }, 0) {
+			@Override
+			public boolean isCellEditable(int row, int column) {
+				return false;
+			}
+		};
 		tblTodos = new JTable(modeloTabla);
 		tblTodos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		TableColumnModel columnModel = tblTodos.getColumnModel();
 		columnModel.getColumn(0).setPreferredWidth(500);
 		columnModel.getColumn(1).setPreferredWidth(800);
-		tblTodos.setBounds(0, 40, 1300, 590);
+//		tblTodos.setBounds(0, 40, 1300, 590);
 
 		scrollPane = new JScrollPane(tblTodos);
-
-//		lblNombre = new JLabel("Nombre paciente");
-//		lblNombre.setBounds(30, 10, 300, 20);
-//		lblNombre.setFont(new Font("Tahoma", Font.BOLD, 14));
-//		lblNombre.setForeground(new Color(5, 25, 35 ));
-
-//		add(tblTodos);
-//		add(lblNombre);
+		scrollPane.setBounds(0, 40, 1300, 590);
 		add(scrollPane);
 	}
 
@@ -81,6 +74,17 @@ public class PanelAdVerTodos extends JPanel {
 	public void agregarFilaTabla(String nombre, String correo) {
 		DefaultTableModel modeloTabla = (DefaultTableModel) tblTodos.getModel();
 		modeloTabla.addRow(new Object[] { nombre, correo });
+		modeloTabla.fireTableDataChanged();
+		tblTodos.getTableHeader().repaint();
+	}
+
+	/**
+	 * Metodo encargado de limpiar la tabla cuando se quiera cambiar de
+	 * visualizaciones
+	 */
+	public void limpiarTabla() {
+		DefaultTableModel modeloTabla = (DefaultTableModel) tblTodos.getModel();
+		modeloTabla.setRowCount(0);
 	}
 
 	/**
@@ -118,22 +122,4 @@ public class PanelAdVerTodos extends JPanel {
 	public void setScrollPane(JScrollPane scrollPane) {
 		this.scrollPane = scrollPane;
 	}
-
-//	/**
-//	 * Metodo que retorna el valor del atributo lblNombre
-//	 * 
-//	 * @return Contenido del atributo lblNombre
-//	 */
-//	public JLabel getLblNombre() {
-//		return lblNombre;
-//	}
-//
-//	/**
-//	 * Metodo que actualiza el valor del atributo lblNombre
-//	 * 
-//	 * @param lblNombre valor a actualizar
-//	 */
-//	public void setLblNombre(JLabel lblNombre) {
-//		this.lblNombre = lblNombre;
-//	}
 }
