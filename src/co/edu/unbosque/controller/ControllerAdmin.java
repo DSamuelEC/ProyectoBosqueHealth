@@ -54,6 +54,7 @@ public class ControllerAdmin implements ActionListener {
 			cambiarPanel(2);
 			break;
 		case "P_BOTONES_ADMIN_ASIGNAR_TURNOS":
+//			vistaE.mostrarInformacion(admin.getNombre(), 2);
 //			vistaE.mostrarInformacion("FATAL ERROR: NO SE PUDO MANDAR EL CORREO AUN", 0);
 			break;
 		case "P_BOTONES_ADMIN_VER_PACIENTES":
@@ -121,8 +122,7 @@ public class ControllerAdmin implements ActionListener {
 		String especialidad = ventanaP.getpAdPrincipal().getpAdRegistrarEspecialista().getLdEspecialidad()
 				.getSelectedItem().toString();
 		String correo = ventanaP.getpAdPrincipal().getpAdRegistrarEspecialista().getTxtCorreo().getText();
-		int cedula = Integer
-				.parseInt(ventanaP.getpAdPrincipal().getpAdRegistrarEspecialista().getTxtCedula().getText());
+		long cedula = Long.parseLong(ventanaP.getpAdPrincipal().getpAdRegistrarEspecialista().getTxtCedula().getText());
 		String sexo = ventanaP.getpAdPrincipal().getpAdRegistrarEspecialista().getLdSexo().getSelectedItem().toString();
 		int edad = Integer.parseInt(ventanaP.getpAdPrincipal().getpAdRegistrarEspecialista().getTxtEdad().getText());
 

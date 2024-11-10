@@ -22,8 +22,8 @@ public class Hospital {
 		boolean creado = hospitalDAO.add(persona);
 		if (creado == true && !personaDto.getRol().equals("ADMIN")) {
 			Admin aux = (Admin) hospitalDAO.find("ADMIN");
-			aux.setPacientes(null);
-			aux.setEspecialistas(null);
+			aux.setPacientes(new ArrayList<Paciente>());
+			aux.setEspecialistas(new ArrayList<Especialista>());
 			aux.agruparPacientesyEspecialistas(hospitalDAO.getAll());
 			hospitalDAO.update(aux, aux);
 		}
@@ -42,7 +42,7 @@ public class Hospital {
 	public void verTodos() {
 		todasPersonas = hospitalDAO.getAll();
 		for (Persona persona : todasPersonas) {
-			System.out.println(persona.getNombre() + "    " + persona.getRol());
+			System.out.println(persona.getNombre() + "    " + persona.getRol() + "    " + persona.getCedula());
 		}
 	}
 

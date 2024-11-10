@@ -97,4 +97,16 @@ public class Admin extends Persona {
 	public void setEspecialistas(ArrayList<Especialista> especialistas) {
 		this.especialistas = especialistas;
 	}
+
+	@Override
+	public String toString() {
+		return "Admin [pacientes=" + pacientes + ", especialistas=" + especialistas + ", nombre=" + nombre + ", cedula="
+				+ cedula + ", correo=" + correo + ", sexo=" + sexo + ", edad=" + edad + ", rol=" + rol
+				+ ", agruparEspecialistasPorArea()=" + agruparEspecialistasPorArea() + ", getPacientes()="
+				+ getPacientes() + ", getEspecialistas()=" + getEspecialistas() + ", getNombre()=" + getNombre()
+				+ ", getCedula()=" + getCedula() + ", getCorreo()=" + getCorreo() + ", getSexo()=" + getSexo()
+				+ ", getEdad()=" + getEdad() + ", getRol()=" + getRol() + ", getClass()=" + getClass() + ", hashCode()="
+				+ hashCode() + ", toString()=" + super.toString() + "]";
+	}
+	
 }

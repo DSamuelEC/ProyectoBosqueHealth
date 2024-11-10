@@ -34,7 +34,7 @@ public class Controller {
 	public void run() {
 	}
 
-	public void capturarDatosCrearPersonas(String nombre, int cedula, String correo, String sexo, int edad, String rol,
+	public void capturarDatosCrearPersonas(String nombre, long cedula, String correo, String sexo, int edad, String rol,
 			String especialidad) {
 		PersonaDTO personadto;
 		switch (rol) {
@@ -92,7 +92,7 @@ public class Controller {
 		}
 	}
 
-	public void capturarDatosLogin(String nombre, int cedula, String rol, int index) {
+	public void capturarDatosLogin(String nombre, long cedula, String rol, int index) {
 		String mensaje = hospital.find(nombre, cedula, rol);
 		if (mensaje == "ACESSO CONCEDIDO") {
 			vistaE.mostrarInformacion(mensaje, 2);
@@ -103,6 +103,7 @@ public class Controller {
 				controllerPaciente.setearDatosPaciente((Paciente) hospital.getPersona());
 				break;
 			case "ADMIN":
+				System.out.println(((Admin) hospital.getPersona()).toString());
 				controllerAdmin.setearDatosAdmin((Admin) hospital.getPersona());
 				break;
 			default:

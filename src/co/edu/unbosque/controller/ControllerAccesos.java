@@ -86,7 +86,7 @@ public class ControllerAccesos implements ActionListener {
 
 	public void capturarDatosCrearPaciente() {
 		String nombre = ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtNombre().getText();
-		int cedula = Integer.parseInt(ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtCedula().getText());
+		long cedula = Long.parseLong(ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtCedula().getText());
 		String correo = ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtCorreo().getText();
 		String sexo = ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getLdSexo().getSelectedItem().toString();
 		int edad = Integer.parseInt(ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtEdad().getText());
@@ -96,7 +96,7 @@ public class ControllerAccesos implements ActionListener {
 //	ADM
 	public void capturarDatosCrearAdmin() {
 		String nombre = ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtNombre().getText();
-		int cedula = Integer.parseInt(ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtCedula().getText());
+		long cedula = Long.parseLong(ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtCedula().getText());
 		String correo = ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtCorreo().getText();
 		String sexo = ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getLdSexo().getSelectedItem().toString();
 		int edad = Integer.parseInt(ventanaP.getpAccesosPrincipal().getPanelCrearPaciente().getTxtEdad().getText());
@@ -105,23 +105,22 @@ public class ControllerAccesos implements ActionListener {
 
 	public void capturarAcceso(int index) {
 		String nombre;
-		int cedula;
+		long cedula;
 		switch (index) {
 		case 1:
 			nombre = ventanaP.getpAccesosPrincipal().getPanelAccesoPaciente().getTxtNombre().getText();
-			cedula = Integer
-					.parseInt(ventanaP.getpAccesosPrincipal().getPanelAccesoPaciente().getTxtCedula().getText());
+			cedula = Long.parseLong(ventanaP.getpAccesosPrincipal().getPanelAccesoPaciente().getTxtCedula().getText());
 			controllerPrincipal.capturarDatosLogin(nombre, cedula, "PACIENTE", 2);
 			break;
 		case 2:
 			nombre = ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().getTxtNombre().getText();
-			cedula = Integer
-					.parseInt(ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().getTxtCedula().getText());
+			cedula = Long
+					.parseLong(ventanaP.getpAccesosPrincipal().getPanelAccesoEspecialista().getTxtCedula().getText());
 			controllerPrincipal.capturarDatosLogin(nombre, cedula, "ESPECIALISTA", 3);
 			break;
 		case 3:
 			nombre = ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().getTxtNombre().getText();
-			cedula = Integer.parseInt(ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().getTxtCedula().getText());
+			cedula = Long.parseLong(ventanaP.getpAccesosPrincipal().getPanelAccesoAdmin().getTxtCedula().getText());
 			controllerPrincipal.capturarDatosLogin(nombre, cedula, "ADMIN", 4);
 			break;
 		default:
