@@ -126,6 +126,7 @@ public class Controller {
 	}
 
 	public void actualizarLaDBConEspecialistas(ArrayList<Especialista> especialistas) {
+		int bandera = 1;
 		PersonaDTO personadto;
 		EspecialistaDTO especialistaDto = new EspecialistaDTO();
 		for (Especialista especialista : especialistas) {
@@ -138,10 +139,16 @@ public class Controller {
 			especialistaDto.setRol(especialista.getRol());
 			especialistaDto.setTurnos(MapHandler.convertirTurnoToTurnoDTO(especialista.getTurnos()));
 			personadto = especialistaDto;
-			
+
 			if (hospital.actualizarPersona(personadto)) {
 				System.out.println("SE ASIGNARON TURNOS AUTOMATICAMENTE!!!");
+				bandera++;
 			}
+		}
+		if (bandera == especialistas.size()) {
+			vistaE.mostrarInformacion("Se actualizaron correctamente los especialistas", 2);
+		} else {
+			vistaE.mostrarInformacion("NO se actualizaron correctamente los especialistas", 1);
 		}
 	}
 }

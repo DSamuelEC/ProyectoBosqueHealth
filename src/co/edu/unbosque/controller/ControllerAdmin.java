@@ -66,10 +66,11 @@ public class ControllerAdmin implements ActionListener {
 			setearTableEspecialistas(admin.getEspecialistas());
 			break;
 		case "P_BOTONES_ADMIN_REPORTES":
-//			vistaE.mostrarInformacion("FATAL ERROR: NO SE PUDO MANDAR EL CORREO AUN", 0);
+			vistaE.mostrarInformacion("FUNCION NO AGREGADA", 0);
 			break;
 		case "P_BOTONES_ADMIN_CONFIGURACIONES":
 			cambiarPanel(3);
+			vistaE.mostrarInformacion("FUNCION NO AGREGADA", 0);
 			break;
 		case "P_BOTONES_ADMIN_CERRAR_SESION":
 			cambiarPanel(1);
@@ -79,15 +80,13 @@ public class ControllerAdmin implements ActionListener {
 			cambiarPanel(1);
 			break;
 		case "P_AD_CONFIGURACIONES_SUBMIT":
+			vistaE.mostrarInformacion("FUNCION NO AGREGADA", 0);
 //			cambiarPanel(1);
-//			vistaE.mostrarInformacion("FATAL ERROR: AUN NO HAY CAMBIOS", 0);
 		case "P_AD_REGISTRAR_ESPECIALISTA_ATRAS":
 			cambiarPanel(1);
 			break;
 		case "P_AD_REGISTRAR_ESPECIALISTA_SUBMIT":
 			capturarDatosCrearEspecialista();
-//			cambiarPanel(1);
-//			vistaE.mostrarInformacion("FATAL ERROR: AUN NO HAY CAMBIOS", 0);
 			break;
 		case "P_AD_CONFIGURACIONES_MAS_TURNOS":
 			ventanaP.getpAdPrincipal().getpAdConfiguraciones().cambiarEstados("turnos", "MAS", 0);

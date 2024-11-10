@@ -47,7 +47,6 @@ public class PanelAdVerTodos extends JPanel {
 		TableColumnModel columnModel = tblTodos.getColumnModel();
 		columnModel.getColumn(0).setPreferredWidth(500);
 		columnModel.getColumn(1).setPreferredWidth(800);
-//		tblTodos.setBounds(0, 40, 1300, 590);
 
 		scrollPane = new JScrollPane(tblTodos);
 		scrollPane.setBounds(0, 40, 1300, 590);

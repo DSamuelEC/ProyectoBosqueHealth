@@ -122,12 +122,12 @@ public class PanelPSuperior extends JPanel {
 				
 		add(lblNombre);
 		add(btnAgendarCita);
-		add(btnCancelarCita);
-		add(btnCerrarSesion);
-		add(btnReagendarCita);
 		add(btnVerCitas);
 		add(btnVerExamenes);
 		add(btnVerMas);
+		add(btnReagendarCita);
+		add(btnCancelarCita);
+		add(btnCerrarSesion);
 	}
 
 	/**

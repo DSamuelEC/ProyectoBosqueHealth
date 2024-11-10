@@ -1,6 +1,8 @@
 package co.edu.unbosque.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import co.edu.unbosque.model.persistence.HospitalDAO;
 import co.edu.unbosque.model.persistence.MapHandler;
@@ -49,6 +51,27 @@ public class Hospital {
 		todasPersonas = hospitalDAO.getAll();
 		for (Persona persona : todasPersonas) {
 			System.out.println(persona.getNombre() + "    " + persona.getRol() + "    " + persona.getCedula());
+		}
+	}
+
+	public void mostrarEspecialistasPorArea(String areaPedida) {
+		verTodos();
+		Map<String, ArrayList<Especialista>> especialistasPorArea = new HashMap<>();
+
+		especialistasPorArea.put("Cirugia", new ArrayList<>());
+		especialistasPorArea.put("Oncologia", new ArrayList<>());
+		especialistasPorArea.put("Dermatologia", new ArrayList<>());
+		especialistasPorArea.put("Neumologia", new ArrayList<>());
+		especialistasPorArea.put("Cardiologia", new ArrayList<>());
+		especialistasPorArea.put("Medicina Interna", new ArrayList<>());
+
+		for (Persona p : todasPersonas) {
+			if (p.getRol().equals("ESPECIALISTA")) {
+				String area = ((Especialista) p).getEspecializacion();
+				if (especialistasPorArea.containsKey(area)) {
+					especialistasPorArea.get(area).add((Especialista) p);
+				}
+			}
 		}
 	}
 

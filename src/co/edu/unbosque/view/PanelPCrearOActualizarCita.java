@@ -6,6 +6,7 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
 /**
@@ -44,26 +45,6 @@ public class PanelPCrearOActualizarCita extends JPanel {
 	 */
 	private JLabel lblDisponinilidad;
 	/**
-	 * Atributo encargado de mostrar un texto Cita
-	 */
-	private JLabel lblCita;
-	/**
-	 * Atributo encargado de mostrar un texto Examen
-	 */
-	private JLabel lblExamen;
-	/**
-	 * Atributo encargado de mostrar un texto Nombre Especialista
-	 */
-	private JLabel lblNombreEspecialista;
-	/**
-	 * Atributo encargado de mostrar un texto Fecha
-	 */
-	private JLabel lblFecha;
-	/**
-	 * Atributo encargado de mostrar un texto Hora
-	 */
-	private JLabel lblHora;
-	/**
 	 * Atributo encargado de motrar una tabla con las citas disponibles
 	 */
 	private JTable tblCrearOActualizar;
@@ -91,7 +72,7 @@ public class PanelPCrearOActualizarCita extends JPanel {
 		lblAgendamiento = new JLabel("AGENDAMIENTO DE CITAS");
 		lblAgendamiento.setBounds(545, 12, 300, 30);
 		lblAgendamiento.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblAgendamiento.setForeground(new Color(5, 25, 35 ));
+		lblAgendamiento.setForeground(new Color(5, 25, 35));
 
 		String[] opciones = { "Cirugía", "Oncología", "Dermatología", "Neumología", "Cardiología", "Medicina Interna" };
 		ldIngreseEspecialista = new JComboBox<String>(opciones);
@@ -106,72 +87,74 @@ public class PanelPCrearOActualizarCita extends JPanel {
 		btnBuscarDisponibilidad.setActionCommand("P_CREAR_O_ACTUALIZAR_PACIENTE_BUSCAR_DISPONIBILIDAD");
 		btnBuscarDisponibilidad.setBackground(new Color(244, 158, 76));
 		btnBuscarDisponibilidad.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnBuscarDisponibilidad.setForeground(new Color(5, 25, 35 ));
+		btnBuscarDisponibilidad.setForeground(new Color(5, 25, 35));
 
 		btnAgendar = new JButton("Agendar");
 		btnAgendar.setBounds(1150, 50, 100, 30);
 		btnAgendar.setActionCommand("P_CREAR_O_ACTUALIZAR_PACIENTE_AGENDAR");
 		btnAgendar.setBackground(new Color(244, 158, 76));
 		btnAgendar.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnAgendar.setForeground(new Color(5, 25, 35 ));
+		btnAgendar.setForeground(new Color(5, 25, 35));
 
 		lblDisponinilidad = new JLabel("DISPONIBILIDAD");
-		lblDisponinilidad.setBounds(580, 100, 300, 30);
+		lblDisponinilidad.setBounds(580, 90, 300, 30);
 		lblDisponinilidad.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblDisponinilidad.setForeground(new Color(5, 25, 35 ));
+		lblDisponinilidad.setForeground(new Color(5, 25, 35));
 
-		lblCita = new JLabel("Cita");
-		lblCita.setBounds(10, 120, 300, 30);
-		lblCita.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblCita.setForeground(new Color(5, 25, 35 ));
-
-		lblExamen = new JLabel("Exámen");
-		lblExamen.setBounds(10, 120, 300, 30);
-		lblExamen.setVisible(false);
-		lblExamen.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblExamen.setForeground(new Color(5, 25, 35 ));
-
-		lblNombreEspecialista = new JLabel("Nombre Especialista");
-		lblNombreEspecialista.setBounds(210, 120, 300, 30);
-		lblNombreEspecialista.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblNombreEspecialista.setForeground(new Color(5, 25, 35 ));
-
-		lblFecha = new JLabel("Fecha");
-		lblFecha.setBounds(810, 120, 300, 30);
-		lblFecha.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblFecha.setForeground(new Color(5, 25, 35 ));
-
-		lblHora = new JLabel("Hora");
-		lblHora.setBounds(1110, 120, 300, 30);
-		lblHora.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblHora.setForeground(new Color(5, 25, 35 ));
-
-		tblCrearOActualizar = new JTable(50, 4);
+		DefaultTableModel modeloTabla = new DefaultTableModel(
+				new Object[] { "Especialista", "Especialidad", "Fecha", "Hora Inicio", "Hora Final" }, 0) {
+			@Override
+			public boolean isCellEditable(int row, int column) {
+				return false;
+			}
+		};
+		
+		tblCrearOActualizar = new JTable(modeloTabla);
 		tblCrearOActualizar.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		TableColumnModel columnModel = tblCrearOActualizar.getColumnModel();
-		columnModel.getColumn(0).setPreferredWidth(200);
-		columnModel.getColumn(1).setPreferredWidth(600);
-		columnModel.getColumn(2).setPreferredWidth(300);
+		columnModel.getColumn(0).setPreferredWidth(400);
+		columnModel.getColumn(1).setPreferredWidth(300);
+		columnModel.getColumn(2).setPreferredWidth(200);
 		columnModel.getColumn(3).setPreferredWidth(200);
-		tblCrearOActualizar.setBounds(0, 150, 1300, 590);
+		columnModel.getColumn(4).setPreferredWidth(200);
 
 		scrollPane = new JScrollPane(tblCrearOActualizar);
+		scrollPane.setBounds(0, 120, 1300, 590);
 
 		add(lblAgendamiento);
-		add(lblCita);
 		add(lblDisponinilidad);
-		add(lblExamen);
-		add(lblFecha);
-		add(lblHora);
-		add(lblNombreEspecialista);
 		add(ldIngreseEspecialista);
 		add(txtDigiteFecha);
-		add(tblCrearOActualizar);
 		add(btnAgendar);
 		add(btnBuscarDisponibilidad);
-
+		add(scrollPane);
 	}
 
+	/**
+	 * Metodo que agrega una fila a la tabla
+	 * 
+	 * @param especialista Valor a agregar del nombre del especialista
+	 * @param fecha        Valor a agregar de la fecha
+	 * @param horaInicio   Valor a agregar de la hora de inicio
+	 * @param horaFinal    Valor a agregar de la hora de fin
+	 */
+	public void agregarFilaTabla(String especialista, String especialidad, String fecha, String horaInicio,
+			String horaFinal) {
+		DefaultTableModel modeloTabla = (DefaultTableModel) tblCrearOActualizar.getModel();
+		modeloTabla.addRow(new Object[] { especialista, especialidad, fecha, horaInicio, horaFinal });
+		modeloTabla.fireTableDataChanged();
+		tblCrearOActualizar.getTableHeader().repaint();
+	}
+	
+	/**
+	 * Metodo encargado de limpiar la tabla cuando se quiera cambiar de
+	 * visualizaciones
+	 */
+	public void limpiarTabla() {
+		DefaultTableModel modeloTabla = (DefaultTableModel) tblCrearOActualizar.getModel();
+		modeloTabla.setRowCount(0);
+	}
+	
 	/**
 	 * Metodo encargado de configurar el texto que se muestra en "txtNombre,
 	 * txtCedula, txtCorreo y txtEdad" para que cuando no tenga ningun texto muestre
@@ -309,96 +292,6 @@ public class PanelPCrearOActualizarCita extends JPanel {
 	}
 
 	/**
-	 * Metodo que retorna el valor del atributo lblCita
-	 * 
-	 * @return Contenido del atributo lblCita
-	 */
-	public JLabel getLblCita() {
-		return lblCita;
-	}
-
-	/**
-	 * Metodo que actualiza el valor del atributo lblCita
-	 * 
-	 * @param lblCita valor a actualizar
-	 */
-	public void setLblCita(JLabel lblCita) {
-		this.lblCita = lblCita;
-	}
-
-	/**
-	 * Metodo que retorna el valor del atributo lblExamen
-	 * 
-	 * @return Contenido del atributo lblExamen
-	 */
-	public JLabel getLblExamen() {
-		return lblExamen;
-	}
-
-	/**
-	 * Metodo que actualiza el valor del atributo lblExamen
-	 * 
-	 * @param lblExamen valor a actualizar
-	 */
-	public void setLblExamen(JLabel lblExamen) {
-		this.lblExamen = lblExamen;
-	}
-
-	/**
-	 * Metodo que retorna el valor del atributo lblNombreEspecialista
-	 * 
-	 * @return Contenido del atributo lblNombreEspecialista
-	 */
-	public JLabel getLblNombreEspecialista() {
-		return lblNombreEspecialista;
-	}
-
-	/**
-	 * Metodo que actualiza el valor del atributo lblNombreEspecialista
-	 * 
-	 * @param lblNombreEspecialista valor a actualizar
-	 */
-	public void setLblNombreEspecialista(JLabel lblNombreEspecialista) {
-		this.lblNombreEspecialista = lblNombreEspecialista;
-	}
-
-	/**
-	 * Metodo que retorna el valor del atributo lblFecha
-	 * 
-	 * @return Contenido del atributo lblFecha
-	 */
-	public JLabel getLblFecha() {
-		return lblFecha;
-	}
-
-	/**
-	 * Metodo que actualiza el valor del atributo lblFecha
-	 * 
-	 * @param lblFecha valor a actualizar
-	 */
-	public void setLblFecha(JLabel lblFecha) {
-		this.lblFecha = lblFecha;
-	}
-
-	/**
-	 * Metodo que retorna el valor del atributo lblHora
-	 * 
-	 * @return Contenido del atributo lblHora
-	 */
-	public JLabel getLblHora() {
-		return lblHora;
-	}
-
-	/**
-	 * Metodo que actualiza el valor del atributo lblHora
-	 * 
-	 * @param lblHora valor a actualizar
-	 */
-	public void setLblHora(JLabel lblHora) {
-		this.lblHora = lblHora;
-	}
-
-	/**
 	 * Metodo que retorna el valor del atributo tblCrearOActualizar
 	 * 
 	 * @return Contenido del atributo tblCrearOActualizar
@@ -415,5 +308,4 @@ public class PanelPCrearOActualizarCita extends JPanel {
 	public void setTblCrearOActualizar(JTable tblCrearOActualizar) {
 		this.tblCrearOActualizar = tblCrearOActualizar;
 	}
-
 }

@@ -59,15 +59,6 @@ public class PanelPVerMas extends JPanel {
 	 * Resultado del Examen del paciente
 	 */
 	private JButton btnResultadoExamen;
-	/**
-	 * Atributo encargado de mostrar un boton que guarde la información y vuelva al
-	 * panel VerCitasOexamen
-	 */
-	private JButton btnSubmit;
-	/**
-	 * Atributo encargado de mostrar un boton de volver al VerCitasOexamen
-	 */
-	private JButton btnAtras;
 
 	/**
 	 * Metodo Constructor de la clase
@@ -84,89 +75,72 @@ public class PanelPVerMas extends JPanel {
 	 * Metodo encargado de inicializar todos los atributos de la clase
 	 */
 	public void inicializarComponentes() {
-
 		lblFecha = new JLabel("Fecha");
 		lblFecha.setBounds(50, 30, 100, 30);
 		lblFecha.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblFecha.setForeground(new Color(5, 25, 35 ));
+		lblFecha.setForeground(new Color(5, 25, 35));
 
 		lblHora = new JLabel("Hora");
 		lblHora.setBounds(900, 30, 100, 30);
 		lblHora.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblHora.setForeground(new Color(5, 25, 35 ));
+		lblHora.setForeground(new Color(5, 25, 35));
 
 		lblNombreEspecialista = new JLabel("Nombre Especialista");
 		lblNombreEspecialista.setBounds(50, 100, 200, 30);
 		lblNombreEspecialista.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblNombreEspecialista.setForeground(new Color(5, 25, 35 ));
+		lblNombreEspecialista.setForeground(new Color(5, 25, 35));
 
 		lblCorreoEspecialista = new JLabel("Correo Especialista");
 		lblCorreoEspecialista.setBounds(50, 140, 200, 30);
 		lblCorreoEspecialista.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblCorreoEspecialista.setForeground(new Color(5, 25, 35 ));
+		lblCorreoEspecialista.setForeground(new Color(5, 25, 35));
 
 		lblNombrePaciente = new JLabel("Nombre Paciente");
 		lblNombrePaciente.setBounds(50, 180, 200, 30);
 		lblNombrePaciente.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblNombrePaciente.setForeground(new Color(5, 25, 35 ));
+		lblNombrePaciente.setForeground(new Color(5, 25, 35));
 
 		lblCorreoPaciente = new JLabel("Correro Paciente");
 		lblCorreoPaciente.setBounds(50, 220, 200, 30);
 		lblCorreoPaciente.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblCorreoPaciente.setForeground(new Color(5, 25, 35 ));
+		lblCorreoPaciente.setForeground(new Color(5, 25, 35));
 
 		lblEspecialidad = new JLabel("Especialidad");
 		lblEspecialidad.setBounds(50, 260, 200, 30);
 		lblEspecialidad.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblEspecialidad.setForeground(new Color(5, 25, 35 ));
+		lblEspecialidad.setForeground(new Color(5, 25, 35));
 
 		btnTratamiento = new JButton("Tratamiento");
 		btnTratamiento.setBounds(150, 400, 300, 40);
 		btnTratamiento.setActionCommand("P_VER_MAS_PACIENTE_TRATAMIENTO");
 		btnTratamiento.setBackground(new Color(244, 158, 76));
 		btnTratamiento.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnTratamiento.setForeground(new Color(5, 25, 35 ));
+		btnTratamiento.setForeground(new Color(5, 25, 35));
 
 		btnExamenes = new JButton("Exámenes");
 		btnExamenes.setBounds(500, 400, 300, 40);
 		btnExamenes.setActionCommand("P_VER_MAS_PACIENTE_EXAMENES");
 		btnExamenes.setBackground(new Color(244, 158, 76));
 		btnExamenes.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnExamenes.setForeground(new Color(5, 25, 35 ));
+		btnExamenes.setForeground(new Color(5, 25, 35));
 
 		btnResultadoExamen = new JButton("Resultado Exámen");
 		btnResultadoExamen.setBounds(850, 400, 300, 40);
 		btnResultadoExamen.setActionCommand("P_VER_MAS_PACIENTE_RESULTADO_EXAMEN");
 		btnResultadoExamen.setBackground(new Color(244, 158, 76));
 		btnResultadoExamen.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnResultadoExamen.setForeground(new Color(5, 25, 35 ));
-		
-		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(680, 480, 100, 30);
-		btnSubmit.setActionCommand("P_VER_MAS_PACIENTE_SUBMIT");
-		btnSubmit.setBackground(new Color(244, 158, 76));
-		btnSubmit.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnSubmit.setForeground(new Color(5, 25, 35 ));
+		btnResultadoExamen.setForeground(new Color(5, 25, 35));
 
-		btnAtras = new JButton("Atras");
-		btnAtras.setBounds(510, 480, 100, 30);
-		btnAtras.setActionCommand("P_VER_MAS_PACIENTE_ATRAS");
-		btnAtras.setBackground(new Color(244, 158, 76));
-		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnAtras.setForeground(new Color(5, 25, 35 ));
-
-		add(lblCorreoEspecialista);
+		add(lblNombrePaciente);
 		add(lblCorreoPaciente);
-		add(btnExamenes);
-		add(btnResultadoExamen);
-		add(btnTratamiento);
+		add(lblNombreEspecialista);
+		add(lblCorreoEspecialista);
 		add(lblEspecialidad);
 		add(lblFecha);
 		add(lblHora);
-		add(lblNombreEspecialista);
-		add(lblNombrePaciente);
-		add(btnAtras);
-		add(btnSubmit);
+		add(btnTratamiento);
+		add(btnExamenes);
+		add(btnResultadoExamen);
 	}
 
 	/**
@@ -348,38 +322,4 @@ public class PanelPVerMas extends JPanel {
 	public void setBtnResultadoExamen(JButton btnResultadoExamrn) {
 		this.btnResultadoExamen = btnResultadoExamrn;
 	}
-	/**
-	 * Metodo que retorna el valor del atributo btnSubmit
-	 * 
-	 * @return Contenido del atributo btnSubmit
-	 */
-	public JButton getBtnSubmit() {
-		return btnSubmit;
-	}
-	/**
-	 * Metodo que actualiza el valor del atributo btnSubmit
-	 * 
-	 * @param btnSubmit valor a actualizar
-	 */
-	public void setBtnSubmit(JButton btnSubmit) {
-		this.btnSubmit = btnSubmit;
-	}
-	/**
-	 * Metodo que retorna el valor del atributo btnAtras
-	 * 
-	 * @return Contenido del atributo btnAtras
-	 */
-	public JButton getBtnAtras() {
-		return btnAtras;
-	}
-	/**
-	 * Metodo que actualiza el valor del atributo btnAtras
-	 * 
-	 * @param btnAtras valor a actualizar
-	 */
-	public void setBtnAtras(JButton btnAtras) {
-		this.btnAtras = btnAtras;
-	}
-	
-
 }
