@@ -30,7 +30,7 @@ public class HospitalDAO implements InterfaceDAO<Persona> {
 	}
 
 	/**
-	 * 
+	 * Metodo encargado de traer lo que esta en nuestra base de datos y almacenarlo
 	 */
 	public void actualizarBD() {
 		ArrayList<Persona> personasExistentes = archivo.leerArchivoBinario();
@@ -39,11 +39,22 @@ public class HospitalDAO implements InterfaceDAO<Persona> {
 		}
 	}
 
+	/**
+	 * Metodo que devuelve lo que se trae de la base de datos
+	 * 
+	 * @return contenido almacenado en el atributo datos
+	 */
 	@Override
 	public ArrayList<Persona> getAll() {
 		return datos;
 	}
 
+	/**
+	 * Metodo encargado de agregar una persona a la base de datos
+	 * 
+	 * @return devuelve un valor de verdad o falsedad en caso de que si o no haya
+	 *         podido agregarlo
+	 */
 	@Override
 	public boolean add(Persona x) {
 		if (find(x.getNombre(), x.getCedula()) == null) {
@@ -54,6 +65,11 @@ public class HospitalDAO implements InterfaceDAO<Persona> {
 		return false;
 	}
 
+	/**
+	 * Metodo encargado de eliminar una persona de la base de datos
+	 * 
+	 * @return devuelve falso o verdadero en caso de que pueda eliminarla
+	 */
 	@Override
 	public boolean delete(Persona x) {
 		Persona y = find(x.getNombre(), x.getCedula());
@@ -72,18 +88,38 @@ public class HospitalDAO implements InterfaceDAO<Persona> {
 		return false;
 	}
 
+	/**
+	 * Metodo encargado de actualizar lo que hay en la base de datos
+	 * 
+	 * @return devuelve falso o verdadero en caso de que pueda actualizarlo
+	 */
 	@Override
 	public boolean update(Persona x, Persona y) {
 		Persona e = find(x.getNombre(), x.getCedula());
 		if (e != null) {
-			datos.remove(e);
-			datos.add(y);
-			archivo.escribirArchivoBinario(datos);
-			return true;
+			try {
+				datos.remove(e);
+				datos.add(y);
+				archivo.getUbicacionArchivoBinario().delete();
+				archivo.getUbicacionArchivoBinario().createNewFile();
+				archivo.escribirArchivoBinario(datos);
+				return true;
+			} catch (IOException e2) {
+				e2.printStackTrace();
+			}
+
 		}
 		return false;
 	}
 
+	/**
+	 * Metodo que busca una persona en especifico dentro de la base de datos
+	 * 
+	 * @param nombre Primer criterio para buscar a una persona especifica
+	 * @param cedula Segundo criterio para buscar a una persona especifica
+	 * @return devuelve a la persona si la encontro con esos parametros de busqueda,
+	 *         si no devuelve nulo
+	 */
 	@Override
 	public Persona find(String nombre, long cedula) {
 		Persona encontrado = null;
@@ -98,6 +134,13 @@ public class HospitalDAO implements InterfaceDAO<Persona> {
 		return encontrado;
 	}
 
+	/**
+	 * Metodo que busca una persona en especifico dentro de la base de datos
+	 * 
+	 * @param rol Primer y unico criterio para buscar a una persona especifica
+	 * @return devuelve a la persona si la encontro con ese parametro de busqueda,
+	 *         si no devuelve nulo
+	 */
 	@Override
 	public Persona find(String rol) {
 		Persona encontrado = null;
