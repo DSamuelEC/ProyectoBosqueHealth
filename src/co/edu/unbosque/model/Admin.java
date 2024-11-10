@@ -72,6 +72,16 @@ public class Admin extends Persona {
 		return especialistasPorArea;
 	}
 
+	public void agruparPacientesyEspecialistas(ArrayList<Persona> personas) {
+		for (Persona persona : personas) {
+			if (persona instanceof Paciente) {
+				pacientes.add((Paciente) persona);
+			} else if (persona instanceof Especialista) {
+				especialistas.add((Especialista) persona);
+			}
+		}
+	}
+
 	public ArrayList<Paciente> getPacientes() {
 		return pacientes;
 	}

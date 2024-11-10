@@ -102,7 +102,7 @@ public class HospitalDAO implements InterfaceDAO<Persona> {
 		Persona encontrado = null;
 		if (!datos.isEmpty()) {
 			for (Persona persona : datos) {
-				if (persona.getNombre().equals(rol)) {
+				if (persona.getRol().equals(rol)) {
 					encontrado = persona;
 					break;
 				}
@@ -110,5 +110,4 @@ public class HospitalDAO implements InterfaceDAO<Persona> {
 		}
 		return encontrado;
 	}
-
 }
