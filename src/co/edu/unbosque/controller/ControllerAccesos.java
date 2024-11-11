@@ -6,7 +6,7 @@ import co.edu.unbosque.view.VentanaPrincipal;
 
 /**
  * Controlador encargado de gestionar los accesos y cambios de paneles
- * en la interfaz de usuario de la aplicación, asignando oyentes a los botones
+ * en la interfaz de usuario de la aplicacion, asignando oyentes a los botones
  * y procesando las acciones relacionadas con accesos de usuario, especialista
  * y administrador.
  * 
@@ -15,13 +15,13 @@ import co.edu.unbosque.view.VentanaPrincipal;
 public class ControllerAccesos implements ActionListener {
 
     /**
-     * Controlador principal de la aplicación, encargado de procesar datos y 
+     * Controlador principal de la aplicacion, encargado de procesar datos y 
      * realizar acciones de negocio.
      */
     private Controller controllerPrincipal;
 
     /**
-     * Ventana principal de la interfaz gráfica, que contiene los paneles de acceso
+     * Ventana principal de la interfaz grafica, que contiene los paneles de acceso
      * y sus componentes.
      */
     private VentanaPrincipal ventanaP;
@@ -30,7 +30,7 @@ public class ControllerAccesos implements ActionListener {
      * Constructor de la clase ControllerAccesos. Inicializa los atributos y asigna
      * oyentes a los botones de la ventana principal.
      * 
-     * @param controllerPrincipal El controlador principal de la aplicación
+     * @param controllerPrincipal El controlador principal de la aplicacion
      * @param ventanaP La ventana principal que contiene los paneles de acceso
      */
     public ControllerAccesos(Controller controllerPrincipal, VentanaPrincipal ventanaP) {
@@ -40,7 +40,7 @@ public class ControllerAccesos implements ActionListener {
     }
 
     /**
-     * Asigna oyentes de acción a los botones dentro de los paneles de acceso,
+     * Asigna oyentes de accion a los botones dentro de los paneles de acceso,
      * para gestionar eventos de clic en los diferentes componentes de la interfaz.
      */
     public void asignarOyentes() {
@@ -63,10 +63,10 @@ public class ControllerAccesos implements ActionListener {
     }
 
     /**
-     * Gestiona los eventos de acción de los botones de acceso, realizando
-     * cambios de panel o capturando datos según el botón presionado.
+     * Gestiona los eventos de accion de los botones de acceso, realizando
+     * cambios de panel o capturando datos según el boton presionado.
      * 
-     * @param e Evento de acción que contiene el comando asociado al botón
+     * @param e Evento de accion que contiene el comando asociado al boton
      */
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -115,17 +115,17 @@ public class ControllerAccesos implements ActionListener {
     }
 
     /**
-     * Cambia la visibilidad de los paneles en la ventana principal según el índice
+     * Cambia la visibilidad de los paneles en la ventana principal segun el indice
      * especificado.
      * 
-     * @param index Índice del panel al que se desea cambiar la visibilidad
+     * @param index indice del panel al que se desea cambiar la visibilidad
      */
     public void cambiarPanel(int index) {
         ventanaP.getpAccesosPrincipal().cambiarVisibilidad(index);
     }
 
     /**
-     * Captura los datos del formulario de creación de paciente y los envía al
+     * Captura los datos del formulario de creacion de paciente y los envia al
      * controlador principal para su procesamiento y almacenamiento.
      */
     public void capturarDatosCrearPaciente() {
@@ -138,7 +138,7 @@ public class ControllerAccesos implements ActionListener {
     }
 
     /**
-     * Captura los datos del formulario de creación de administrador y los envía
+     * Captura los datos del formulario de creacion de administrador y los envía
      * al controlador principal para su procesamiento y almacenamiento.
      */
     public void capturarDatosCrearAdmin() {
@@ -152,9 +152,9 @@ public class ControllerAccesos implements ActionListener {
 
     /**
      * Captura los datos de acceso de los usuarios y los envía al controlador
-     * principal para validación.
+     * principal para validacion.
      * 
-     * @param index Índice que identifica el rol del usuario (1 = Paciente, 2 = Especialista, 3 = Administrador)
+     * @param index indice que identifica el rol del usuario (1 = Paciente, 2 = Especialista, 3 = Administrador)
      */
     public void capturarAcceso(int index) {
         String nombre;

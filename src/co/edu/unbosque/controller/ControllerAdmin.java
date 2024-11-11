@@ -11,7 +11,7 @@ import co.edu.unbosque.view.VistaVentanasEmergentes;
 
 /**
  * Controlador encargado de gestionar las acciones y configuraciones administrativas
- * en la aplicación, tales como asignación de turnos, visualización de listas de 
+ * en la aplicacion, tales como asignación de turnos, visualización de listas de 
  * pacientes y especialistas, y ajustes de configuraciones.
  * 
  * @author Samuel Diaz
@@ -19,18 +19,18 @@ import co.edu.unbosque.view.VistaVentanasEmergentes;
 public class ControllerAdmin implements ActionListener {
 
     /**
-     * Controlador principal de la aplicación para la gestión centralizada de acciones.
+     * Controlador principal de la aplicacion para la gestion centralizada de acciones.
      */
     private Controller controllerPrincipal;
 
     /**
-     * Ventana principal de la interfaz gráfica, que contiene los paneles administrativos
+     * Ventana principal de la interfaz grafica, que contiene los paneles administrativos
      * y otros elementos de la interfaz de usuario.
      */
     private VentanaPrincipal ventanaP;
 
     /**
-     * Ventana de diálogos emergentes para mostrar mensajes informativos o de error.
+     * Ventana de dialogos emergentes para mostrar mensajes informativos o de error.
      */
     private VistaVentanasEmergentes vistaE;
 
@@ -55,8 +55,8 @@ public class ControllerAdmin implements ActionListener {
     }
 
     /**
-     * Asigna oyentes de acción a los botones de los paneles administrativos en la interfaz,
-     * para gestionar eventos de clic en los componentes de la interfaz de administración.
+     * Asigna oyentes de accion a los botones de los paneles administrativos en la interfaz,
+     * para gestionar eventos de clic en los componentes de la interfaz de administracion.
      */
     public void asignarOyentes() {
         ventanaP.getpAdPrincipal().getpAdBotones().getBtnAsignarTurnos().addActionListener(this);
@@ -81,10 +81,10 @@ public class ControllerAdmin implements ActionListener {
     }
 
     /**
-     * Método para gestionar los eventos de acción de los botones administrativos, tales como
-     * asignar turnos, ver pacientes y especialistas, configurar parámetros y cerrar sesión.
+     * Metodo para gestionar los eventos de accion de los botones administrativos, tales como
+     * asignar turnos, ver pacientes y especialistas, configurar parámetros y cerrar sesion.
      * 
-     * @param e Evento de acción que contiene el comando asociado al botón
+     * @param e Evento de acción que contiene el comando asociado al boton
      */
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -153,16 +153,16 @@ public class ControllerAdmin implements ActionListener {
     }
 
     /**
-     * Cambia la visibilidad de los paneles en la ventana principal según el índice especificado.
+     * Cambia la visibilidad de los paneles en la ventana principal segun el indice especificado.
      * 
-     * @param index Índice del panel al que se desea cambiar la visibilidad
+     * @param index Indice del panel al que se desea cambiar la visibilidad
      */
     public void cambiarPanel(int index) {
         ventanaP.getpAdPrincipal().cambiarVisibilidad(index);
     }
 
     /**
-     * Captura los datos del formulario de creación de un especialista y los envía
+     * Captura los datos del formulario de creación de un especialista y los envia
      * al controlador principal para su procesamiento y almacenamiento.
      */
     public void capturarDatosCrearEspecialista() {
@@ -179,7 +179,7 @@ public class ControllerAdmin implements ActionListener {
     }
 
     /**
-     * Establece el objeto Admin actual, actualiza la vista con su información y
+     * Establece el objeto Admin actual, actualiza la vista con su informaciOn y
      * muestra la lista de pacientes asignados al administrador.
      * 
      * @param admin El objeto Admin con los datos del administrador actual

@@ -9,8 +9,8 @@ import co.edu.unbosque.view.VentanaPrincipal;
 import co.edu.unbosque.view.VistaVentanasEmergentes;
 
 /**
- * Controlador encargado de gestionar las acciones y funcionalidades específicas
- * para el perfil de especialista, tales como la visualización de turnos, citas y
+ * Controlador encargado de gestionar las acciones y funcionalidades especificas
+ * para el perfil de especialista, tales como la visualizacion de turnos, citas y
  * solicitudes de cambio de turno.
  * 
  * @autor Samuel Diaz
@@ -18,7 +18,7 @@ import co.edu.unbosque.view.VistaVentanasEmergentes;
 public class ControllerEspecialista implements ActionListener {
 
     /**
-     * Controlador principal de la aplicación para la gestión centralizada de acciones.
+     * Controlador principal de la aplicación para la gestion centralizada de acciones.
      */
     private Controller controllerPrincipal;
 
@@ -29,7 +29,7 @@ public class ControllerEspecialista implements ActionListener {
     private VentanaPrincipal ventanaP;
 
     /**
-     * Ventana de diálogos emergentes para mostrar mensajes informativos o de error.
+     * Ventana de dialogos emergentes para mostrar mensajes informativos o de error.
      */
     private VistaVentanasEmergentes vistaE;
 
@@ -43,8 +43,8 @@ public class ControllerEspecialista implements ActionListener {
      * oyentes a los botones de la interfaz especialista.
      * 
      * @param controllerPrincipal El controlador principal de la aplicación
-     * @param ventanaP La ventana principal de la interfaz gráfica
-     * @param vistaE La ventana de diálogos emergentes para mostrar mensajes
+     * @param ventanaP La ventana principal de la interfaz grafica
+     * @param vistaE La ventana de dialogos emergentes para mostrar mensajes
      */
     public ControllerEspecialista(Controller controllerPrincipal, VentanaPrincipal ventanaP,
                                   VistaVentanasEmergentes vistaE) {
@@ -76,10 +76,10 @@ public class ControllerEspecialista implements ActionListener {
     }
 
     /**
-     * Método para gestionar los eventos de acción de los botones del perfil especialista, 
-     * tales como visualización de turnos, manejo de citas y cierre de sesión.
+     * Metodo para gestionar los eventos de accion de los botones del perfil especialista, 
+     * tales como visualizacion de turnos, manejo de citas y cierre de sesion.
      * 
-     * @param e Evento de acción que contiene el comando asociado al botón
+     * @param e Evento de accion que contiene el comando asociado al boton
      */
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -131,16 +131,16 @@ public class ControllerEspecialista implements ActionListener {
     }
 
     /**
-     * Cambia la visibilidad de los paneles en la ventana principal según el índice especificado.
+     * Cambia la visibilidad de los paneles en la ventana principal segun el indice especificado.
      * 
-     * @param index Índice del panel al que se desea cambiar la visibilidad
+     * @param index Indice del panel al que se desea cambiar la visibilidad
      */
     public void cambiarPanel(int index) {
         ventanaP.getpEPrincipal().cambiarVisibilidad(index);
     }
 
     /**
-     * Establece el objeto Especialista actual, actualiza la vista con su información y
+     * Establece el objeto Especialista actual, actualiza la vista con su informacion y
      * muestra la lista de citas asignadas al especialista.
      * 
      * @param especialista El objeto Especialista con los datos del especialista actual
