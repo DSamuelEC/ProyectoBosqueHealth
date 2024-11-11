@@ -50,6 +50,7 @@ public class ControllerEspecialista implements ActionListener {
 			break;
 		case "P_BOTONES_ESPECIALISTA_MIS_PACIENTES":
 			cambiarPanel(1);
+			setearTableVerCitas(especialista.getCitas());
 			break;
 		case "P_BOTONES_ESPECIALISTA_VER_MAS":
 			cambiarPanel(2);
@@ -96,12 +97,19 @@ public class ControllerEspecialista implements ActionListener {
 		this.especialista = especialista;
 		ventanaP.getpEPrincipal().getpBotonesEspecialista().getLblNombreEspecialista()
 				.setText(this.especialista.getNombre());
+		setearTableVerCitas(this.especialista.getCitas());
 	}
 
 	public void setearTableVerCitas(ArrayList<Cita> citas) {
 		ventanaP.getpEPrincipal().getpMisPacientes().limpiarTabla();
 		if (citas.size() == 0) {
 			vistaE.mostrarInformacion("No tiene citas agendadas aun", 1);
+		} else {
+			for (Cita cita : citas) {
+				ventanaP.getpEPrincipal().getpMisPacientes().agregarFilaTabla(cita.getNombrePaciente(),
+						cita.getFecha().toString(),
+						cita.getHoraInicio().toString() + " - " + cita.getHoraFinal().toString());
+			}
 		}
 	}
 }
