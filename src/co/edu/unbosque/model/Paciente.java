@@ -2,7 +2,7 @@ package co.edu.unbosque.model;
 
 import java.util.ArrayList;
 
-public class Paciente extends Persona implements InterfaceCRUD<Cita> {
+public class Paciente extends Persona {
 	private ArrayList<Cita> citas;
 	private ArrayList<Cita> examenes;
 
@@ -10,36 +10,6 @@ public class Paciente extends Persona implements InterfaceCRUD<Cita> {
 		super(nombre, cedula, correo, sexo, edad, "PACIENTE");
 		this.citas = new ArrayList<Cita>();
 		this.examenes = new ArrayList<Cita>();
-	}
-
-	@Override
-	public String verTodo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean añadir(Cita x) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean actualizar(Cita x, Cita y) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean eliminar(Cita x) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean buscar(Cita x) {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 	public ArrayList<Cita> getCitas() {

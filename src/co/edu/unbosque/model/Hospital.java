@@ -2,8 +2,6 @@ package co.edu.unbosque.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import co.edu.unbosque.model.persistence.HospitalDAO;
 import co.edu.unbosque.model.persistence.MapHandler;
