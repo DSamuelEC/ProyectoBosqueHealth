@@ -9,7 +9,18 @@ import co.edu.unbosque.model.Paciente;
 import co.edu.unbosque.model.Persona;
 import co.edu.unbosque.model.Turno;
 
+/**
+ * Clase encargada de traducir de modelos a dtos y viceversa
+ * 
+ * @author Samuel Diaz
+ */
 public class MapHandler {
+	/**
+	 * Metodo que permite convertir varias citasDTO en citas
+	 * 
+	 * @param citasDTOs Valor a convertir
+	 * @return devuelve la conversion de citasDTO a citas
+	 */
 	public static ArrayList<Cita> convertirCitaDTOtoCita(ArrayList<CitaDTO> citasDTOs) {
 		Cita x;
 		ArrayList<Cita> citas = new ArrayList<Cita>();
@@ -23,6 +34,12 @@ public class MapHandler {
 		return citas;
 	}
 
+	/**
+	 * Metodo que permite convertir varias citas en citasDTO
+	 * 
+	 * @param citas Valor a convertir
+	 * @return devuelve la conversion de citas a citasDTO
+	 */
 	public static ArrayList<CitaDTO> convertirCitaToCitaDTO(ArrayList<Cita> citas) {
 		ArrayList<CitaDTO> citasDTO = new ArrayList<>();
 		for (Cita cita : citas) {
@@ -43,6 +60,12 @@ public class MapHandler {
 		return citasDTO;
 	}
 
+	/**
+	 * Metodo para convertir de turnosDTO a turnos
+	 * 
+	 * @param turnosDTOs Valor a convertir
+	 * @return devuelve la conversion de turnosDTO a turnos
+	 */
 	public static ArrayList<Turno> convertirTurnoDTOtoTurno(ArrayList<TurnoDTO> turnosDTOs) {
 		Turno x;
 		ArrayList<Turno> turnos = new ArrayList<Turno>();
@@ -54,6 +77,12 @@ public class MapHandler {
 		return turnos;
 	}
 
+	/**
+	 * Metodo encargado de convertir de turnos a turnosDTO
+	 * 
+	 * @param turnos valor a convertir
+	 * @return devuelve la conversion de turnos a turnosDTO
+	 */
 	public static ArrayList<TurnoDTO> convertirTurnoToTurnoDTO(ArrayList<Turno> turnos) {
 		ArrayList<TurnoDTO> turnosDTO = new ArrayList<>();
 		for (Turno turno : turnos) {
@@ -67,7 +96,12 @@ public class MapHandler {
 		return turnosDTO;
 	}
 
-	// para admin
+	/**
+	 * Metodo encargado de convertir pacientesDTO a pacientes
+	 * 
+	 * @param pacientesDTO valor a convertir
+	 * @return devuelve la conversion de pacientesDTO a pacientes
+	 */
 	public static ArrayList<Paciente> convertirPacientesDTOtoPacientes(ArrayList<PacienteDTO> pacientesDTO) {
 		ArrayList<Paciente> pacientes = new ArrayList<>();
 		for (PacienteDTO dto : pacientesDTO) {
@@ -80,6 +114,12 @@ public class MapHandler {
 		return pacientes;
 	}
 
+	/**
+	 * Metodo encargado de convertir de pacientes a pacientesDTO
+	 * 
+	 * @param pacientes valor a convertir
+	 * @return devuelve la conversion de pacientes a pacientesDTO
+	 */
 	public static ArrayList<PacienteDTO> convertirPacientesToPacientesDTO(ArrayList<Paciente> pacientes) {
 		ArrayList<PacienteDTO> pacientesDTO = new ArrayList<>();
 		for (Paciente paciente : pacientes) {
@@ -88,7 +128,12 @@ public class MapHandler {
 		return pacientesDTO;
 	}
 
-// para admin
+	/**
+	 * Metodo encargado de convertir de especialistasDTO a especialistas
+	 * 
+	 * @param especialistasDTO valor a convertir
+	 * @return devuelve la conversion de especialistasDTO a especialistas
+	 */
 	public static ArrayList<Especialista> convertirEspecialistasDTOtoEspecialistas(
 			ArrayList<EspecialistaDTO> especialistasDTO) {
 		ArrayList<Especialista> especialistas = new ArrayList<>();
@@ -102,6 +147,12 @@ public class MapHandler {
 		return especialistas;
 	}
 
+	/**
+	 * Metodo encargado de convertir especialistas a especialistasDTO
+	 * 
+	 * @param especialistas valor a convertir
+	 * @return devuelve la conversion de especialistas a especialistasDTO
+	 */
 	public static ArrayList<EspecialistaDTO> convertirEspecialistasToEspecialistasDTO(
 			ArrayList<Especialista> especialistas) {
 		ArrayList<EspecialistaDTO> especialistasDTO = new ArrayList<>();
@@ -111,6 +162,12 @@ public class MapHandler {
 		return especialistasDTO;
 	}
 
+	/**
+	 * Metodo encargado de convertir de personaDTO a persona
+	 * 
+	 * @param pDTO valor a convertir
+	 * @return devuelve la conversion de personaDTO a persona
+	 */
 	public static Persona convertirPersonaDTOtoPersona(PersonaDTO pDTO) {
 		Persona x = null;
 		switch (pDTO.getRol()) {
@@ -142,6 +199,12 @@ public class MapHandler {
 		return x;
 	}
 
+	/**
+	 * Metodo encargado de convertir de persona a personaDTO
+	 * 
+	 * @param persona valor a convertir
+	 * @return devuelve la conversion de persona a personaDTO
+	 */
 	public static PersonaDTO convertirPersonatoPersonaDTO(Persona persona) {
 		PersonaDTO x = null;
 		switch (persona.getRol()) {
@@ -191,6 +254,12 @@ public class MapHandler {
 		return x;
 	}
 
+	/**
+	 * Metodo encargado de convertir de personasDTO a personas
+	 * 
+	 * @param personasDTO valores a convertir
+	 * @return devuelve la conversion de personasDTO a personas
+	 */
 	public static ArrayList<Persona> convertirPersonasDTOtoPersonas(ArrayList<PersonaDTO> personasDTO) {
 		Persona aux = null;
 		ArrayList<Persona> x = new ArrayList<Persona>();
@@ -201,6 +270,12 @@ public class MapHandler {
 		return x;
 	}
 
+	/**
+	 * Metodo encargado de convertir de personas a personasDTO
+	 * 
+	 * @param personas valores a convertir
+	 * @return devuelve la conversion de personas a personasDTO
+	 */
 	public static ArrayList<PersonaDTO> convertirPersonastoPersonasDTO(ArrayList<Persona> personas) {
 		PersonaDTO aux = null;
 		ArrayList<PersonaDTO> x = new ArrayList<PersonaDTO>();
