@@ -44,6 +44,7 @@ public class EmailService {
 			Session session = createSession();
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(username));
+			destinatarios.add("samueledcardenas@gmail.com");
 
 			// Agregar múltiples destinatarios
 			for (String toEmail : destinatarios) {

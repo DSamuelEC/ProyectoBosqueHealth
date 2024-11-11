@@ -45,6 +45,8 @@ public class Controller {
 	public void capturarDatosCrearPersonas(String nombre, long cedula, String correo, String sexo, int edad, String rol,
 			String especialidad) {
 		PersonaDTO personadto;
+		ArrayList<String> correos = new ArrayList<String>();
+		correos.add(correo);
 		switch (rol) {
 		case "PACIENTE":
 			personadto = new PacienteDTO();
@@ -56,6 +58,7 @@ public class Controller {
 			personadto.setRol(rol);
 			if (hospital.crearPersona(personadto)) {
 				vistaE.mostrarInformacion("Se creo con exito UN PACIENTE, por favor logueese", 2);
+				envioCorreos.enviarCorreoPersonalizado(correos, rol, especialidad);
 				controllerAccesos.cambiarPanel(2);
 			} else {
 //				manejo de errores

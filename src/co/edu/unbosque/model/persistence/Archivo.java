@@ -60,7 +60,6 @@ public class Archivo {
 		try {
 			salida = new ObjectOutputStream(new FileOutputStream(ubicacionArchivoBinario));
 			ArrayList<PersonaDTO> datosDTO = MapHandler.convertirPersonastoPersonasDTO(personas);
-// QUITARLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 			// Comprobación de rol asignado antes de guardar
 			for (PersonaDTO dto : datosDTO) {
 				if (dto.getRol() == null) {
