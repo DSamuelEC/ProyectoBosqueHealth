@@ -24,18 +24,17 @@ public class Admin extends Persona {
 		Map<String, ArrayList<Especialista>> especialistasPorArea = agruparEspecialistasPorArea();
 		LocalDate inicioMes = LocalDate.now().withDayOfMonth(1);
 
-		for (int semana = 0; semana < 4; semana++) { // Recorre las 4 semanas del mes
+		for (int semana = 0; semana < 4; semana++) {
 			LocalDate inicioSemana = inicioMes.plusWeeks(semana);
 
 			for (String area : especialistasPorArea.keySet()) {
 				ArrayList<Especialista> especialistas = especialistasPorArea.get(area);
 				int numEspecialistas = especialistas.size();
 
-				for (int dia = 0; dia < 7; dia++) { // 7 días de la semana
+				for (int dia = 0; dia < 7; dia++) {
 					LocalDate fechaTurno = inicioSemana.plusDays(dia);
 
 					for (Especialista especialista : especialistas) {
-						// Verificar si el especialista puede tomar otro turno en la semana
 						if (especialista.puedeTomarTurno(inicioSemana, maxTurnosPorSemana)) {
 							Turno turno = new Turno(fechaTurno, horaInicioTurno, horaFinTurno.plusHours(24),
 									"Asignado");
