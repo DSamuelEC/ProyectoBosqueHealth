@@ -2,7 +2,9 @@ package co.edu.unbosque.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
+import co.edu.unbosque.model.Cita;
 import co.edu.unbosque.model.Especialista;
 import co.edu.unbosque.view.VentanaPrincipal;
 import co.edu.unbosque.view.VistaVentanasEmergentes;
@@ -89,11 +91,17 @@ public class ControllerEspecialista implements ActionListener {
 	public void cambiarPanel(int index) {
 		ventanaP.getpEPrincipal().cambiarVisibilidad(index);
 	}
-	
+
 	public void setearDatosEspecialista(Especialista especialista) {
 		this.especialista = especialista;
-		ventanaP.getpEPrincipal().getpBotonesEspecialista().getLblNombreEspecialista().setText(this.especialista.getNombre());
-		System.out.println(this.especialista.getTurnos());
-//		setearTablePacientes(this.admin.getPacientes());
+		ventanaP.getpEPrincipal().getpBotonesEspecialista().getLblNombreEspecialista()
+				.setText(this.especialista.getNombre());
+	}
+
+	public void setearTableVerCitas(ArrayList<Cita> citas) {
+		ventanaP.getpEPrincipal().getpMisPacientes().limpiarTabla();
+		if (citas.size() == 0) {
+			vistaE.mostrarInformacion("No tiene citas agendadas aun", 1);
+		}
 	}
 }

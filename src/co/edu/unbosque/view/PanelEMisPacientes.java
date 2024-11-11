@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
 /**
@@ -20,18 +21,6 @@ public class PanelEMisPacientes extends JPanel {
 	 * Atribujo encargado de mostrar un panel de desplazamiento
 	 */
 	private JScrollPane scrollPane;
-	/**
-	 * Atributo encargado de mostrar un texto del nombre del paciente en el Panel
-	 */
-	private JLabel lblNombrePaciente;
-	/**
-	 * Atributo encargado de mostrar un texto de la fecha de la cita en el Panel
-	 */
-	private JLabel lblFecha;
-	/**
-	 * Atributo encargado de mostrar un texto de la Hora de la cita en el Panel
-	 */
-	private JLabel lblHora;
 
 	/**
 	 * Metodo Constructor de la clase
@@ -48,38 +37,47 @@ public class PanelEMisPacientes extends JPanel {
 	 * Metodo encargado de inicializar todos los atributos de la clase
 	 */
 	public void inicializarComponentes() {
-		
-		tblMisPacientes = new JTable(50, 3);
+		DefaultTableModel modeloTabla = new DefaultTableModel(new Object[] { "Nombre Paciente", "Fecha", "Hora" }, 0) {
+			@Override
+			public boolean isCellEditable(int row, int column) {
+				return false;
+			}
+		};
+
+		tblMisPacientes = new JTable(modeloTabla);
 		tblMisPacientes.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		TableColumnModel columnModel = tblMisPacientes.getColumnModel();
-		columnModel.getColumn(0).setPreferredWidth(680);
-	    columnModel.getColumn(1).setPreferredWidth(280);
-	    columnModel.getColumn(2).setPreferredWidth(300);
-		tblMisPacientes.setBounds(0, 40, 1300, 590);
+		columnModel.getColumn(0).setPreferredWidth(700);
+		columnModel.getColumn(1).setPreferredWidth(300);
+		columnModel.getColumn(2).setPreferredWidth(300);
 
 		scrollPane = new JScrollPane(tblMisPacientes);
-		
-		lblNombrePaciente = new JLabel("Nombre paciente");
-		lblNombrePaciente.setBounds(30, 10, 300, 20);
-		lblNombrePaciente.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblNombrePaciente.setForeground(new Color(5, 25, 35 ));
-		
-		lblFecha = new JLabel("Fecha");
-		lblFecha.setBounds(700, 10, 300, 20);
-		lblFecha.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblFecha.setForeground(new Color(5, 25, 35 ));
+		scrollPane.setBounds(0, 40, 1300, 590);
 
-		lblHora = new JLabel("Hora");
-		lblHora.setBounds(1000, 10, 300, 20);
-		lblHora.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblHora.setForeground(new Color(5, 25, 35 ));
-		
 		add(scrollPane);
-		add(tblMisPacientes);
-		add(lblNombrePaciente);
-		add(lblFecha);
-		add(lblHora);
+	}
 
+	/**
+	 * Metodo que agrega una fila a la tabla
+	 * 
+	 * @param nombrePaciente Valor a agregar del nombre del paciente
+	 * @param fecha          Valor a agregar de la fecha
+	 * @param hora           Valor a agregar de la hora
+	 */
+	public void agregarFilaTabla(String nombrePaciente, String fecha, String hora) {
+		DefaultTableModel modeloTabla = (DefaultTableModel) tblMisPacientes.getModel();
+		modeloTabla.addRow(new Object[] { nombrePaciente, fecha, hora });
+		modeloTabla.fireTableDataChanged();
+		tblMisPacientes.getTableHeader().repaint();
+	}
+
+	/**
+	 * Metodo encargado de limpiar la tabla cuando se quiera cambiar de
+	 * visualizaciones
+	 */
+	public void limpiarTabla() {
+		DefaultTableModel modeloTabla = (DefaultTableModel) tblMisPacientes.getModel();
+		modeloTabla.setRowCount(0);
 	}
 
 	/**
@@ -117,54 +115,4 @@ public class PanelEMisPacientes extends JPanel {
 	public void setScrollPane(JScrollPane scrollPane) {
 		this.scrollPane = scrollPane;
 	}
-
-	/**
-	 * Metodo que retorna el valor del atributo lblNombrePaciente
-	 * 
-	 * @return Contenido del atributo lblNombrePaciente
-	 */
-	public JLabel getLblNombrePaciente() {
-		return lblNombrePaciente;
-	}
-	/**
-	 * Metodo que actualiza el valor del atributo lblNombrePaciente
-	 * 
-	 * @param lblNombrePaciente valor a actualizar
-	 */
-	public void setLblNombrePaciente(JLabel lblNombrePaciente) {
-		this.lblNombrePaciente = lblNombrePaciente;
-	}
-	/**
-	 * Metodo que retorna el valor del atributo lblFecha
-	 * 
-	 * @return Contenido del atributo lblFecha
-	 */
-	public JLabel getLblFecha() {
-		return lblFecha;
-	}
-	/**
-	 * Metodo que actualiza el valor del atributo lblFecha
-	 * 
-	 * @param lblFecha valor a actualizar
-	 */
-	public void setLblFecha(JLabel lblFecha) {
-		this.lblFecha = lblFecha;
-	}
-	/**
-	 * Metodo que retorna el valor del atributo lblHora
-	 * 
-	 * @return Contenido del atributo lblHora
-	 */
-	public JLabel getLblHora() {
-		return lblHora;
-	}
-	/**
-	 * Metodo que actualiza el valor del atributo lblHora
-	 * 
-	 * @param lblHora valor a actualizar
-	 */
-	public void setLblHora(JLabel lblHora) {
-		this.lblHora = lblHora;
-	}
-
 }
