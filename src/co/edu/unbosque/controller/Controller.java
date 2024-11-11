@@ -24,11 +24,13 @@ public class Controller {
 	private ControllerEspecialista controllerEspecialista;
 	private ControllerAdmin controllerAdmin;
 	private Hospital hospital;
+	private EmailService envioCorreos;
 
 	public Controller() {
 		hospital = new Hospital();
 		ventanaP = new VentanaPrincipal();
 		vistaE = new VistaVentanasEmergentes();
+		envioCorreos = new EmailService("smtp.gmail.com", 587, "bosquehealthapp8@gmail.com", "nljl rlsz mods rpov");
 		controllerAccesos = new ControllerAccesos(this, ventanaP);
 		controllerPaciente = new ControllerPaciente(this, ventanaP, vistaE);
 		controllerEspecialista = new ControllerEspecialista(this, ventanaP, vistaE);
@@ -192,4 +194,5 @@ public class Controller {
 			vistaE.mostrarInformacion("Se agrego correctamente la citaaa", 2);
 		}
 	}
+	
 }
