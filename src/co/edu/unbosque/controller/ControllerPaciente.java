@@ -86,36 +86,36 @@ public class ControllerPaciente implements ActionListener {
 		switch (comando) {
 		case "P_SUPERIOR_PACIENTE_VER_CITAS":
 			cambiarPanel(1);
+			setearTableCitas(paciente.getCitas(), "CITAS");
 			break;
 		case "P_SUPERIOR_PACIENTE_VER_EXAMENES":
-			ventanaP.getpPPrincipal().cambiarVisibilidad(1);
+			vistaE.mostrarInformacion("FUNCION NO IMPLEMENTADA", 1);
 			break;
 		case "P_SUPERIOR_PACIENTE_AGENDAR_CITA":
 			cambiarPanel(2);
-//			ventanaP.getpPPrincipal().getpPSuperior().getLblNombre().setText("ola");
 			break;
 		case "P_SUPERIOR_PACIENTE_REAGENDAR_CITA":
-			ventanaP.getpPPrincipal().cambiarVisibilidad(2);
+			vistaE.mostrarInformacion("FUNCION NO IMPLEMENTADA", 1);
 			break;
 		case "P_SUPERIOR_PACIENTE_CANCELAR_CITA":
-			ventanaP.getpPPrincipal().cambiarVisibilidad(2);
+			vistaE.mostrarInformacion("FUNCION NO IMPLEMENTADA", 1);
 			break;
 		case "P_SUPERIOR_PACIENTE_CERRAR_SESION":
 			cambiarPanel(1);
-			vistaE.mostrarInformacion("Cerrando sesion, hasta la proxima...", 1);
-			ventanaP.cambiarVisibilidad(1);
+			controllerPrincipal.cerrarSesiones(1);
 			break;
 		case "P_SUPERIOR_PACIENTE_VER_MAS":
+			vistaE.mostrarInformacion("FUNCION NO IMPLEMENTADA", 1);
 			cambiarPanel(3);
 			break;
 		case "P_VER_MAS_PACIENTE_TRATAMIENTO":
-//			mostrar popup con informacion
+			vistaE.mostrarInformacion("FUNCION NO IMPLEMENTADA", 1);
 			break;
 		case "P_VER_MAS_PACIENTE_EXAMENES":
-//			mostrar popup con informacion
+			vistaE.mostrarInformacion("FUNCION NO IMPLEMENTADA", 1);
 			break;
 		case "P_VER_MAS_PACIENTE_RESULTADO_EXAMEN":
-//			mostrar popup con informacion
+			vistaE.mostrarInformacion("FUNCION NO IMPLEMENTADA", 1);
 			break;
 		case "P_CREAR_O_ACTUALIZAR_PACIENTE_BUSCAR_DISPONIBILIDAD":
 			mostrarDisponibilidad();
@@ -143,7 +143,6 @@ public class ControllerPaciente implements ActionListener {
 		if (citas.size() == 0) {
 			vistaE.mostrarInformacion("No existen " + tipo + " asignadas aun", 1);
 		} else {
-			ventanaP.getpPPrincipal().getpPVerCitasOExamen().cambiarEncabezado(0, tipo);
 			for (Cita cita : citas) {
 				ventanaP.getpPPrincipal().getpPVerCitasOExamen().agregarFilaTabla(cita.getNombreEspecialista(),
 						cita.getEspecialidad(), cita.getFecha().toString(), cita.getHoraInicio().toString(),

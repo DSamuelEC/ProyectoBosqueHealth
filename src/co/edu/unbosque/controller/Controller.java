@@ -145,11 +145,11 @@ public class Controller {
 			if (hospital.actualizarPersona(personadto)) {
 				System.out.println("SE ASIGNARON TURNOS AUTOMATICAMENTE!!!");
 				bandera++;
+				vistaE.mostrarInformacion("Se actualizo correctamente a " + especialista.getNombre(), 2);
 			}
 		}
 		if (bandera == especialistas.size()) {
 
-			vistaE.mostrarInformacion("Se actualizaron correctamente los especialistas", 2);
 		}
 	}
 
