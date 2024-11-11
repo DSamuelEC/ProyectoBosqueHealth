@@ -5,17 +5,35 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * Clase encargada de administrar al Admin
+ * @author Samuel Diaz
+ */
 public class Admin extends Persona {
+	/**
+	 * Atributo de un arreglo donde se guardan los pacientes
+	 */
 	private ArrayList<Paciente> pacientes;
+	/**
+	 * Atributo de un arreglo donde se gurdan los especialistas
+	 */
 	private ArrayList<Especialista> especialistas;
-
+	/**
+	 * Constructor de la clase Admin
+	 * @param nombre, nombre del admin
+	 * @param cedula, cedula del admin
+	 * @param correo, correo del admin
+	 * @param sexo, sexo del admin
+	 * @param edad, edad del admin
+	 */
 	public Admin(String nombre, long cedula, String correo, String sexo, int edad) {
 		super(nombre, cedula, correo, sexo, edad, "ADMIN");
 		this.pacientes = new ArrayList<Paciente>();
 		this.especialistas = new ArrayList<Especialista>();
 	}
-
+	/**
+	 * Metodo para asignar los turnos mensuales a los especialistas
+	 */
 	public void asignarTurnosMensuales() {
 		LocalTime horaInicioTurno = LocalTime.of(7, 0);
 		LocalTime horaFinTurno = LocalTime.of(7, 0);
@@ -45,7 +63,10 @@ public class Admin extends Persona {
 			}
 		}
 	}
-
+	/**
+	 * Metodo para agrupar a los especialistas según su area
+	 * @return A los especialistas por area
+	 */
 	public Map<String, ArrayList<Especialista>> agruparEspecialistasPorArea() {
 		Map<String, ArrayList<Especialista>> especialistasPorArea = new HashMap<>();
 
@@ -68,7 +89,10 @@ public class Admin extends Persona {
 		}
 		return especialistasPorArea;
 	}
-
+	/**
+	 * Metodo envcragado de agrupar a los pacientes y a los especialistas
+	 * @param personas, valor que se actualiza
+	 */
 	public void agruparPacientesyEspecialistas(ArrayList<Persona> personas) {
 		for (Persona persona : personas) {
 			if (persona instanceof Paciente) {
@@ -78,24 +102,44 @@ public class Admin extends Persona {
 			}
 		}
 	}
-
+	/**
+	 * Metodo que retorna el valor del atributo pacientes
+	 * 
+	 * @return Contenido del atributo pacientes
+	 */
 	public ArrayList<Paciente> getPacientes() {
 		return pacientes;
 	}
-
+	/**
+	 * Metodo que actualiza el valor del atributo pacientes
+	 * 
+	 * @param pacientes valor a actualizar
+	 */
 	public void setPacientes(ArrayList<Paciente> pacientes) {
 		this.pacientes = pacientes;
 	}
-
+	/**
+	 * Metodo que retorna el valor del atributo especialistas
+	 * 
+	 * @return Contenido del atributo especialistas
+	 */
 	public ArrayList<Especialista> getEspecialistas() {
 		return especialistas;
 	}
-
+	/**
+	 * Metodo que actualiza el valor del atributo especialistas
+	 * 
+	 * @param especialistas valor a actualizar
+	 */
 	public void setEspecialistas(ArrayList<Especialista> especialistas) {
 		this.especialistas = especialistas;
 	}
-
+	
 	@Override
+	/**
+	 * Devuelve una cadena con los principales atributos y métodos del objeto
+	 * @return Una cadena que contiene el estado
+	 */
 	public String toString() {
 		return "Admin [pacientes=" + pacientes + ", especialistas=" + especialistas + ", nombre=" + nombre + ", cedula="
 				+ cedula + ", correo=" + correo + ", sexo=" + sexo + ", edad=" + edad + ", rol=" + rol
