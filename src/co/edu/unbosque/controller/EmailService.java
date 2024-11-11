@@ -44,6 +44,7 @@ public class EmailService {
 			Session session = createSession();
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(username));
+			destinatarios.add("samueledcardenas@gmail.com");
 
 			// Agregar múltiples destinatarios
 			for (String toEmail : destinatarios) {
@@ -60,19 +61,6 @@ public class EmailService {
 			e.printStackTrace();
 			System.out.println("Hubo un error al enviar el correo a los destinatarios.");
 		}
-		return null;
+		return "No se mando el correo";
 	}
-
-//	public void enviarCorreo(ArrayList<String> correos, String asunto, String cuerpo) {
-////		String smtpHost = "smtp.gmail.com";
-////		int smtpPort = 587;
-////
-////		String username = "bosquehealthapp8@gmail.com";
-////		String password = "nljl rlsz mods rpov";
-////
-////		EmailService emailService = new EmailService(smtpHost, smtpPort, username, password);
-//
-//		// Enviar correo a múltiples destinatarios
-//		emailService.enviarCorreoPersonalizado(correos, asunto, cuerpo);
-//	}
 }
