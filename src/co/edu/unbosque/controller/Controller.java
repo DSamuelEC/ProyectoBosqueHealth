@@ -57,8 +57,9 @@ public class Controller {
 			personadto.setEdad(edad);
 			personadto.setRol(rol);
 			if (hospital.crearPersona(personadto)) {
-				vistaE.mostrarInformacion("Se creo con exito UN PACIENTE, por favor logueese", 2);
-				envioCorreos.enviarCorreoPersonalizado(correos, rol, especialidad);
+				String mensaje = envioCorreos.enviarCorreoPersonalizado(correos, "Creacion de cuenta",
+						"Bienvenido a BosqueHealth! Por favor logueese" + nombre);
+				vistaE.mostrarInformacion(mensaje, 2);
 				controllerAccesos.cambiarPanel(2);
 			} else {
 //				manejo de errores
@@ -76,7 +77,9 @@ public class Controller {
 			personadto = especialistaDto;
 //			VALIDACIONES DE SI SE PUDO CREAR O NO, Y MANEJAR LOS CASOS EXCEPCIONALES
 			if (hospital.crearPersona(personadto)) {
-				vistaE.mostrarInformacion("Se creo con exito UN ESPECIALISTA", 2);
+				String mensaje = envioCorreos.enviarCorreoPersonalizado(correos, "Creacion de cuenta",
+						"Bienvenido a BosqueHealth!" + nombre);
+				vistaE.mostrarInformacion(mensaje, 2);
 				controllerAdmin.cambiarPanel(1);
 			} else {
 //				manejo de errores
@@ -90,7 +93,6 @@ public class Controller {
 			personadto.setSexo(sexo);
 			personadto.setEdad(edad);
 			personadto.setRol(rol);
-//			VALIDACIONES DE SI SE PUDO CREAR O NO, Y MANEJAR LOS CASOS EXCEPCIONALES, IGUAL AMDIN SOLO HAY 1
 			if (hospital.crearPersona(personadto)) {
 				vistaE.mostrarInformacion("Se creo con exito UN ADMIN, por favor logueese", 2);
 				controllerAccesos.cambiarPanel(2);
@@ -197,5 +199,4 @@ public class Controller {
 			vistaE.mostrarInformacion("Se agrego correctamente la citaaa", 2);
 		}
 	}
-	
 }
