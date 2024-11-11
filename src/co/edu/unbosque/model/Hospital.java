@@ -1,5 +1,6 @@
 package co.edu.unbosque.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -54,25 +55,43 @@ public class Hospital {
 		}
 	}
 
-	public void mostrarEspecialistasPorArea(String areaPedida) {
-		verTodos();
-		Map<String, ArrayList<Especialista>> especialistasPorArea = new HashMap<>();
+	public ArrayList<Especialista> obtenerEspecialistasDisponibles(LocalDate fecha, String especialidad) {
+		ArrayList<Especialista> especialistasDisponibles = new ArrayList<>();
 
-		especialistasPorArea.put("Cirugia", new ArrayList<>());
-		especialistasPorArea.put("Oncologia", new ArrayList<>());
-		especialistasPorArea.put("Dermatologia", new ArrayList<>());
-		especialistasPorArea.put("Neumologia", new ArrayList<>());
-		especialistasPorArea.put("Cardiologia", new ArrayList<>());
-		especialistasPorArea.put("Medicina Interna", new ArrayList<>());
-
-		for (Persona p : todasPersonas) {
-			if (p.getRol().equals("ESPECIALISTA")) {
-				String area = ((Especialista) p).getEspecializacion();
-				if (especialistasPorArea.containsKey(area)) {
-					especialistasPorArea.get(area).add((Especialista) p);
+		for (Persona persona : todasPersonas) {
+			if (persona instanceof Especialista) {
+				Especialista especialista = (Especialista) persona;
+				if (especialista.getEspecializacion().equalsIgnoreCase(especialidad)) {
+					for (Turno turno : especialista.getTurnos()) {
+						if (turno.getFecha().isEqual(fecha)) {
+							int citasEnFecha = 0;
+							for (Cita cita : especialista.getCitas()) {
+								if (cita.getFecha().isEqual(fecha)) {
+									citasEnFecha++;
+								}
+							}
+							if (citasEnFecha < 24) {
+								especialistasDisponibles.add(especialista);
+							}
+							break;
+						}
+					}
 				}
 			}
 		}
+		return especialistasDisponibles;
+	}
+
+	public ArrayList<Especialista> obtenerTodosLosEspecialistas() {
+		ArrayList<Especialista> especialistas = new ArrayList<>();
+
+		for (Persona persona : todasPersonas) {
+			if (persona instanceof Especialista) {
+				Especialista especialista = (Especialista) persona;
+				especialistas.add(especialista);
+			}
+		}
+		return especialistas;
 	}
 
 	public void actualizarBD() {

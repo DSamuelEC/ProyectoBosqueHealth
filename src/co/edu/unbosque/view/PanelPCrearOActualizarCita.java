@@ -25,7 +25,7 @@ public class PanelPCrearOActualizarCita extends JPanel {
 	 * Atributo encargado de mostrar una lista desplegable con las especialidades
 	 * que maneja el hospital
 	 */
-	private JComboBox ldIngreseEspecialista;
+	private JComboBox ldAreas;
 	/**
 	 * Atributo encargado de almacenar la fecha que busca el paciente para su cita
 	 */
@@ -74,13 +74,13 @@ public class PanelPCrearOActualizarCita extends JPanel {
 		lblAgendamiento.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblAgendamiento.setForeground(new Color(5, 25, 35));
 
-		String[] opciones = { "Cirugía", "Oncología", "Dermatología", "Neumología", "Cardiología", "Medicina Interna" };
-		ldIngreseEspecialista = new JComboBox<String>(opciones);
-		ldIngreseEspecialista.setBounds(50, 50, 350, 30);
+		String[] opciones = { "Cirugia", "Oncologia", "Dermatologia", "Neumologia", "Cardiologia", "Medicina Interna" };
+		ldAreas = new JComboBox<String>(opciones);
+		ldAreas.setBounds(50, 50, 350, 30);
 
 		txtDigiteFecha = new JTextField();
 		txtDigiteFecha.setBounds(420, 50, 400, 30);
-		configurarPlaceHolder(txtDigiteFecha, "Digite Fecha AA/MM/DD");
+		configurarPlaceHolder(txtDigiteFecha, "Digite Fecha AAAA-MM-DD");
 
 		btnBuscarDisponibilidad = new JButton("Buscar Disponibilidad");
 		btnBuscarDisponibilidad.setBounds(860, 50, 250, 30);
@@ -102,28 +102,26 @@ public class PanelPCrearOActualizarCita extends JPanel {
 		lblDisponinilidad.setForeground(new Color(5, 25, 35));
 
 		DefaultTableModel modeloTabla = new DefaultTableModel(
-				new Object[] { "Especialista", "Especialidad", "Fecha", "Hora Inicio", "Hora Final" }, 0) {
+				new Object[] { "Especialista", "Especialidad", "Fecha"}, 0) {
 			@Override
 			public boolean isCellEditable(int row, int column) {
 				return false;
 			}
 		};
-		
+
 		tblCrearOActualizar = new JTable(modeloTabla);
 		tblCrearOActualizar.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		TableColumnModel columnModel = tblCrearOActualizar.getColumnModel();
-		columnModel.getColumn(0).setPreferredWidth(400);
-		columnModel.getColumn(1).setPreferredWidth(300);
-		columnModel.getColumn(2).setPreferredWidth(200);
-		columnModel.getColumn(3).setPreferredWidth(200);
-		columnModel.getColumn(4).setPreferredWidth(200);
+		columnModel.getColumn(0).setPreferredWidth(600);
+		columnModel.getColumn(1).setPreferredWidth(400);
+		columnModel.getColumn(2).setPreferredWidth(300);
 
 		scrollPane = new JScrollPane(tblCrearOActualizar);
 		scrollPane.setBounds(0, 120, 1300, 590);
 
 		add(lblAgendamiento);
 		add(lblDisponinilidad);
-		add(ldIngreseEspecialista);
+		add(ldAreas);
 		add(txtDigiteFecha);
 		add(btnAgendar);
 		add(btnBuscarDisponibilidad);
@@ -134,18 +132,16 @@ public class PanelPCrearOActualizarCita extends JPanel {
 	 * Metodo que agrega una fila a la tabla
 	 * 
 	 * @param especialista Valor a agregar del nombre del especialista
+	 * @param especialidad Valor a agregar del nombre de la especialidad
 	 * @param fecha        Valor a agregar de la fecha
-	 * @param horaInicio   Valor a agregar de la hora de inicio
-	 * @param horaFinal    Valor a agregar de la hora de fin
 	 */
-	public void agregarFilaTabla(String especialista, String especialidad, String fecha, String horaInicio,
-			String horaFinal) {
+	public void agregarFilaTabla(String especialista, String especialidad, String fecha) {
 		DefaultTableModel modeloTabla = (DefaultTableModel) tblCrearOActualizar.getModel();
-		modeloTabla.addRow(new Object[] { especialista, especialidad, fecha, horaInicio, horaFinal });
+		modeloTabla.addRow(new Object[] { especialista, especialidad, fecha});
 		modeloTabla.fireTableDataChanged();
 		tblCrearOActualizar.getTableHeader().repaint();
 	}
-	
+
 	/**
 	 * Metodo encargado de limpiar la tabla cuando se quiera cambiar de
 	 * visualizaciones
@@ -154,7 +150,7 @@ public class PanelPCrearOActualizarCita extends JPanel {
 		DefaultTableModel modeloTabla = (DefaultTableModel) tblCrearOActualizar.getModel();
 		modeloTabla.setRowCount(0);
 	}
-	
+
 	/**
 	 * Metodo encargado de configurar el texto que se muestra en "txtNombre,
 	 * txtCedula, txtCorreo y txtEdad" para que cuando no tenga ningun texto muestre
@@ -202,21 +198,39 @@ public class PanelPCrearOActualizarCita extends JPanel {
 	}
 
 	/**
-	 * Metodo que retorna el valor del atributo ldIngreseEspecialista
+	 * Metodo que retorna el valor del atributo ldAreas
 	 * 
-	 * @return Contenido del atributo ldIngreseEspecialista
+	 * @return Contenido del atributo ldAreas
 	 */
-	public JComboBox getIdIngreseEspecialista() {
-		return ldIngreseEspecialista;
+	public JComboBox getLdAreas() {
+		return ldAreas;
 	}
 
 	/**
-	 * Metodo que actualiza el valor del atributo ldIngreseEspecialista
+	 * Metodo que actualiza el valor del atributo ldAreas
 	 * 
-	 * @param ldIngreseEspecialista valor a actualizar
+	 * @param ldAreas valor a actualizar
 	 */
-	public void setIdIngreseEspecialista(JComboBox idIngreseEspecialista) {
-		this.ldIngreseEspecialista = idIngreseEspecialista;
+	public void setLdAreas(JComboBox ldAreas) {
+		this.ldAreas = ldAreas;
+	}
+
+	/**
+	 * Metodo que retorna el valor del atributo scrollPane
+	 * 
+	 * @return Contenido del atributo scrollPane
+	 */
+	public JScrollPane getScrollPane() {
+		return scrollPane;
+	}
+
+	/**
+	 * Metodo que actualiza el valor del atributo scrollPane
+	 * 
+	 * @param scrollPane valor a actualizar
+	 */
+	public void setScrollPane(JScrollPane scrollPane) {
+		this.scrollPane = scrollPane;
 	}
 
 	/**

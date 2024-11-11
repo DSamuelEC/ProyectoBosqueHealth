@@ -19,35 +19,33 @@ public class Admin extends Persona {
 	public void asignarTurnosMensuales() {
 		LocalTime horaInicioTurno = LocalTime.of(7, 0);
 		LocalTime horaFinTurno = LocalTime.of(7, 0);
-
 		int maxTurnosPorSemana = 2;
 
 		Map<String, ArrayList<Especialista>> especialistasPorArea = agruparEspecialistasPorArea();
-
 		LocalDate inicioMes = LocalDate.now().withDayOfMonth(1);
 
-		for (int semana = 0; semana < 4; semana++) {
+		for (int semana = 0; semana < 4; semana++) { // Recorre las 4 semanas del mes
 			LocalDate inicioSemana = inicioMes.plusWeeks(semana);
 
 			for (String area : especialistasPorArea.keySet()) {
 				ArrayList<Especialista> especialistas = especialistasPorArea.get(area);
 				int numEspecialistas = especialistas.size();
 
-				for (int dia = 0; dia < 7; dia++) {
+				for (int dia = 0; dia < 7; dia++) { // 7 días de la semana
 					LocalDate fechaTurno = inicioSemana.plusDays(dia);
 
-					int especialistaIndex = (semana * 7 + dia) % numEspecialistas;
-					Especialista especialista = especialistas.get(especialistaIndex);
-
-					if (especialista.puedeTomarTurno(inicioSemana, maxTurnosPorSemana)) {
-						Turno turno = new Turno(fechaTurno, horaInicioTurno, horaFinTurno.plusHours(24), "Asignado");
-						especialista.agregarTurno(turno);
-						System.out.println(especialista + " tomo turno " + fechaTurno.toString());
+					for (Especialista especialista : especialistas) {
+						// Verificar si el especialista puede tomar otro turno en la semana
+						if (especialista.puedeTomarTurno(inicioSemana, maxTurnosPorSemana)) {
+							Turno turno = new Turno(fechaTurno, horaInicioTurno, horaFinTurno.plusHours(24),
+									"Asignado");
+							especialista.agregarTurno(turno);
+							System.out.println(especialista.getNombre() + " asignado a turno el " + fechaTurno);
+						}
 					}
 				}
 			}
 		}
-//		Falta actualizar la DB con el turno
 	}
 
 	public Map<String, ArrayList<Especialista>> agruparEspecialistasPorArea() {
@@ -109,5 +107,5 @@ public class Admin extends Persona {
 				+ ", getEdad()=" + getEdad() + ", getRol()=" + getRol() + ", getClass()=" + getClass() + ", hashCode()="
 				+ hashCode() + ", toString()=" + super.toString() + "]";
 	}
-	
+
 }
