@@ -121,7 +121,7 @@ public class Controller {
                 if (hospital.crearPersona(personadto)) {
                     String mensaje = envioCorreos.enviarCorreoPersonalizado(correos, "Creacion de cuenta",
                             "Bienvenido a BosqueHealth! Por favor logueese " + nombre);
-                    vistaE.mostrarInformacion(mensaje, 2);
+                    vistaE.mostrarInformacion(mensaje, 1);
                     controllerAccesos.cambiarPanel(2);
                 }
                 break;
@@ -138,7 +138,7 @@ public class Controller {
                 if (hospital.crearPersona(personadto)) {
                     String mensaje = envioCorreos.enviarCorreoPersonalizado(correos, "Creacion de cuenta",
                             "Bienvenido a BosqueHealth! " + nombre);
-                    vistaE.mostrarInformacion(mensaje, 2);
+                    vistaE.mostrarInformacion(mensaje, 1);
                     controllerAdmin.cambiarPanel(1);
                 }
                 break;

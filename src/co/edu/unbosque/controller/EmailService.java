@@ -1,7 +1,5 @@
 package co.edu.unbosque.controller;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 import javax.mail.Authenticator;
@@ -12,11 +10,33 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+/**
+ * Clase encargada de enviar correos
+ * 
+ * @author Mariana Ovallos
+ */
 public class EmailService {
+	/**
+	 * Atributo encargado de guardar un nombre
+	 */
 	private String username;
+	/**
+	 * Atributo encargado de guardar una contraseña
+	 */
 	private String password;
+	/**
+	 * Atributo encargado de almacenar unas propiedades
+	 */
 	private Properties properties;
 
+	/**
+	 * Metodo constructor
+	 * 
+	 * @param smtpHost valor del dominio de envio del correo
+	 * @param smtpPort valor del puerto requerido para su configuracion
+	 * @param username valor del correo remitente
+	 * @param password valor de la contraseña que da el proveedor de correos
+	 */
 	public EmailService(String smtpHost, int smtpPort, String username, String password) {
 		this.username = username;
 		this.password = password;
@@ -38,7 +58,14 @@ public class EmailService {
 		});
 	}
 
-	// Método para enviar correo a varios destinatarios
+	/**
+	 * Metodo encargado de enviar un correo personalizado
+	 * 
+	 * @param destinatarios Valor que contiene los correos de destino
+	 * @param subject       Valor del asunto del correo
+	 * @param body          valor del cuerpo del correo
+	 * @return mensaje indicando que debe revisar su correo
+	 */
 	public String enviarCorreoPersonalizado(List<String> destinatarios, String subject, String body) {
 		try {
 			Session session = createSession();
@@ -61,6 +88,6 @@ public class EmailService {
 			e.printStackTrace();
 			System.out.println("Hubo un error al enviar el correo a los destinatarios.");
 		}
-		return "No se mando el correo";
+		return "Revise su correo";
 	}
 }
