@@ -29,7 +29,6 @@ public class Admin extends Persona {
 
 			for (String area : especialistasPorArea.keySet()) {
 				ArrayList<Especialista> especialistas = especialistasPorArea.get(area);
-				int numEspecialistas = especialistas.size();
 
 				for (int dia = 0; dia < 7; dia++) {
 					LocalDate fechaTurno = inicioSemana.plusDays(dia);
@@ -106,5 +105,4 @@ public class Admin extends Persona {
 				+ ", getEdad()=" + getEdad() + ", getRol()=" + getRol() + ", getClass()=" + getClass() + ", hashCode()="
 				+ hashCode() + ", toString()=" + super.toString() + "]";
 	}
-
 }
